@@ -25,16 +25,7 @@ The Box Panel interface provides a single, consolidated view of enterprise asset
 
 This user guide provides an end-to-end overview to help you get started using Box Panel Version 3.8.3 and later, so you can monitor and control your IBM Blue Box Cloud. 
 
-## Logging In 
-
-To get started with Box Panel, log in. 
-
-**Logging into your Box Panel Account:**
-
-1. Click the following URL to be directed to the login page: https://boxpanel.bluebox.net.
-2. Log into your Box Panel account with the login credentials provided by the Blue Box Support Team. If you are a **Secondary** contact and don't yet have access, you can be added by an **Administrator**. See the **Managing Users and Projects** section for more details.
-3. If you do not yet have a Box Panel account, refer to the **Billing** section to set up an account.
-5. After logging in, you will be directed automatically to the Box Panel Dashboard UI.
+## [Logging In](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/Box-Panel.md#logging-in)
 
 ## Using Lock Box to Log In
 +
