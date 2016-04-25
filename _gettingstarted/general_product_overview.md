@@ -4,7 +4,7 @@ title: General Product Overview
 featured: false
 weight: 10
 tags: [release, features, gettingstarted, overview]
-date: March 29, 2016
+dateAdded: March 29, 2016
 author: Leslie Lundquist
 ---
 
@@ -35,4 +35,45 @@ The IBM Blue Box Cloud hardware substrate varies by offering. You can get more i
 
 You can use the **OpenStack Horizon** interface to monitor your cloud’s performance, or you can use a customized IBM Blue Box product, Box Panel, to view your cloud as well as your resource usage, your network configurations, and other features of your cloud.
 
-Your purchase of IBM Blue Box Dedicated Cloud includes 24/7 technical support. The Box Panel product provides an interface for opening a support ticket. You also can call Blue Box Support at 1-800-613-4305 or email us at support@bluebox.net.
+You can find more information about Box Panel in the [Box Panel User Guide.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/Box_Panel.md)
+
+#### **Cloud Overview: IBM Blue Box Cloud Building Blocks**
+
+Every IBM Blue Box Cloud, Dedicated or Local, starts with a cluster of controller and compute nodes:
+
+**IBM Blue Box Dedicated Cloud:**
+
+	• A cloud can start as a three-node cluster with two hyper-converged (controller + compute nodes) and one compute-only node.
+	• A cloud can start as a five-node cluster with a pair of dedicated controller-only nodes and three compute-only nodes. 
+
+**IBM Blue Box Local Cloud:**
+
+	• Each cloud must have at least one dedicated controller-only node and three compute-only nodes.  
+	
+From any of these starting places (e.g., 3-node hyper-converged, or 5-node with dedicated controllers), you can add compute nodes of any type, along with block storage (Ceph), and/or object storage (Swift).
+
+**Additional building blocks:**
+
+	• For a Standard Capacity Dedicated cloud, Dedicated Gateway Firewalls are included by default
+	• Enterprise Capacity includes double the resources and 10 Gbps of network connectivity 
+	• Dedicated controller nodes (or additional ones)
+	• Compute nodes (or additional ones): Standard or Enterprise, IO or High Storage 
+
+#### **Optional Expansion Compute Nodes**
+
+Optionally, you can select from the following compute node extensions to add to your standard or enterprise cloud:
+
+	• You can select specialized expansion compute nodes: IO, or HIGH STORAGE 
+	• You can select additional standard or enterprise compute nodes: STANDARD COMPUTE, or ENTERPRISE COMPUTE
+
+Expansion compute nodes address your requirements for faster IO ephemeral, more RAM, and an order of magnitude larger ephemeral storage.  Both types of expansion nodes—IO optimized and high storage capacity—allow better coverage of instance types and workloads. Starting with the 2.1.0 release, compute types have been grouped into Availability Zones for easy targeting of workloads to the appropriate compute type.
+
+#### **Optional Hybrid Block Storage Nodes **
+
+Hybrid Block Storage nodes provide lower cost and higher density Block Storage.  
+
+	• You can select Block Storage: SSD or HYBRID
+	• You can select Object Storage 
+
+
+Your purchase of IBM Blue Box Dedicated Cloud includes 24/7 technical support. The Box Panel product provides an interface for opening a support ticket. You also can call Blue Box Support at 1-800-613-4305 or email us at *support@bluebox.net*.
