@@ -1,23 +1,13 @@
 --- 
-
 layout: page 
-
 title: "Box Panel User Guide" 
-
 featured: false 
-
 weight: 2 
-
 tags: [getting started, Box Panel] 
-
 author: Jill Tempelmeyer 
-
 editor: Leslie Lundquist
-
 dateAdded: April 14, 2016 
-
 --- 
-
 
 # Getting Started with Box Panel
 
@@ -40,9 +30,17 @@ To get started with Box Panel, log in.
 +
 +You will receive your `cloud_admin` credentials to your private OpenStack cluster through the Box Panel Lock Box. Your credentials should look like this:
 +
-+{% highlight bash %} URL: https://customer_name.openstack.blueboxgrid.com User name: **Specified Username** Password: **Specified Password** {% endhighlight %}
++{% highlight bash %}
+
+URL: https://customer_name.openstack.blueboxgrid.com 
+
+User name: **Your Specified Username**
+
+Password: **Your Specified Password**
+
+{% endhighlight %}
 +
-+Navigate to the above URL. You can then use your **Specified Username** and **Specified Password** to log in.
++Navigate to the above URL. You can then use **Your Specified Username** and ** Your Specified Password** to log in.
 
 
 ## Navigating the Box Panel Dashboard
@@ -51,7 +49,7 @@ From the Box Panel Dashboard, you can see a consolidated asset view of all of yo
 
 The top of the Dashboard displays the infrastructure currently in use, with your list of hosts. 
 
-![Image of Dashboard1](https://github.com/help-documentation/img/Dashboard1.png)
+![Image of Dashboard 1](https://github.com/help-documentation/img/Dashboard1.png)
 
 Immediately below, you can view your bandwidth usage and any support tickets related to your cloud, along with your status. 
 
@@ -109,7 +107,9 @@ Users with the `cloud_admin` role can enable and disable projects. When you disa
 3. Check each box associated with the project(s) you would like to disable.
 4. Confirm that you would like to disable the project by clicking the **Disable Projects** button.
 
-## Creating a Custom Flavor
+## Managing Machines and Resources
+
+**Creating a Custom Flavor**
 
 In OpenStack, a **Flavor** is a template for describing the resource configuration of a Virtual Machine.
 
@@ -121,9 +121,7 @@ In OpenStack, a **Flavor** is a template for describing the resource configurati
 4. Enter a name and assign custom configuration information.
 5. If you would like to limit your **Flavor** to a specific project, click the **Flavor Access* tab, and click the **+** symbol to move your **Flavor** to the **Selected Projects** section.
 
-## Adding a Virtual Machine 
-
-**To add an asset or machine:**
+**Adding a Virtual Machine:**
 
 1. From the **Project** menu, select **Instances**.
 2. Click the **Launch Instance** button.
@@ -136,9 +134,7 @@ In OpenStack, a **Flavor** is a template for describing the resource configurati
 
 On the **Instances** page, find your machine in the list and select the **Actions** drop-down menu to manage your machine.
 
-## Deleting a Virtual Machine
-
-**To delete an asset or machine:** 
+## Deleting an Asset or Machine:
 
 1. Visit the **Instances** page. 
 2. As long as you have the proper permissions to delete an asset, you can **Power Cycle** the machine’s PDUs, or select **Delete Asset.** 
@@ -163,9 +159,9 @@ Each image is displayed as a card. Cards are grouped by operating system.
 
 ![Image of Dashboard 5](https://github.com/help-documentation/img/Dashboard 5.png) 
 
-## Managing Access and Security
+## Managing Access and Security with Security Groups
 
-A software-based firewall must be opened before the instance can receive external traffic.
+A software-based firewall, or **Security Group**, must be opened before the instance can receive external traffic.
 
 **To set firewall rules:**
 
@@ -206,19 +202,11 @@ To receive Internet traffic, you also must assign a **Floating IP** address that
 2. From the Modal window, select an instance from the **Attach to Instance** drop-down.
 3. Click the **Attach Volume** button to assign the volume to your instance.
 
-## Managing Support Tickets 
+## Getting Support 
 
-By clicking on a support ticket from the Dashboard, you can see the text of the associated ticket. This text includes additional tickets, as well as chat history and correspondence related to the selected ticket. The status of the support ticket is highlighted on the orange button in the top left corner. 
+**Note: For immediate support, you can call Blue Box Support at 1-800-613-4305 or email us at support@bluebox.net.**
 
-![Image of Dashboard 6](https://github.com/help-documentation/img/Dashboard 6.png) 
-
-From the panel on the left-hand side, you have options to create a new support ticket, subscribe to the ticket you have selected (if you want to follow its status), view your tickets, and view all tickets submitted by shared users on your account. 
-
-To view a list of Subscribers for a selected ticket, simply click on the **Subscribers** link. 
-
-![Image of Dashboard 7](https://github.com/help-documentation/img/Dashboard 7.png)
-
-To have a conversation with one of our Blue Box support team experts, you can click the green **Post Reply** button, or use the **Chat** feature. 
+In most cases, you'll want to open a support ticket to get support. By using a ticket, you'll have a record of the issue and the solutions taken to address your issue, complete with logs of your chat sessions with the customer support team.
 
 **To create a ticket:**
 
@@ -249,7 +237,20 @@ To have a conversation with one of our Blue Box support team experts, you can cl
  9. If you wish to open your ticket as **Urgent** and consent to pay the consulting charges for non-critical items, check the **I Agree** box. 
  10. Finally, click the **Create Ticket** box. 
 
-**Note: For additional support, you can call Blue Box Support at 1-800-613-4305 or email us at support@bluebox.net.**
+**Using Your Support Ticket
+
+Anytime after a ticket is created, you can see the text associated with that ticket, by clicking on that support ticket from the Dashboard. The text may include references to other tickets, as well as chat history and correspondence related to the selected ticket. The status of the support ticket is highlighted on the orange button in the top left corner. 
+
+![Image of Dashboard 6](https://github.com/help-documentation/img/Dashboard 6.png) 
+
+From the panel on the left-hand side of the screen, you can select options to create another new support ticket, subscribe to the ticket you have selected (if you want to follow its status), view your tickets, and view all tickets submitted by shared users on your account. 
+
+To view a list of Subscribers for a selected ticket, click on the **Subscribers** link. 
+
+![Image of Dashboard 7](https://github.com/help-documentation/img/Dashboard 7.png)
+
+To have a written conversation with one of our Blue Box support team experts about the topic of this ticket, you can click the green **Post Reply** button, or you can use the live **Chat** feature by clicking on **Chat**. All live chat sessions are recorded and added to the ticket as a transcript.
+
 
 ## Managing Billing 
 
