@@ -29,7 +29,7 @@ This user guide provides an end-to-end overview to help you get started using Bo
 
 To get started with Box Panel, log in. 
 
-**Logging into your Box Panel Account:**
+**To log into your Box Panel Account:**
 
 1. Click the following URL to be directed to the login page: https://boxpanel.bluebox.net.
 2. Log into your Box Panel account with the login credentials provided by the Blue Box Support Team. If you are a **Secondary** contact and don't yet have access, you can be added by an **Administrator**. See the **Managing Users and Projects** section for more details.
@@ -37,13 +37,12 @@ To get started with Box Panel, log in.
 5. After logging in, you will be directed automatically to the Box Panel Dashboard UI.
 
 ## Using Lock Box to Log In
-+
-+You will receive your `cloud_admin` credentials to your private OpenStack cluster through the Box Panel Lock Box. Your credentials should look like this:
-+
-+{% highlight bash %} URL: https://customer_name.openstack.blueboxgrid.com User name: **Specified Username** Password: **Specified Password** {% endhighlight %}
-+
-+Navigate to the above URL. You can then use your **Specified Username** and **Specified Password** to log in.
 
+You will receive your `cloud_admin` credentials to your private OpenStack cluster through the Box Panel Lock Box. Your credentials should look like this:
+
+{% highlight bash %} URL: https://customer_name.openstack.blueboxgrid.com User name: **Specified Username** Password: **Specified Password** {% endhighlight %}
+
+Navigate to the above URL. You can then use your **Specified Username** and **Specified Password** to log in.
 
 ## Navigating the Box Panel Dashboard
 
@@ -57,15 +56,11 @@ Immediately below, you can view your bandwidth usage and any support tickets rel
 
 ![Image of Dashboard 2](https://github.com/help-documentation/img/Dashboard 2.png)
 
-On the right, additional details related to your account summary are displayed. 
+On the right, additional details related to your account summary, including your **Lock Box Messages**, **Verbal Password**, **Bandwidth Quota**, and **Backup Quota** are displayed.
 
 ## Managing Users and Projects
 
-A **Project** is a group of resources that can be asssigned to a user or a group of users.
-
-**Users** include the following four predefined roles: **cloud_admin**, **project_admin**, **\_member\_**, and **heat_stack_owner**. A fifth role, **heat_stack_user**, is assigned automatically. 
-
-Version 3 of the Keystone API with IBM Blue Box Cloud introduces the concept of **groups**. You can use groups to make multiple assignments simultaneously. For more information on Keystone v3, **groups**, and use cases, please refer to the primary document on this topic: [Managing Users and Projects] (http://ibm-blue-box-help.github.io/help-documentation/keystone/Managing_Users_and_Projects/)
+Version 3 of the Keystone API with IBM Blue Box Cloud introduces the concept of **groups**. You can use groups to make multiple assignments simultaneously. For more information on Keystone v3, **groups**, **projects**, **users**, and use cases, please refer to the primary document on this topic: [Managing Users and Projects] (http://ibm-blue-box-help.github.io/help-documentation/keystone/Managing_Users_and_Projects/)
 
 ## Creating a Project
 
@@ -208,7 +203,9 @@ To receive Internet traffic, you also must assign a **Floating IP** address that
 
 ## Managing Support Tickets 
 
-By clicking on a support ticket from the Dashboard, you can see the text of the associated ticket. This text includes additional tickets, as well as chat history and correspondence related to the selected ticket. The status of the support ticket is highlighted on the orange button in the top left corner. 
+You can click on the **Support** tab from your Dashboard to be redirected to view information related to your support tickets.
+
+From this view, you can select a ticket to see the text of the associated ticket. This text includes additional tickets, as well as chat history and correspondence related to the selected ticket. The status of the support ticket is highlighted on the orange button in the top left corner. 
 
 ![Image of Dashboard 6](https://github.com/help-documentation/img/Dashboard 6.png) 
 
@@ -249,7 +246,18 @@ To have a conversation with one of our Blue Box support team experts, you can cl
  9. If you wish to open your ticket as **Urgent** and consent to pay the consulting charges for non-critical items, check the **I Agree** box. 
  10. Finally, click the **Create Ticket** box. 
 
-**Note: For additional support, you can call Blue Box Support at 1-800-613-4305 or email us at support@bluebox.net.**
+**Note: For additional support, you can call Blue Box Support at 1-800-613-4305, email us at support@bluebox.net, or use the Chat feature, outlined below.**
+
+## Using the Chat Feature
+
+**To chat with Blue Box Support**:
+
+1. Click the **Chat** tab from your Dashboard. This automatically directs you to a chat room with support staff. 
+2. From here, you are able to view the support staff members join your conversation on the left-hand side of the chat room.
+3. Once a support member joins, you can compose and send messages from the chat bar. If you need to enter a new line during your chat, press **Control/Command + Enter**.
+4. If you need to escalate your support issue, please call 1-800-613-4305 ext 1.
+
+**Note: Each customer chat room is private. This means that only contacts within your customer account and Blue Box staff have access. No sensitive data (credit card numbers, private keys) is persisted.**
 
 ## Managing Billing 
 
