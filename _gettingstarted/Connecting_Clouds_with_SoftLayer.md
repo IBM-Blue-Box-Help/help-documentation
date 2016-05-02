@@ -27,6 +27,8 @@ The document assumes that each IBM Blue Box cloud you are planning to connect ha
 
 Traffic from instances that have a floating IP associated with them will have SNAT translation performed **before traversing** the SoftLayer private network.  If the customer's application is sensitive to the source address being translated, instances with floating IPs cannot be used.
 
+ L2 population presents some limitations for customers that want to implement vIP failover between instances, because it won't work without making Neutron API calls.  
+
 ### To Initiate Network Connectivity
 
 1. If your IBM Blue Box cloud already is deployed, open an IBM Blue Box support ticket and request access to the SoftLayer private network.
