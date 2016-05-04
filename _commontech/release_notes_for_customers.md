@@ -18,25 +18,25 @@ author: Leslie Lundquist
 
 This document offers a basic technical description of the latest IBM Blue Box Cloud offerings, specifically the Dedicated and Local Cloud offerings.  The new capabilities of IBM Blue Box Dedicated and Local Cloud include:  
 
-1.  [Additional types of Expansion Compute Nodes are available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#optional-expansion-compute-nodes-now-available)
+1.  [Additional types of Expansion Compute Nodes are available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#optional-expansion-compute-nodes-now-available)
 
-2.  [Hybrid Block Storage Cluster and Expansion Nodes are available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#optional-hybrid-block-storage-nodes-now-available)
+2.  [Hybrid Block Storage Cluster and Expansion Nodes are available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#optional-hybrid-block-storage-nodes-now-available)
 
-3.  [Direct Link is available on IBM Blue Box Dedicated Cloud, in three varieties, and for hybrid cloud applications.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#direct-link-now-available-in-softlayer-data-centers)
+3.  [Direct Link is available on IBM Blue Box Dedicated Cloud, in three varieties, and for hybrid cloud applications.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#direct-link-now-available-in-softlayer-data-centers)
 
-4.  [SoftLayer Private Network access is available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#softlayer-private-network-access)
+4.  [SoftLayer Private Network access is available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#softlayer-private-network-access)
 
-5.  [Use of Role-Based Access Control (RBAC) to define permissions.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#role-based-access-control-rbac)
+5.  [Use of Role-Based Access Control (RBAC) to define permissions.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#role-based-access-control-rbac)
 
-6.  [Additional cloud images are provided by IBM Blue Box.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#additional-cloud-images-available)
+6.  [Additional cloud images are provided by IBM Blue Box.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#additional-cloud-images-available)
 
-7.  [HIPAA-compliant options are now available for IBM Blue Box Dedicated Cloud.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#hipaa-and-ibm-blue-box-dedicated-cloud)
+7.  [HIPAA-compliant options are now available for IBM Blue Box Dedicated Cloud.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#hipaa-and-ibm-blue-box-dedicated-cloud)
 
 For additional user documentation, please refer to the [main Help page.](http://ibm-blue-box-help.github.io/help-documentation/) 
 
-[A **General Product Overview** for IBM Blue Box Cloud version 2.0 and later is available in this document](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/general_product_overview/).
+[A **General Product Overview** for IBM Blue Box Cloud version 2.0 and later is available in this document.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/431dc5999dd57701f527865ca18c4089114395eb/_commontech/general_product_overview.md#general-product-overview)
 
-A summary of features from previous releases that will affect users of this release is available [at the end of this document.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#summary-of-new-features-from-previous-releases-that-will-affect-customer-use-of-this-release)
+A summary of features from previous releases that will affect users of this release is available [at the end of this document.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_commontech/release_notes_for_customers.md#summary-of-new-features-from-previous-releases-that-will-affect-customer-use-of-this-release)
 
 #### **IBM Blue Box Cloud Building Blocks**
 
@@ -100,13 +100,13 @@ Available:
 
 SoftLayer Private Network access lets you set up connectivity between two IBM Blue Box Dedicated private clouds, using the SoftLayer private network capability, when both of the IBM Blue Box clouds that will be connected are deployed under the same SoftLayer account. You would select this service to enable _low-latency, un-metered, private network traffic_ between your IBM Blue Box Dedicated clouds.
 
-For more information, please refer to [the main document on this topic.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/Connecting_Clouds_with_SoftLayer/)
+For more information, please refer to [the main document on this topic.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/431dc5999dd57701f527865ca18c4089114395eb/_commontech/Connecting_Clouds_with_SoftLayer.md#utilizing-softlayers-private-network-with-multiple-ibm-blue-box-clouds)
 
-For a known limitation, please look [here](http://ibm-blue-box-help.github.io/help-documentation/keystone/RBAC_Definitions/).
+For a known limitation, please look [here](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_keystone/RBAC_Definitions.md#role-based-access-control-rbac-and-access-to-openstack-services).
 
 #### **Role-Based Access Control (RBAC)**
 
-Several roles are created by default that give you specific access capabilities within your cloud. This version of IBM Blue Box Cloud introduces the concept of **groups**. For more information about users, roles, and groups, please refer to [this document](http://ibm-blue-box-help.github.io/help-documentation/keystone/RBAC_Definitions/).
+Several roles are created by default that give you specific access capabilities within your cloud. This version of IBM Blue Box Cloud introduces the concept of **groups**. For more information about users, roles, and groups, please refer to [this document](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_keystone/RBAC_Definitions.md#role-based-access-control-rbac-and-access-to-openstack-services).
 
 #### **Additional Cloud Images Available**
 
@@ -122,7 +122,7 @@ IBM Blue Box Cloud 2.1.0 comes pre-populated with Cirros 0.3.3 x86_64 images. Ad
 	• Windows Server 2012 R2 Datacenter
 	• Windows Server 2012 R2 Standard
 
-To use any of these images, additional information is provided in [this document](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/Cloud_Images_Provided_by_IBM/).
+To use any of these images, additional information is provided in [this document](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/431dc5999dd57701f527865ca18c4089114395eb/_commontech/Cloud_Images_Provided_by_IBM.md#working-with-cloud-images-provided-by-ibm-blue-box).
 
 #### **HIPAA and IBM Blue Box Dedicated Cloud**
 
