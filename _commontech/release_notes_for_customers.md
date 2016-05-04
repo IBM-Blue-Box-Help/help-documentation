@@ -18,25 +18,25 @@ author: Leslie Lundquist
 
 This document offers a basic technical description of the latest IBM Blue Box Cloud offerings, specifically the Dedicated and Local Cloud offerings.  The new capabilities of IBM Blue Box Dedicated and Local Cloud include:  
 
-1.  [Additional types of Expansion Compute Nodes are available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#optional-expansion-compute-nodes-now-available)
+1.  [Additional types of Expansion Compute Nodes are available.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers.md/#optional-expansion-compute-nodes-now-available)
 
-2.  [Hybrid Block Storage Cluster and Expansion Nodes are available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#optional-hybrid-block-storage-nodes-now-available)
+2.  [Hybrid Block Storage Cluster and Expansion Nodes are available.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/#optional-hybrid-block-storage-nodes-now-available)
 
-3.  [Direct Link is available on IBM Blue Box Dedicated Cloud, in three varieties, and for hybrid cloud applications.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#direct-link-now-available-in-softlayer-data-centers)
+3.  [Direct Link is available on IBM Blue Box Dedicated Cloud, in three varieties, and for hybrid cloud applications.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/#direct-link-now-available-in-softlayer-data-centers)
 
-4.  [SoftLayer Private Network access is available.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#softlayer-private-network-access)
+4.  [SoftLayer Private Network access is available.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/#softlayer-private-network-access)
 
-5.  [Use of Role-Based Access Control (RBAC) to define permissions.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#role-based-access-control-rbac)
+5.  [Use of Role-Based Access Control (RBAC) to define permissions.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/#role-based-access-control-rbac)
 
-6.  [Additional cloud images are provided by IBM Blue Box.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#additional-cloud-images-available)
+6.  [Additional cloud images are provided by IBM Blue Box.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/#additional-cloud-images-available)
 
-7.  [HIPAA-compliant options are now available for IBM Blue Box Dedicated Cloud.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#hipaa-and-ibm-blue-box-dedicated-cloud)
+7.  [HIPAA-compliant options are now available for IBM Blue Box Dedicated Cloud.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/#hipaa-and-ibm-blue-box-dedicated-cloud)
 
 For additional user documentation, please refer to the [main Help page.](http://ibm-blue-box-help.github.io/help-documentation/) 
 
-[A **General Product Overview** for IBM Blue Box Cloud version 2.0 and later is available in this document](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/general_product_overview/).
+[A **General Product Overview** for IBM Blue Box Cloud version 2.0 and later is available in this document](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/general_product_overview/).
 
-A summary of features from previous releases that will affect users of this release is available [at the end of this document.](https://github.com/IBM-Blue-Box-Help/help-documentation/blob/gh-pages/_gettingstarted/release_notes_for_customers.md/#summary-of-new-features-from-previous-releases-that-will-affect-customer-use-of-this-release)
+A summary of features from previous releases that will affect users of this release is available [at the end of this document.](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/#summary-of-new-features-from-previous-releases-that-will-affect-customer-use-of-this-release)
 
 #### **IBM Blue Box Cloud Building Blocks**
 
