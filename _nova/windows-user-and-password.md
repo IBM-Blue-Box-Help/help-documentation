@@ -7,7 +7,7 @@ featured: false
 weight: 4
 ---
 
-To set the initial username and password, use the following command (with the relevant username and password in place of `<USERNAME>` and `<YOUR_PASSWORD>`). The password must comply with the rules described in **Managing and monitoring compute resources**, or you will not be able to log in to your instance:
+To set the initial username and password, use the following command (with the relevant username and password in place of `<USERNAME>` and `<YOUR_PASSWORD>`). 
 
 {% highlight bash %}
 rem cmd
