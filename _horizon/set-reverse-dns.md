@@ -7,4 +7,4 @@ featured: false
 weight: 4
 ---
 
-Please contact us with the IP addresses of the instances and names you want them to point to.  We will add the record(s) for you.  Our development team also is working on a way for you to be able to do this yourself.
+Please [contact us](https://support.bluebox.net/) with the IP addresses of the instances and names you want them to point to.  We will add the record(s) for you.  Our development team also is working on a way for you to be able to do this yourself.

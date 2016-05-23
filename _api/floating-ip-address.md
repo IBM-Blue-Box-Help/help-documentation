@@ -7,7 +7,7 @@ author: Jason Kennedy
 dateAdded: August 13th, 2015
 ---
 
-Hey folks, today we're going to run through the process necessary to add a floating IP address to one of your instances. I touched on how to complete this at the end of **Creating Additional Networks in OpenStack via the Horizon Panel**, so let's run this example through the terminal. The first thing to consider that *creating* a floating IP doesn't actually create the address, it merely allocates one from the assigned pool. Let's take a look at what we have assigned:
+Hey folks, today we're going to run through the process necessary to add a floating IP address to one of your instances. I touched on how to complete this at the end of [**Creating Additional Networks in OpenStack via the Horizon Panel**](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/creating-additional-networks-with-horizon/), so let's run this example through the terminal. The first thing to consider is that *creating* a floating IP doesn't actually create the address, it merely allocates one from the assigned pool. Let's take a look at what we have assigned:
 
 {% highlight bash %}
 $neutron net-list | grep external

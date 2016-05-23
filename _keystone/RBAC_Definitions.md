@@ -26,14 +26,13 @@ However, assuming that you are interested in automating updates to Neutron port 
 
 {% highlight bash %}
 ```
-    "is_owner": "project_id:%(tenant_id)s or project_id:%(project_id)s",
-    "admin_or_owner": "rule:cloud_admin_privilege or rule:is_owner or rule:project_admin_privilege",
-
+    "is_owner": "project_id:%(tenant_id)s or project_id:%(project_id)s"
+    "admin_or_owner": "rule:cloud_admin_privilege or rule:is_owner or rule:project_admin_privilege"
     "update_port": "rule:admin_or_owner or rule:context_is_advsvc"
 ```
 {% endhighlight %}
 
-If you would like to see more granular roles in a future release, we can open a feature request to our product team.
+If you would like to see more granular roles in a future release, we can [open a feature request](https://support.bluebox.net/) to our product team.
 
 #### Known Problem with Horizon Can Create Confusion for Cloud Admins
 

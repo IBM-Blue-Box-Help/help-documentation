@@ -14,11 +14,11 @@ A typical **IBM Blue Box** cloud has an Internal and External network setup by d
 
 (Disclaimer: There be dragons here! Make sure you are in fact using VXLAN before you do this--it just won't work otherwise. Also, you run the risk of suddenly ceasing earth's rotation and flinging us all into space)
 
-First things, first, let's create a network. For sanity's sake, I'll be showing both command-line interface (CLI) and **Horizon** methods so as to be the most helpful. Let's start with **Horizon**, I'll do CLI in [another post]():
+First things, first, let's create a network. For sanity's sake, I'll be showing both command-line interface (CLI) and **Horizon** methods so as to be the most helpful. Let's start with **Horizon**, I'll do CLI in another post shortly.
 
 Under your Project, go to the **Network** tab and select **Networks**. You will see Internal and External as described previously.
 
- ![Here is a screen shot](http://help.bluebox.net/hc/en-us/article_attachments/202593017/Screen_Shot_2015-08-04_at_12.06.40_PM.png)
+![Internal External Networks]({{site.baseurl}}/img/Internal_External_Networks.png)
 
 
 From here, click on **Create Network** at the top right, to bring up the **Create Network** popup screen.
@@ -31,13 +31,13 @@ Now click **Subnet Detail** or **Next**. On this screen, if you are only allocat
 
 From here just click the blue **Create** button. Your **Networks** section should now look like this:
 
-![Here's your Network Section](http://help.bluebox.net/hc/en-us/article_attachments/202594607/Screen_Shot_2015-08-04_at_12.38.57_PM.png)
+![Network Section]({{site.baseurl}}/img/Network_Section.png)
 
 Now let's add a router.
 
 Click on **Routers** under **Networks** in the navigation; you shouldn't see any routers there, so let's make one by clicking **Create Router**. It'll bring up the **Create Router** dialogue window. All you need to do is pick a **Router Name** (we'll use `test_router`). Hit **Create Router** and you should see the following:
 
-![Router](http://help.bluebox.net/hc/en-us/article_attachments/202667758/Screen_Shot_2015-08-04_at_12.43.48_PM.png)
+![Router]({{site.baseurl}}/img/Router.png)
 
 Looking at our router, we can see that it's not attached to an external network, which is necessary for it to do the things that routers do. Under **Actions** on the right side, let's click on **Set Gateway**. That brings up the **Set Gateway** window; under the **External Network** dropdown.
 Select **External**, and then hit the blue **Set Gateway** button. Your gateway is now attached to the External network.
@@ -46,7 +46,7 @@ From here, we can take a step back and examine what we've done so far. If you cl
 
 Click **Routers** on the left and then click on your router. You should now be in the **Router Details** screen, as shown:
 
-![Router Details](http://help.bluebox.net/hc/en-us/article_attachments/202594817/Screen_Shot_2015-08-04_at_12.53.00_PM.png)
+![Router Details]({{site.baseurl}}/img/Router_Details.png)
 
 This screen provides a lot of information about our router, and we can see that our External gateway interface has been added. Let's click **Add Interface**, to bring up the **Add Interface** dialogue box. In the **Subnet** dropdown, select the network you created. Optionally, you can assign this interface an IP or let the cloud do so. We'll leave IP Address blank and let it be assigned. Click the blue **Add Interface** button to finish.
 
@@ -60,7 +60,7 @@ Now click **Access & Security** in blue at the top. You should already have a ke
 
 Here we select our test network. Click **Launch**. You should see something similar to the following:
 
-![Here's what you'll see](http://help.bluebox.net/hc/en-us/article_attachments/202595027/Screen_Shot_2015-08-04_at_1.07.47_PM.png)
+![Launch Instance]({{site.baseurl}}/img/Launch_Instance.png)
 
 Notice that the IP address `192.168.10.1` is being used for the Internal interface gateway on our router, so it's unavailable for use on instances. Click on the instance name to go into the **Overview**. From here click on the **Console** tab. When that comes up, click on the darker blue section that says "Connected" and hit enter, you should be at a login prompt. Log into the instance using the default Cirros login: cirros username, password cubswin:)
 
