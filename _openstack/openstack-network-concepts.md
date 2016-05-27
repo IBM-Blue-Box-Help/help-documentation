@@ -12,7 +12,7 @@ dateAdded: May 25, 2016
 
 ## Basic Concepts
 
-| **Concept**          | ** Description**                                                                                                                                   																		 |
+| **Concept**          | **Description**                                                                                                                                   																		 |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Network              | An isolated L2 segment, similar to a VLAN in regular networking. A network may have one or more subnets.                                     																			     |
 | Subnet               | A range of IPv4 addresses.																																																	 |
