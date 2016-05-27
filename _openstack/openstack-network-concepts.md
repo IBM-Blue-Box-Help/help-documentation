@@ -12,7 +12,7 @@ dateAdded: May 25, 2016
 
 ## Basic Concepts
 
-| **Concept**          | ** Description**                                                                                                                                   																		 |
+| **Concept**          | **Description**                                                                                                                                   																		 |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Network              | An isolated L2 segment, similar to a VLAN in regular networking. A network may have one or more subnets.                                     																			     |
 | Subnet               | A range of IPv4 addresses.																																																	 |
@@ -35,8 +35,10 @@ You can enable communication among a set of VMs by connecting them to the same i
 ### External Networks
 
 External networks include the public network, the SoftLayer private network, and a router network. 
+
 * The public network provides access to the Internet. 
 * The SoftLayer private network is intended to provide access to other services in SoftLayer. 
 * The router network is intended to provide access to customer resources outside your private cloud environment. 
+
 Such resources might reside in a data center at your site or in another private cloud environment owned by you in SoftLayer or elsewhere. The public and SoftLayer private networks 
 are physical networks.
