@@ -1,7 +1,7 @@
 ---
 layout: page
-title:  "Creating Instance Security"
-tags: [cinder, encryption, volumes]
+title:  "How can I Create Better Security in My Cloud?"
+tags: [commontech, instance, hypervisor, security, interfaces]
 author: Dustin Lundquist
 editor: Leslie Lundquist
 dateAdded: July 12th, 2016
