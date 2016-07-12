@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "How can I Create Better Security in My Cloud?"
+title:  "How can I Create Better Security for My Hypervisors?"
 tags: [commontech, instance, hypervisor, security, interfaces]
 author: Dustin Lundquist
 editor: Leslie Lundquist
@@ -9,9 +9,9 @@ featured: false
 weight: 4
 ---
 
-Users have root access to their instances, and we want to restrict access to the host hypervisors. Therefore, anytime information flows from the instance to the hypervisor, it should be through secured interfaces. We should think very carefully before introducing any more avenues for information to move from the guest instance to the hypervisor. 
+Because users have root access to their instances, it is wise to restrict access to the host hypervisors. Therefore, anytime information flows from the instance to the hypervisor, it should be through secured interfaces. We should think very carefully before introducing any more avenues for information to move from the guest instance to the hypervisor. 
 
-The existing interfaces:
+Here are the existing interfaces:
 
 1. Instance I/O devices -- virtualized network interfaces, virtualized disk controllers, etc -- these are provided by QEMU
 2. Network services: metadata, DHCP, etc -- these are run by Neutron in network namespaces.
