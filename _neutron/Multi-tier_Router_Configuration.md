@@ -18,6 +18,8 @@ You might want to set up a multi-tier router configuration for your cloud in one
 
 The way to establish a multi-tier network initially is to establish static routes from the main router to each of the "child" routers. The main idea of the test is to be sure that these static routes are persistent. In this example, we set up two networks of this type, called `test1` and `test2`.
 
+![The multi-tier network topology]({{site.baseurl}}/img/multi_router_network.png)
+
 Let's say you want to test a multi-tier router configuration and confirm that the routes you've set up are persistent across failover.
 
 **Here are the steps you'd need to take to perform the test:**
@@ -30,7 +32,7 @@ neutron net-create test1
 
 neutron net-create test2
 
-neutron subnet-create test1 162.16.0.0.24
+neutron subnet-create test1 162.16.0.0/24
 
 neutron subnet-create test2 162.16.1.0/24
 
