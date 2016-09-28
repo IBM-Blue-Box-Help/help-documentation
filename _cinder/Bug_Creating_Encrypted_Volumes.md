@@ -27,3 +27,7 @@ nova.volume.encryptors.luks.LuksEncryptor \
 This false acknowledgement happens even though creating encrypted volumes with Ceph is not supported - see https://review.openstack.org/#/c/239798/
 
 This is a known bug, tracked at: https://bugs.launchpad.net/cinder/+bug/1505113
+
+### Do you support ephemeral disk encryption?
+
+No. For handling crypto keys for customer data, we recommend that you use encryption inside the VM and encrypt objects before sending them to Swift.
