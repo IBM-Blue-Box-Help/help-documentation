@@ -47,7 +47,7 @@ Every IBM Blue Box Cloud 2.1.0, Dedicated or Local, starts with a cluster of con
 	• A cloud can start as a three-node cluster with two hyper-converged (controller + compute nodes) and one compute-only node.
 	• A cloud can start as a five-node cluster with a pair of dedicated controller-only nodes and three compute-only nodes. 
 
-**IBM Blue Box Local Cloud:**
+**IBM Bluemix Local on OpenStack Cloud:**
 
 	• Each cloud must have at least one dedicated controller-only node and three compute-only nodes.  
 	

@@ -19,7 +19,7 @@ This document offers a basic technical description of the latest IBM Blue Box Cl
 
 ### Summary of the Latest Release
 
-Release 3.0.0 of IBM Blue Box Cloud includes many updates to the underlying OpenStack platform upon which every IBM Blue Box Cloud is built, as well as upgrades to infrastructure and features of IBM Blue Box Dedicated Cloud and IBM Blue Box Local Cloud. Most notable is the move to the **OpenStack Mitaka** release, which enables many new capabilities. We’ve included some general product improvements such as performance benchmarks and an updated Rally test suite, designed to facilitate smoother operation and deployment. This release also includes many improvements to documentation.
+Release 3.0.0 of IBM Blue Box Cloud includes many updates to the underlying OpenStack platform upon which every IBM Blue Box Cloud is built, as well as upgrades to infrastructure and features of IBM Blue Box Dedicated Cloud and IBM Bluemix Local on OpenStack Cloud. Most notable is the move to the **OpenStack Mitaka** release, which enables many new capabilities. We’ve included some general product improvements such as performance benchmarks and an updated Rally test suite, designed to facilitate smoother operation and deployment. This release also includes many improvements to documentation.
 
 Every IBM Blue Box 3.0.0 Cloud has these new features:
 
@@ -37,8 +37,8 @@ IBM Blue Box 3.0.0 Local Cloud features:
 
 1. [Hybrid Block Storage Nodes.](#block-storage)
 2. [New Compute Node Types.](#expansion-compute)
-3. [HIPAA-enabled IBM Blue Box Local Cloud.](#hipaa)
-4. [Support for IBM Blue Box Local on PureApp platform (Beta release).](#pure-app)
+3. [HIPAA-enabled IBM Bluemix Local on OpenStack Cloud.](#hipaa)
+4. [Support for IBM Bluemix Local on OpenStack on PureApp platform (Beta release).](#pure-app)
 
 [**Known Limitations of this Release**](#known-limitations-of-this-release)
 
@@ -80,9 +80,9 @@ Keystone-to-Keystone (K2K) federation lets you log in to multiple clouds using y
 
 <a name="10gb-vyatta"></a>**Vyatta with 10G networking:** This feature is designed for customers with high bandwidth requirements for cloud egress and ingress. 
 
-### IBM Blue Box Local 3.0.0 Cloud:
+### IBM Bluemix Local on OpenStack 3.0.0 Cloud:
 <a name="expansion-compute"></a>**New Compute Node Types:** Expansion compute nodes address your requirements for faster IO ephemeral, more RAM, and an order of magnitude larger ephemeral storage.  Expansion nodes allow better coverage of instance types and workloads. With this release, compute types are grouped into Availability Zones for easy targeting of workloads to the appropriate compute type.
-You can select from the following compute node extensions to add to your IBM Blue Box Local cloud:
+You can select from the following compute node extensions to add to your IBM Bluemix Local on OpenStack cloud:
 
  * You can select specialized expansion compute nodes: IO, or HIGH STORAGE (New in this release)
  * You can select additional standard or enterprise compute nodes: STANDARD COMPUTE, or ENTERPRISE COMPUTE (Previously available)
@@ -92,11 +92,11 @@ You can select from the following compute node extensions to add to your IBM Blu
 
  * You can select Block Storage: SSD or HYBRID
 
-<a name="hipaa"></a>**HIPAA-enabled Cloud:** A HIPAA-enabled cloud has the same configuration and expansion options as any other IBM Blue Box Cloud offering, but we are enabling _over 50 additional information-security controls_ that support our customers who must store personal health information (PHI). Because of this increased information security capability, a HIPAA-enabled cloud must be HIPAA-enabled from its inception: you cannot upgrade an existing cloud to enable HIPAA protocol. Also, you cannot downgrade from an IBM Blue Box Local HIPAA cloud: the existing HIPAA cloud must be wiped—per HIPAA protocol—and you must order a new Local cloud with non-HIPAA controllers.
+<a name="hipaa"></a>**HIPAA-enabled Cloud:** A HIPAA-enabled cloud has the same configuration and expansion options as any other IBM Blue Box Cloud offering, but we are enabling _over 50 additional information-security controls_ that support our customers who must store personal health information (PHI). Because of this increased information security capability, a HIPAA-enabled cloud must be HIPAA-enabled from its inception: you cannot upgrade an existing cloud to enable HIPAA protocol. Also, you cannot downgrade from an IBM Bluemix Local on OpenStack HIPAA cloud: the existing HIPAA cloud must be wiped—per HIPAA protocol—and you must order a new Local cloud with non-HIPAA controllers.
 
- * You can now select HIPAA Enablement for your IBM Blue Box Local Cloud.
+ * You can now select HIPAA Enablement for your IBM Bluemix Local on OpenStack Cloud.
 
-<a name="pure-app"></a>**Support for Blue Box on PureApp (Beta release):** PureApp is an existing IBM system for hardware management. With its Beta release, we are making it available as a platform for IBM Blue Box Local, in addition to the Cisco hardware already available.
+<a name="pure-app"></a>**Support for Blue Box on PureApp (Beta release):** PureApp is an existing IBM system for hardware management. With its Beta release, we are making it available as a platform for IBM Bluemix Local on OpenStack, in addition to the Cisco hardware already available.
 
 ### Known Limitations of This Release
 **Horizon Dashboard and LBaaS v2:**

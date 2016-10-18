@@ -11,7 +11,7 @@ dateAdded: April 14, 2016
 
 ## Getting Started with Box Panel
 
-The Box Panel interface gives you a single, consolidated view of assets deployed in your **IBM Blue Box Dedicated** and **IBM Blue Box Local** cloud environments. Its self-service access lets you create support tickets, leverage central authentication for logins and user permissions, monitor various functions, and view your invoices, easily. 
+The Box Panel interface gives you a single, consolidated view of assets deployed in your **IBM Blue Box Dedicated** and **IBM Bluemix Local on OpenStack** cloud environments. Its self-service access lets you create support tickets, leverage central authentication for logins and user permissions, monitor various functions, and view your invoices, easily. 
 
 This user guide gives you an end-to-end overview, so you can get started using Box Panel to monitor and control your IBM Blue Box Cloud. This document applies to Box Panel Version 3.8.3 and later.
 
@@ -54,7 +54,7 @@ To get started, first navigate to the URL provided in your Lockbox. Then you can
 
 ### Navigating the Box Panel Dashboard
 
-From the Box Panel Dashboard, you can see a consolidated asset view of all of your **IBM Blue Box Dedicated** and **IBM Blue Box Local** instances, on one screen.
+From the Box Panel Dashboard, you can see a consolidated asset view of all of your **IBM Blue Box Dedicated** and **IBM Bluemix Local on OpenStack** instances, on one screen.
 
 The top of the Dashboard displays the infrastructure currently in use, with your list of hosts. 
 

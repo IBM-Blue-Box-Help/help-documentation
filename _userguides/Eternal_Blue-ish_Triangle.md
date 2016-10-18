@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Box Panel, Site Controller, and IBM Blue Box Local Cloud
+title: Box Panel, Site Controller, and IBM Bluemix Local on OpenStack Cloud
 author: Leslie Lundquist and Tom Spoonemore
 dateAdded: September 20, 2016
 tags: [user guides, box panel, site controller, faq, cloud security]
@@ -8,7 +8,7 @@ featured: true
 weight: 3
 ---
 
-This document offers an introduction to the fundamental concepts and terminology about Box Panel, Site Controller, and how they work together to control and manage your IBM Blue Box Local Cloud environment. The document includes links and pointers to external documents, so you can find even more information. Some of the terms defined in the Terminology FAQ section will be more technical than you may need to know on a daily basis, but knowing about them might come in handy if you have an opportunity to speak to our support team.
+This document offers an introduction to the fundamental concepts and terminology about Box Panel, Site Controller, and how they work together to control and manage your IBM Bluemix Local on OpenStack Cloud environment. The document includes links and pointers to external documents, so you can find even more information. Some of the terms defined in the Terminology FAQ section will be more technical than you may need to know on a daily basis, but knowing about them might come in handy if you have an opportunity to speak to our support team.
 
 ### What Is Box Panel?
 

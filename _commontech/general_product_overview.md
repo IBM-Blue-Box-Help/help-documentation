@@ -16,7 +16,7 @@ Both offerings of **IBM Blue Box Cloud**, Dedicated and Local, are deployed auto
 
 To deploy the **IBM Blue Box Dedicated** offering, a physical **Site Controller** machine must be located in a **SoftLayer Datacenter** within the same geographical region in which your new IBM Blue Box Dedicated cloud is deployed.
 
-To deploy the **IBM Blue Box Local** cloud offering, a Site Controller logical machine must be co-located within your IBM Local Cloud data center, and it will communicate with a Central Site Controller machine at IBM Blue Box.
+To deploy the **IBM Bluemix Local on OpenStack** cloud offering, a Site Controller logical machine must be co-located within your IBM Local Cloud data center, and it will communicate with a Central Site Controller machine at IBM Blue Box.
 
 Each version of **Ursula** on the Site Controller is tailored to initialize and run a specific version of OpenStack and IBM Blue Box Cloud, by setting up the proper environment variables and other aspects of your customized cloud configuration. The particular version of Ursula described in this document is 3.0.0, and the environment which it creates for your cloud is described in the next section.
 
@@ -47,7 +47,7 @@ Every IBM Blue Box Cloud, Dedicated or Local, starts with a cluster of controlle
 	• A cloud can start as a three-node cluster with two hyper-converged (controller + compute nodes) and one compute-only node.
 	• A cloud can start as a five-node cluster with a pair of dedicated controller-only nodes and three compute-only nodes. 
 
-**IBM Blue Box Local Cloud:**
+**IBM Bluemix Local on OpenStack Cloud:**
 
 	• Each cloud must have at least one dedicated controller-only node and three compute-only nodes.  
 	

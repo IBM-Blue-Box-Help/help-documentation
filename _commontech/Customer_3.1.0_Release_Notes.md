@@ -53,7 +53,7 @@ Release 3.1.0 of **IBM Blue Box Cloud, Dedicated and Local**, includes some new 
 **IBM Blue Box 3.1.0 Local Cloud features:**
 
  * **Support for Lenovo**: In addition to the current Cisco UCS platform, a Lenovo-curated bill of materials is now supported.  
- * **Support for Bluemix Local System**: IBM Blue Box Local (PCaaS) Private Cloud as a Service is now supported on Bluemix Local Systems.
+ * **Support for Bluemix Local System**: IBM Bluemix Local on OpenStack (PCaaS) Private Cloud as a Service is now supported on Bluemix Local Systems.
 
 ### Known Limitations of this Release
 
