@@ -22,7 +22,7 @@ This proposed resolution convers the following resource types:
 
 Take these steps:
 
-1. Use the following command to download the IBM Blue Box certificate into a `crt` file, for example, `example.crt` (replace `example.blueboxcloud.com` with your own FQDN):
+1. Use the following command to download the IBM Bluemix on OpenStack certificate into a `crt` file, for example, `example.crt` (replace `example.blueboxcloud.com` with your own FQDN):
     
 		echo -n | openssl s_client -connect  example.blueboxcloud.com:5000 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p'  > example.crt
 

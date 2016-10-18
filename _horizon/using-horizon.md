@@ -8,7 +8,7 @@ featured: false
 weight: 4
 ---
 
-**Horizon** is the web interface that is bundled with **OpenStack**. IBM Blue Box Cloud uses the complete open source Horizon code, thus the bundled web interface will look similar to other OpenStack interfaces that utilize the same Horizon codebase.
+**Horizon** is the web interface that is bundled with **OpenStack**. IBM Bluemix on OpenStack uses the complete open source Horizon code, thus the bundled web interface will look similar to other OpenStack interfaces that utilize the same Horizon codebase.
 
 To get started, you’ll need to log in to your OpenStack cluster account.
 

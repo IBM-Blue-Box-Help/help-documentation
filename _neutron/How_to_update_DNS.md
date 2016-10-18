@@ -4,7 +4,7 @@ title: "How Can I Update DNS?"
 featured: false
 weight: 5
 tags: [neutron, DNS settings, subnet ]
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 dateAdded: September 13, 2016
 ---
 

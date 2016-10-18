@@ -4,7 +4,7 @@ title: "How Can I See My IPs?"
 featured: false
 weight: 5
 tags: [neutron, external ip, internal ip, available ip]
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 dateAdded: August 4, 2016
 ---
 

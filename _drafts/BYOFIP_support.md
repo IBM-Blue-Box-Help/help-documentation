@@ -9,13 +9,13 @@ author: Xiang Wang
 editor: Jillian Tempelmeyer
 ---
 
-# Using BYOFIP Connectivity Between IBM Blue Box Cloud and a Customer Site
+# Using BYOFIP Connectivity Between IBM Bluemix on OpenStack and a Customer Site
 
 ## Overview
-BYOFIP (Bring Your Own Floating IP) is a feature that lets our IBM customers bring their own floating IPs and set up a BYOFIP network in their IBM Blue Box cloud. By enabling this feature, you'll be able to assign these floating IPs directly to your guest VMs. Then you can connect to the guest VMs over the BYOFIP network from your customer site. Additional fees may apply.
+BYOFIP (Bring Your Own Floating IP) is a feature that lets our IBM customers bring their own floating IPs and set up a BYOFIP network in their IBM Bluemix on OpenStack cloud. By enabling this feature, you'll be able to assign these floating IPs directly to your guest VMs. Then you can connect to the guest VMs over the BYOFIP network from your customer site. Additional fees may apply.
 
 ## Request
-To request BYOFIP connectivity, please open a support ticket and request that this feature be enabled for your IBM Blue Box cloud. You would need to provide the subnet or subnets that you'd like to bring into your Blue Box cloud. Then, an IBM engineer sets up BYOFIP external network and a tunnel endpoint in the Vyattas. This information is passed back to the customer through the ticket, so you can set up the tunnel endpoint on your end.
+To request BYOFIP connectivity, please open a support ticket and request that this feature be enabled for your IBM Bluemix on OpenStack cloud. You would need to provide the subnet or subnets that you'd like to bring into your Bluemix on OpenStack cloud. Then, an IBM engineer sets up BYOFIP external network and a tunnel endpoint in the Vyattas. This information is passed back to the customer through the ticket, so you can set up the tunnel endpoint on your end.
 
 ## Connecting to a guest VM
 After an IBM engineer has confirmed that the feature is turned on, you can connect over the BYOFIP network by performing the following steps on Horizon or by using the command line:

@@ -3,12 +3,12 @@ layout: page
 title:  "Is creating a volume from an instance snapshot supported?"
 tags: [cinder, snapshot]
 dateAdded: September 8th, 2015
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 featured: false
 weight: 4
 ---
 
-Yes, provided you are running at least the 1.2.x version of our **IBM Blue Box Cloud** stack, and you have the appropriate packages installed on your dedicated **Cinder** node.  Please [contact our support team](https://support.bluebox.net/) to learn whether that's the case.
+Yes, provided you are running at least the 1.2.x version of our **IBM Bluemix on OpenStack** stack, and you have the appropriate packages installed on your dedicated **Cinder** node.  Please [contact our support team](https://support.bluebox.net/) to learn whether that's the case.
 
 Here is an example showing how you would create a volume from an instance snapshot:
 

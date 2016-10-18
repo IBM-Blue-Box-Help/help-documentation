@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Keystone to Keystone (K2K) Federation on IBM Blue Box Cloud
+title: Keystone to Keystone (K2K) Federation on IBM Bluemix on OpenStack
 featured: false
 tags: [federation, keystone, k2k]
 dateAdded: June 24th, 2016
@@ -17,7 +17,7 @@ editor: Leslie Lundquist
 
 ## What is K2K Federation?
 Keystone to Keystone (K2K) federation is a way to use credentials from one Keystone instance for logging in across multiple
-Blue Box clouds. One IBM Blue Box cloud instance is designated as an Identity Provider and other cloud instances are designated as Service Providers. The Identity Provider stores the user's credentials and asserts to the Service Providers that the user is, in fact, a valid user. The user's ID and password are never sent to the Service Providers, only assertions from the Identity Provider are sent.
+Bluemix on OpenStack clouds. One IBM Bluemix on OpenStack cloud instance is designated as an Identity Provider and other cloud instances are designated as Service Providers. The Identity Provider stores the user's credentials and asserts to the Service Providers that the user is, in fact, a valid user. The user's ID and password are never sent to the Service Providers, only assertions from the Identity Provider are sent.
 
 ## How does K2K work?
 The user signs into the Identity Provider, receives a signed SAML assertion from the Identity Provider
@@ -25,7 +25,7 @@ and then uses that SAML assertion to authenticate into the Service Providers. Th
 for handling the SAML flow is handled by the K2K authentication plugin (found in `keystoneauth1`).
 Credentials are managed only on the Identity Provider, and they are accepted by Service Providers through assertions.
 
-If several Blue Box clouds have been set up with the K2K feature, one cloud instance
+If several Bluemix on OpenStack clouds have been set up with the K2K feature, one cloud instance
 is designated as the Identity Provider and the others are designated as Service Providers. Service Providers use mappings to
 select the user attributes from the Identity Provider that are utilized to map to a local group. Once the user logs in using K2K federation, the user is granted the roles assigned to the group.
 
@@ -446,9 +446,9 @@ $ openstack mapping set mapping-for-k2k-federation --rules federated_member_mapp
  * If the **Service Provider** option is selected, federation is used. The Identity Provider user credential will be federated to the Service Provider.
  * To switch between providers, the user will need to log out and re-select the provider.
 
-**Please note:** The Horizon login screen for K2K for IBM Blue Box Cloud 3.0.0 is not a standard OpenStack feature. It may change in future releases.
+**Please note:** The Horizon login screen for K2K for IBM Bluemix on OpenStack 3.0.0 is not a standard OpenStack feature. It may change in future releases.
 
-![The Horizon login screen for Blue Box Cloud]({{site.baseurl}}/img/k2k_auth.png)
+![The Horizon login screen for Bluemix on OpenStack]({{site.baseurl}}/img/k2k_auth.png)
 
 ## <a name="using_the_python_api_libraries"></a>Using the Python API Libraries
 

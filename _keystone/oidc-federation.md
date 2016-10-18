@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OpendID Connect Federation on IBM Blue Box Cloud
+title: OpendID Connect Federation on IBM Bluemix on OpenStack
 featured: false
 tags: [federation, keystone, oidc]
 dateAdded: September 22nd, 2016
@@ -20,7 +20,7 @@ author: Nithya Renganathan
 ## <a name="what_is_keystone_federation?"></a>What is Federation?
 Keystone federation enables identities from an Identity Provider (IDP) to be used on a Service Provider (SP). The different protocols and formats supported are OpenIDConnect (OIDC) and Security Assertion Markup Language (SAML).
 
-The IDP stores and manages the user's credentials and sends claims or assertions to the SP. This allows the customer to use their enterprise credentials to authenticate to a Blue Box cloud without sending their password to their Blue Box cloud. Keystone is usually always the SP since it consumes identities from external resources.
+The IDP stores and manages the user's credentials and sends claims or assertions to the SP. This allows the customer to use their enterprise credentials to authenticate to a Bluemix on OpenStack cloud without sending their password to their Bluemix on OpenStack cloud. Keystone is usually always the SP since it consumes identities from external resources.
 
 
 ## What is OpenID Connect (OIDC)?
@@ -40,9 +40,9 @@ This document describes a mechanism for an OpenID Connect *relying party* to dis
 5. The user info endpoint returns the claims.
 
 ## <a name="setting_up_oidc"></a>Setting up OIDC
-A Blue Box operator will need to work with an IDP integration engineer from the customer's company (for example purposes, `Company XYZ`) to set up OIDC.
+A Bluemix on OpenStack operator will need to work with an IDP integration engineer from the customer's company (for example purposes, `Company XYZ`) to set up OIDC.
 
-The Blue Box operator will need the following information:
+The Bluemix on OpenStack operator will need the following information:
 
 * Authorized Redirect/Callback URL
 * Client ID and Client Secret
@@ -50,9 +50,9 @@ The Blue Box operator will need the following information:
 * The *well-known/configuration URL* which provides all the information needed for access to the provider
 * Default/initial Mapping - The documentation on mappings can be found here: http://docs.openstack.org/developer/keystone/federation/federated_identity.html#mapping-combination
 
-The Blue Box operator should work with the integration engineer to create the initial/default mapping. The mapping provides the way in which the remote users on the IDP are mapped to local groups on the SP. The rest of this document may help clarify what a mapping is and how it's used.
+The Bluemix on OpenStack operator should work with the integration engineer to create the initial/default mapping. The mapping provides the way in which the remote users on the IDP are mapped to local groups on the SP. The rest of this document may help clarify what a mapping is and how it's used.
 
-After the Blue Box operator is finished integrating `Company XYZ IDP` with Keystone, a mapping called `mapping-for-company-xyz-idp` should be created (or a similar mapping name with the IDP name in it).
+After the Bluemix on OpenStack operator is finished integrating `Company XYZ IDP` with Keystone, a mapping called `mapping-for-company-xyz-idp` should be created (or a similar mapping name with the IDP name in it).
 
 The steps for managing the mapping is:
 

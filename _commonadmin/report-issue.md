@@ -8,7 +8,7 @@ author: Giles Frith
 dateAdded: January 14th, 2016
 ---
 
-Your **IBM Blue Box Support** team is available 24 hours a day, seven days a week.  If you are experiencing an issue, please do the following things:
+Your **IBM Bluemix on OpenStack Support** team is available 24 hours a day, seven days a week.  If you are experiencing an issue, please do the following things:
 
 **1. Collect all applicable information for the issue:**
   - Date and time the issue began
@@ -21,7 +21,7 @@ Your **IBM Blue Box Support** team is available 24 hours a day, seven days a wee
   - Any additional useful information
 
 
-**2. Open a new ticket with IBM Blue Box Support** via one of the following methods:**
+**2. Open a new ticket with IBM Bluemix on OpenStack Support** via one of the following methods:**
   -  email: support@bluebox.net
   -  chat: chat.bluebox.net
   -  web: support.bluebox.net
@@ -31,8 +31,8 @@ If you feel that your situation requires escalation, as in the case of outage:
 
  - To escalate a ticket online, scroll to the bottom of your ticket and select the checkbox beside **Urgent**. Note that Urgent status should apply only to situations in which actual outages are occurring.
  - To escalate a ticket by phone, call the **Support** phone number, listen for the options, and select the number for the **Escalate** option. Currently, **Escalate** is option 1.
- - To escalate your ticket using live chat, enter the chat room and let your **IBM Blue Box Support** team member know that you would like to escalate your ticket. It is helpful if you can provide specific reasons or changes in your situation that can explain the need to escalate.
+ - To escalate your ticket using live chat, enter the chat room and let your **IBM Bluemix on OpenStack Support** team member know that you would like to escalate your ticket. It is helpful if you can provide specific reasons or changes in your situation that can explain the need to escalate.
 
-When a ticket is escalated, **IBM Blue Box Support** is notified automatically. If your escalated ticket has not received a response in 15 minutes, we will be notified again.
+When a ticket is escalated, **IBM Bluemix on OpenStack Support** is notified automatically. If your escalated ticket has not received a response in 15 minutes, we will be notified again.
 
-(NOTE: **IBM Blue Box Support** is notified if a normal-priority ticket has not received a response after 1 hour.)
+(NOTE: **IBM Bluemix on OpenStack Support** is notified if a normal-priority ticket has not received a response after 1 hour.)

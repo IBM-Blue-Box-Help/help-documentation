@@ -4,7 +4,7 @@ title: "Cloud Foundry: Invalid Availability Zone Error"
 featured: false 
 weight: 2 
 tags: [Openstack, troubleshooting, availability zone, cloud foundry] 
-author: Blue Box Support Team
+author: Bluemix on OpenStack Support Team
 editor: Leslie Lundquist
 dateAdded: May 11, 2016 
 ---
