@@ -30,3 +30,7 @@ Note the time on the console, if any.
 Capture a screenshot of the console if it's frozen and contains useful information. After you reboot, if you've enabled crash dumps on the virtual machine, you can check `/var/crash` for `vmcore` (on RedHat) or `.crash` (on Ubuntu) files and analyze the dump from there. Also check system activity (sar) stats around the time of the freeze.
 
 Reboot the machine if you need it back up ASAP, or better yet, spin up a new one based on the same image. If you need further investigation done on the infrastructure, try to let us know the time of the freeze in UTC prior to rebooting it, and the UUID of the instance, and we'll see if there is anything to be found in the logs. 
+
+**Q. Why am I getting the error "Can't create server" in Horizon?**
+
+**A.** You might be running low on one of your project quotas, potentially the port quota.  You can view quotas by running `neutron quota-show --tenant-id <UUID>`  Try adjusting your project quotas.
