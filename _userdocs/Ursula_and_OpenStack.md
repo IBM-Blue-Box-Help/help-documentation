@@ -11,11 +11,11 @@ featured: TRUE
 
 ## Ursula and OpenStack
 
-Most of you probably are familiar with [OpenStack](http://www.openstack.org), but probably not everyone is familiar with [Ursula](https://github.com/blueboxgroup/ursula).  At IBM Blue Box, we use Ursula to install OpenStack cloud for our customers. Automated installation reduces user errors and results in faster, cleaner, more customizable OpenStack installations. This blog gets you started on understanding and working with Ursula. All of our Ursula playbooks are open source, and they are available on GitHub. Eventually, you could customize some for your own use.
+Most of you probably are familiar with [OpenStack](http://www.openstack.org), but probably not everyone is familiar with [Ursula](https://github.com/blueboxgroup/ursula).  At IBM Bluemix on OpenStack, we use Ursula to install OpenStack cloud for our customers. Automated installation reduces user errors and results in faster, cleaner, more customizable OpenStack installations. This blog gets you started on understanding and working with Ursula. All of our Ursula playbooks are open source, and they are available on GitHub. Eventually, you could customize some for your own use.
 
 ### Ursula is: 
 
-* The collection of Ansible playbooks that [Blue Box](https://github.com/blueboxgroup/ursula) created, to deploy and manage OpenStack cloud.
+* The collection of Ansible playbooks that [IBM Bluemix on OpenStack](https://github.com/blueboxgroup/ursula) created, to deploy and manage OpenStack cloud.
 
 Ursula can be installed in two ways: one way is by using [Vagrant](https://www.vagrantup.com), and the other way is by "Manual Deployment." This post concentrates on the manual deployment method. 
 
@@ -190,10 +190,7 @@ Find the line: `floating_ip: 172.16.0.100`
 
 Change it to this:
 
-{% highlight bash %}
-floating_ip: \{\{ hostvars[inventory_hostname][primary_interface]['ipv4']['address'] \}\}
-{% endhighlight %}
-_Note: Leave out the backslashes when you enter the line above in your file, we just needed them to be able to show you this code with curly brackets._
+![floating_ip_invisible_code.png]({{site/baseurl}}/img/floating_ip_invisible_code.png)
 
 **ERROR 3: `uuid-runtime` package missing**
 

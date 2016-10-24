@@ -73,7 +73,7 @@ You can either upload an image with the [OpenStack dashboard](#createimage-dashb
 
 ### <a name="createimage-dashboard"></a>Upload an image using the OpenStack dashboard
 
-1. Log in to the IBM Bluemix on OpenStack OpenStack dashboard.
+1. Log in to the IBM Bluemix on OpenStack dashboard.
 2. Under the **Project** panel, expand **Compute** and click **Images**.
 3. Click **Create Image** in the page. Specify the following parameters in the new page, and click **Create Image**.
 
@@ -162,7 +162,7 @@ Follow these steps:
 
 ### <a name="upload-dashboard"></a>Upload an image using the OpenStack dashboard
 
-1. Log in to the IBM Bluemix on OpenStack OpenStack dashboard.
+1. Log in to the IBM Bluemix on OpenStack dashboard.
 
 2. Under the **Project** panel, expand **Compute** and click **Images**.
 
@@ -252,7 +252,7 @@ net localgroup administrators <YOUR_USERNAME> /add
 
 **Note:** Ensure that proper security group rules are defined for connecting to your instance over `ssh` or `rdp`.
 
-1. Log in to the IBM Bluemix on OpenStack OpenStack dashboard.
+1. Log in to the IBM Bluemix on OpenStack dashboard.
 
 2. Expand the **Project** panel, then the **Compute** tab in the left navigation area, and click on **Instances**.
 
@@ -272,7 +272,7 @@ Connect to your instance through SSH or VNC. The default `userid` for the Linux 
 	ssh -i <path_of_Your_SSH_private_key_file> <userid>@<ip_of_instance>
 	```
 	
-* View the VNC console of the instance by clicking on the instance name in the IBM Bluemix on OpenStack OpenStack dashboard, and then click on the **Console** tab. The VNC console connects you with HTTPS.
+* View the VNC console of the instance by clicking on the instance name in the IBM Bluemix on OpenStack dashboard, and then click on the **Console** tab. The VNC console connects you with HTTPS.
   
   ![View the VNC console of your instance]({{site.baseurl}}/img/view_VNC_console.png)
 
@@ -283,7 +283,7 @@ Connect to your instance through SSH or VNC. The default `userid` for the Linux 
 Connect to your instance through Remote Desktop or VNC. You'll need to use the `userid` and `password` specified in the Customization Script during VM provisioning. On your first login, a prompt appears, requesting that you change your password. Please do.
 
 * Use your favorite Remote Desktop client to connect.
-* View the VNC console of the instance by clicking on the instance name in IBM Bluemix on OpenStack OpenStack dashboard, and then click on the **console** tab. The VNC console connects you with HTTPS.
+* View the VNC console of the instance by clicking on the instance name in IBM Bluemix on OpenStack dashboard, and then click on the **console** tab. The VNC console connects you with HTTPS.
 
 ## Image update
 

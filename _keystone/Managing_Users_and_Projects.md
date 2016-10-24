@@ -123,7 +123,7 @@ Manage image cache | N | N | N
 Network Feature | cloud_admin | project_admin (within project) |  \_member\_
 --------------- | ----------- | ------------------------------ | -----------
 Create network  | Y | Y | Y
-Create shared network | N | N | N
+Create shared network | Y | N | N
 Update network  | Y | Y | Y (owner)
 Delete network  | Y | Y | Y (owner)
 Create port     | Y | Y | Y
@@ -159,7 +159,7 @@ This role structure requires Keystone API v3 to run. Using Keystone API v2 will 
 
 Making API calls through the Horizon dashboard does not require any special action, but performing command line calls necessitates changes to the run command (RC) file depending on which version of IBM Bluemix on OpenStack you are running. 
 
- * In IBM Bluemix on OpenStack cloud version 2.1.1, the dashboard-generated RC files enable Keystone v2. 
+ * In IBM Bluemix on OpenStack version 2.1.1, the dashboard-generated RC files enable Keystone v2. 
  * Thus, in 2.1.1, switching to v3 requires changes to the standard RC file. The `OS_AUTH_URL` must be changed from `v2.0` to `v3`, and the `OS_IDENTITY_API_VERSION` must be created and set to `3`. A sample RC file is shown below.
 
 {% highlight bash %}

@@ -20,7 +20,7 @@ author: Nithya Renganathan
 ## <a name="what_is_keystone_federation?"></a>What is Federation?
 Keystone federation enables identities from an Identity Provider (IDP) to be used on a Service Provider (SP). The different protocols and formats supported are OpenIDConnect (OIDC) and Security Assertion Markup Language (SAML).
 
-The IDP stores and manages the user's credentials and sends claims or assertions to the SP. This allows the customer to use their enterprise credentials to authenticate to a Bluemix on OpenStack cloud without sending their password to their Bluemix on OpenStack cloud. Keystone is usually always the SP since it consumes identities from external resources.
+The IDP stores and manages the user's credentials and sends claims or assertions to the SP. This allows the customer to use their enterprise credentials to authenticate to Bluemix on OpenStack without sending their password to their Bluemix on OpenStack. Keystone is usually always the SP since it consumes identities from external resources.
 
 
 ## What is OpenID Connect (OIDC)?

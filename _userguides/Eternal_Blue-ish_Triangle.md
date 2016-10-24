@@ -127,7 +127,7 @@ data centers.
 
 **Q: Who can obtain this information?**
 
-**A:** Bluemix on OpenStack OpenStack Engineering and Operations staff have access to this information for purposes of cloud management and troubleshooting.
+**A:** Bluemix on OpenStack Engineering and Operations staff have access to this information for purposes of cloud management and troubleshooting.
 
 **Q: What is the access control policy for the support team?**
 
