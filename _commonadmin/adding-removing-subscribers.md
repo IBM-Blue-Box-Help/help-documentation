@@ -9,7 +9,7 @@ author: Jason Kennedy
 ---
 
 
-So you've created a ticket in the IBM Blue Box Panel, and now you want to add an engineer that needs to see some details, how do you do that?
+So you've created a ticket in the IBM Bluemix on OpenStack Panel, and now you want to add an engineer that needs to see some details, how do you do that?
 
 In the **Discussion tab**, click the "X subscribers" link (incredibly sorry it's not more obvious), as seen below:
 
