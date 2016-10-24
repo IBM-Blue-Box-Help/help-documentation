@@ -8,7 +8,7 @@ featured: true
 weight: 3
 ---
 
-As a best practice, we suggest that your team consider using the OpenStack Orchestration service (Heat), which comes enabled with all IBM Blue Box Clouds. Using Heat, you can define all your resources procedurally in a text file, and run that same file against multiple clouds to achieve the same result (known as a stack). 
+As a best practice, we suggest that your team consider using the OpenStack Orchestration service (Heat), which comes enabled with all IBM Bluemix on OpenStack clouds. Using Heat, you can define all your resources procedurally in a text file, and run that same file against multiple clouds to achieve the same result (known as a stack). 
 
 You can use Heat to set up a stack that has pretty much any OpenStack resource in it that you wish. 
 
