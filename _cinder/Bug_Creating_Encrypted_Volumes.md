@@ -2,7 +2,7 @@
 layout: page
 title:  "Creating Encrypted Volumes with Cinder is Not Supported"
 tags: [cinder, encryption, volumes]
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 dateAdded: June 13th, 2016
 featured: false
 weight: 4
