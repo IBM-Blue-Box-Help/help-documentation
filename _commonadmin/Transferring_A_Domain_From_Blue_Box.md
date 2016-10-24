@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Transferring A Domain From Blue Box
+title: Transferring A Domain From Bluemix on OpenStack
 featured: false
 weight: 20
 tags: [managed hosting, domain, registrar, transfer]
 dateAdded: August 16, 2016
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 editor: Leslie Lundquist
 ---
 
-This document is intended for IBM Blue Box Managed Hosting clients. It would not apply to our OpenStack clients. Thank you.
+This document is intended for IBM Bluemix on OpenStack Managed Hosting clients. It would not apply to our OpenStack clients. Thank you.
 
 Transferring a domain name can be a complicated process, and it is getting more complicated as time goes on. Other Registrars (where you've registered your domain) don't want to see you leave, so they figure that if they make this process as complicated as humanly possible, maybe you'll stay.
 
