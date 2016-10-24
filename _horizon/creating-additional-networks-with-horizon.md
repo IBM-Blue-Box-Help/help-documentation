@@ -10,7 +10,7 @@ author: Jason Kennedy
 
 So you've been handed the keys to your fresh new OpenStack cloud and you've specifically asked that it be set up with VXLAN because you want to segregate a dev/test environment and your production network. First, is this something you can do using security groups? No? Okay, read on.
 
-A typical **IBM Blue Box** cloud has an Internal and External network setup by default, with a default router (aptly named *default*) bridging them. To create our own network, we need to mirror this setup.
+A typical **IBM Bluemix on OpenStack** cloud has an Internal and External network setup by default, with a default router (aptly named *default*) bridging them. To create our own network, we need to mirror this setup.
 
 (Disclaimer: There be dragons here! Make sure you are in fact using VXLAN before you do this--it just won't work otherwise. Also, you run the risk of suddenly ceasing earth's rotation and flinging us all into space)
 

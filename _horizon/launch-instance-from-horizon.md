@@ -46,7 +46,7 @@ The **Select Boot Source** field offers these options:
 
 ![The Source tab]({{site.baseurl}}/img/launch_instance_source_image.png)
 
-**Note:** The **Image** option is set by default, so you don't have to select one before booting. If you use the **Image** option, you can select from the public images provided by IBM, or you can upload and use your own image. For information about how to upload an image to IBM Blue Box, see [Cloud images provided by IBM Blue Box](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/). 
+**Note:** The **Image** option is set by default, so you don't have to select one before booting. If you use the **Image** option, you can select from the public images provided by IBM, or you can upload and use your own image. For information about how to upload an image to IBM Bluemix on OpenStack, see [Cloud images provided by IBM Bluemix on OpenStack](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/). 
 
 #### The Flavor tab
 
@@ -125,7 +125,7 @@ For more information about Glance metadata, see [Metadata Definition Concepts](h
 
 **Note:** Be sure that proper security group rules are defined for connecting to your instance over `ssh` or `rdp`.
 
-1. Log in to the IBM Blue Box Horizon dashboard.
+1. Log in to the IBM Bluemix on OpenStack Horizon dashboard.
 
 2. Expand the **Project** panel, then the **Compute** tab in the left navigation area, and click on **Instances**.
 
@@ -143,7 +143,7 @@ Connect to your instance through SSH or VNC. The default `userid` for the Linux 
 	ssh -i <path_of_Your_SSH_private_key_file> <userid>@<ip_of_instance>
 	```
 	
-* From the IBM Blue Box Horizon dashboard, view the VNC console of the instance by clicking **Console** from the drop-down list in the **Actions** column of the instance. The VNC console connects you with HTTPS.
+* From the IBM Bluemix on OpenStack Horizon dashboard, view the VNC console of the instance by clicking **Console** from the drop-down list in the **Actions** column of the instance. The VNC console connects you with HTTPS.
   
 **Note:** To log in to a new Linux instance, via the console, as `ibmcloud` user, you must have specified a password previously, in the Customization Script during provisioning.
   
@@ -152,7 +152,7 @@ Connect to your instance through SSH or VNC. The default `userid` for the Linux 
 Connect to your instance through Remote Desktop or VNC. You'll need to use the `userid` and `password` you specified in the Customization Script during VM provisioning. On your first login, a prompt appears, requesting that you change your password. Please do.
 
 * Use your favorite Remote Desktop client to connect.
-* From the IBM Blue Box Horizon dashboard, view the VNC console of the instance by clicking **Console** from the drop-down list in the **Actions** column of the instance. The VNC console connects you with HTTPS.
+* From the IBM Bluemix on OpenStack Horizon dashboard, view the VNC console of the instance by clicking **Console** from the drop-down list in the **Actions** column of the instance. The VNC console connects you with HTTPS.
  
 
 ## <a name="manage-instance"></a>How to manage your instances

@@ -41,11 +41,11 @@ Back at the top, the **System** panel provides details about the state of your p
 
 3. **Host Aggregates**: This option provides a list of host aggredates and availablity zones. See [Host Aggregates wiki](https://wiki.openstack.org/wiki/Host-aggregates) for more information.
 
-3. **Instances**: This option allows you to get more detail about all running instances in your IBM Blue Box Cloud. You can also delete instances from these pages.
+3. **Instances**: This option allows you to get more detail about all running instances in your IBM Bluemix on OpenStack. You can also delete instances from these pages.
 
 4. **Flavors and Images**: Create your own flavors and upload custom images. Be sure to set access to public so these new flavors and images are available within your projects.
 
-5. **Networks and Routers**: These options allow you to manage all networks and routers in your IBM Blue Box Cloud.
+5. **Networks and Routers**: These options allow you to manage all networks and routers in your IBM Bluemix on OpenStack.
 
 5. **Defaults**: Set the quota set by default for all new tenants.
 
