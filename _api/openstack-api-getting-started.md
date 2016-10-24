@@ -7,7 +7,7 @@ author: Eric French
 dateAdded: November 16th, 2015
 ---
 
-Your **IBM Blue Box** Cloud was provisioned with API endpoints for all of the major services running underneath.  Here is how to set up your local system to access these services.
+Your **IBM Bluemix on OpenStack** was provisioned with API endpoints for all of the major services running underneath.  Here is how to set up your local system to access these services.
 
 **On Mac OSX:**
 
