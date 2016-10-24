@@ -9,7 +9,7 @@ featured: true
 
 To import a VHD image, three steps are required:
 
-1.**Get Your VHD Image into Blue Box.** To get the image into **Blue Box** you have 2 options.
+1.**Get Your VHD Image into Bluemix on OpenStack.** To get the image into **Bluemix on OpenStack** you have 2 options.
 
 You can use the OpenStack API command line tools and run a `glance image-create` command pointing to the VHD file:
 

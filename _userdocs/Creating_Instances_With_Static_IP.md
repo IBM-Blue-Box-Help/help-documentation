@@ -13,9 +13,9 @@ tags: [openstack, static ip, instance]
 
 This article shows you how you can create a new port in OpenStack, and attach it manually to instances at boot time, in order to assign a "static" IP to an instance.
 
-First, much of this method is going to happen at the command line, as it's much more versatile a tool for working with your Blue Box Managed OpenStack cluster. If necessary, I'm willing to back up a bit and go over using the OpenStack CLI & API to make this instruction set seem more reasonable. That being said, let's jump right into how to get this done. This work is being done on a test cluster, but these steps can also be repeated in a screenshare on your own cluster if that seems warranted.
+First, much of this method is going to happen at the command line, as it's much more versatile a tool for working with your Bluemix on OpenStack Managed OpenStack cluster. If necessary, I'm willing to back up a bit and go over using the OpenStack CLI & API to make this instruction set seem more reasonable. That being said, let's jump right into how to get this done. This work is being done on a test cluster, but these steps can also be repeated in a screenshare on your own cluster if that seems warranted.
 
-First, Blue Box clusters have two pre-generated networks: `internal` and `external`. For our purposes, we want to create this new port on the internal network, so let's take a quick peak at it via the command line:
+First, Bluemix on OpenStack clusters have two pre-generated networks: `internal` and `external`. For our purposes, we want to create this new port on the internal network, so let's take a quick peak at it via the command line:
 ```
 bash-3.2$ openstack network list | grep internal
 | 81e829d0-5e35-4808-9f7a-d22159faa9d1 | internal | c6560f00-ae29-40b5-93bb-6e7b1ffd3720

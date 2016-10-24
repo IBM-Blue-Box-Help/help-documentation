@@ -130,7 +130,7 @@ You might ask: Now that I know all of this, how do I actually *get* an OpenStack
 
 1. **As a collection of packages (called a ‘distribution’ or ‘distro’)**: The OpenStack website offers a standard, downloadable distribution of OpenStack. Apart from the default OpenStack distribution, many vendors offer proprietary distributions that include some value-added services. Distributions help with the installation and upgrade process of using OpenStack, which can be laborious. However, distributions are not particularly helpful with simplifying the operation of an OpenStack cloud. Customers who successfully use distributions usually have significant experience with OpenStack. Distributions are created by many vendors, as many as 25, including Mirantis, Red Hat, HP, Platform 9, and others. A list of distribution vendors is available in the OpenStack Marketplace, as is a list of consultants who might help you with an OpenStack deployment.
 
-2. **As a service**: OpenStack as a service means that you purchase your (private) cloud services on contract from experienced cloud operators, such as Blue Box or Rackspace. Cloud operators provide support to their clients, so that you are free to work “with” OpenStack, not “on” OpenStack. This is the main benefit of using OpenStack cloud as a service (IaaS): it frees you to focus on your own business applications, rather than on maintaining the cloud.
+2. **As a service**: OpenStack as a service means that you purchase your (private) cloud services on contract from experienced cloud operators, such as Bluemix on OpenStack or Rackspace. Cloud operators provide support to their clients, so that you are free to work “with” OpenStack, not “on” OpenStack. This is the main benefit of using OpenStack cloud as a service (IaaS): it frees you to focus on your own business applications, rather than on maintaining the cloud.
 
 3. **The standard OpenStack Distribution**: The standard OpenStack distribution bundles OpenStack services as packages available to download. Standard packages are available for several platforms, including Ubuntu®, CentOS, Debian, and others. OpenStack software is updated on a continuous basis, for download from what is commonly referred to as the trunk. These continuing updates are not stable; only the bi-annual releases are stable releases. The most recent stable version also is always available for download, along with the working versions available from trunk.
 
@@ -144,7 +144,7 @@ A few vendors offer OpenStack cloud through the hosted, or ‘as a service’ de
 
 Hosted cloud customers receive their single-tenant OpenStack cloud with all its advantages, including API access without the overhead of deployment and operations. A comprehensive list of OpenStack hosted cloud providers is available on the OpenStack Marketplace. Here are some popular vendors of OpenStack cloud as a service:
 
-**IBM Blue Box**: Blue Box, an IBM Company, was one of the earliest providers to offer hosted OpenStack private cloud as a service—PcaaS. The company was purchased by IBM in June, 2015 to become a part of IBM’s cloud product offering. Blue Box leads the OpenStack Seattle User Group meetups and actively contributes to the OpenStack community, particularly around OpenStack Operators work group. Their latest product, IBM Blue Box Cloud, lets you locate OpenStack private cloud hardware in your own data center, fully managed by IBM Blue Box experts.
+**IBM Bluemix on OpenStack**: Bluemix on OpenStack, formerly known as Blue Box, an IBM Company, was one of the earliest providers to offer hosted OpenStack private cloud as a service—PcaaS. The company was purchased by IBM in June, 2015 to become a part of IBM’s cloud product offering. Bluemix on OpenStack leads the OpenStack Seattle User Group meetups and actively contributes to the OpenStack community, particularly around OpenStack Operators work group. Their latest product, IBM Bluemix on OpenStack, lets you locate OpenStack private cloud hardware in your own data center, fully managed by IBM Bluemix on OpenStack experts.
 
 **Cisco Metapod**: Cisco is another vendor offering OpenStack cloud as a service, formerly developed by Metacloud. They began with Cloud-in-a-box or Private Cloud Appliance based in OpenStack, and later started offering hosted Private Cloud. Their custom OpenStack distribution also is known for its superior User Experience (UX).
 
@@ -156,9 +156,9 @@ Hosted cloud customers receive their single-tenant OpenStack cloud with all its 
 
 **Private cloud**: Private cloud tends to appear in two varieties: Hosted cloud, which means that your dedicated but remote cloud hardware and software is operated on your behalf by a cloud service provider, and Local cloud, which means that you own your own hardware and hire someone to run it for you.
 
-**Hosted**: Hosted OpenStack cloud products offer an easier option for getting started with OpenStack. For instance, when you sign up with a provider like IBM Blue Box, you could probably have your hosted private cloud running in few hours. 
+**Hosted**: Hosted OpenStack cloud products offer an easier option for getting started with OpenStack. For instance, when you sign up with a provider like IBM Bluemix on OpenStack, you could probably have your hosted private cloud running in few hours. 
 
-**Local Cloud**: Local cloud means that you have the hardware for your cloud located in your own data center, but operated on your behalf by a hosting provider, such as IBM Blue Box. Several providers are entering the marketplace in 2016 with new offerings of Local cloud services. A list of providers is available on the OpenStack Marketplace.
+**Local Cloud**: Local cloud means that you have the hardware for your cloud located in your own data center, but operated on your behalf by a hosting provider, such as IBM Bluemix on OpenStack. Several providers are entering the marketplace in 2016 with new offerings of Local cloud services. A list of providers is available on the OpenStack Marketplace.
 
 ## Now for the Fun part: Why OpenStack is Great for You
 
@@ -200,7 +200,7 @@ OpenStack integrates well with popular third-party cloud operations, development
 
 **Puppet**: Puppet is another popular configuration management tool from PuppetLabs. Puppet also employs a client-server architecture.  Official Puppet modules are available to help you deploy a large-scale OpenStack cloud.
 
-**Ansible**: Ansible software is an agentless configuration management tool. Though official Ansible playbooks are not available for OpenStack, one can get started with these Blue Box playbooks. 
+**Ansible**: Ansible software is an agentless configuration management tool. Though official Ansible playbooks are not available for OpenStack, one can get started with these Bluemix on OpenStack playbooks. 
 
 **Monitoring Tools**: Operating large-scale OpenStack cloud requires frequent monitoring of different components, including compute resources, virtual machines, and virtual networks. Monitoring also lets administrators raise alerts proactively, such as when a compute node approaches full CPU utilization. OpenStack provides Telemetry service (Ceilometer), which provides an event-based infrastructure that enables monitoring; however, it doesn’t provide complete monitoring capabilities. Therefore, OpenStack cloud deployments often utilize other open source monitoring tools, such as Nagios. 
 
