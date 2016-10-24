@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Keystone SAML Federation on IBM Blue Box Cloud
+title: Keystone SAML Federation on IBM Bluemix on OpenStack
 featured: false
 tags: [federation, keystone, saml]
 dateAdded: September 26, 2016
@@ -34,22 +34,22 @@ SAML IDP called `Company XYZ IDP`.
 the user to have `cloud_admin` access.**
 
 ## <a name="integrating_idp_and_keystone"></a>Integrating the IDP and Keystone
-A Blue Box operator will need to work with a `Company XYZ IDP` integration
+A Bluemix on OpenStack operator will need to work with a `Company XYZ IDP` integration
 engineer to setup both systems to work together.
 
-A Blue Box operator will need the following:
+A Bluemix on OpenStack operator will need the following:
 
  * IDP Metadata URL Endpoint (We currently only support retrieving Metadata through an URL and not a file)
  * IDP entity ID from the IDP Metadata
  * User attributes - This is the SAML user attributes that get passed by the IDP. This can be found in the IDP documentation or IDP server side logs.
  * Default/Inital Mapping - The documentation on mappings can be found here: http://docs.openstack.org/developer/keystone/federation/federated_identity.html#mapping-combination
 
-The `Company XYZ IDP` integration engineer may need the following from the Blue Box Operator:
+The `Company XYZ IDP` integration engineer may need the following from the Bluemix on OpenStack Operator:
 
  * Service Provider Metadata URL
  * Service Provider redirect URL  (Also known as the **callback url**, this is a whitelisted value that the IDP will allow the redirect to go to)
 
-The Blue Box operator should work with the integration engineer to create the initial/default mapping. The mapping is how the remote users on the IDP are mapped to local groups on the SP. The rest of this document may help clarify what a mapping is and how it's used. The integration engineer will also need cloud_admin access. This may be the `cloud_admin` user or a user with the role of the same name.
+The Bluemix on OpenStack operator should work with the integration engineer to create the initial/default mapping. The mapping is how the remote users on the IDP are mapped to local groups on the SP. The rest of this document may help clarify what a mapping is and how it's used. The integration engineer will also need cloud_admin access. This may be the `cloud_admin` user or a user with the role of the same name.
 
 The user attributes should be given with the mapping name. For example the attributes may be given as:
 
@@ -64,7 +64,7 @@ attributes:
 The name given is what the name is inside the SAML assertion. The id is what will
 be used in the Keystone mappings.
 
-After the Blue Box operator is finished integrating `Company XYZ IDP` with
+After the Bluemix on OpenStack operator is finished integrating `Company XYZ IDP` with
 Keystone, a mapping called `mapping-for-company-xyz-idp` should be
 created (or a similar mapping name with the IDP name in it).
 
