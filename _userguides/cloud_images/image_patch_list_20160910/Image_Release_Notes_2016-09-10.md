@@ -1,6 +1,6 @@
 ---
 layout: page
-title: IBM Blue Box Cloud Image Release Notes 2016-09-10
+title: IBM Bluemix on OpenStack Image Release Notes 2016-09-10
 featured: hidden
 weight: 13
 tags: [userguides, release, images, security, kernel, patch]
@@ -13,7 +13,7 @@ editor: Leslie Lundquist, Ying Tang
 
 #### **Summary of Image Updates in the Latest Release**
 
-These release notes describe the system updates and new features applied to IBM Blue Box Cloud Images of Release 2016-09-10 in comparison with the images of Release 2016-06-07, published in June, 2016.
+These release notes describe the system updates and new features applied to IBM Bluemix on OpenStack Images of Release 2016-09-10 in comparison with the images of Release 2016-06-07, published in June, 2016.
 
 From this release, all of our cloud images were updated based on the latest official images specs.
 
