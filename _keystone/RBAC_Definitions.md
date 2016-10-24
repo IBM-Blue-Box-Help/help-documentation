@@ -11,7 +11,7 @@ author: Ulysses Kanigel
 
 Currently, these roles are defined:
 
-• `admin`: allows full access across all projects. (Reserved for IBM Blue Box operations team)
+• `admin`: allows full access across all projects. (Reserved for IBM Bluemix on OpenStack operations team)
 	
 • `cloud_admin`: allows cloud-level access control. This role lets you perform API execution tasks, irrespective of your project.
 	
@@ -34,6 +34,6 @@ If you would like to see more granular roles in a future release, we can [open a
 
 #### Known Problem with Horizon Can Create Confusion for Cloud Admins
 
-A Cloud Admin may see a "Live Migration" option when looking at instances in the Admin panel of Horizon. However, the Live Migration functionality is policy restricted to the "admin" role, which Blue Box retains and does not provide to customers. Horizon will present an error if a non-admin attempts to live migrate an instance.
+A Cloud Admin may see a "Live Migration" option when looking at instances in the Admin panel of Horizon. However, the Live Migration functionality is policy restricted to the "admin" role, which Bluemix on OpenStack retains and does not provide to customers. Horizon will present an error if a non-admin attempts to live migrate an instance.
  
 This is a small UI/UX problem in Horizon, in that it offers to do things that Policy will prevent.
