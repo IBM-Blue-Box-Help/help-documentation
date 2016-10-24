@@ -15,7 +15,7 @@ editor: Leslie Lundquist
 
 **Feature:** Instance Resize (up)
 
-**Description:** Starting with the 1.3 Release of Blue Box Cloud, we have supported instance resizing (up). The resize operation is not live: it _does_ stop and re-start the instance. A resize can happen on the same host, which is helpful in small environments.
+**Description:** Starting with the 1.3 Release of Bluemix on OpenStack, we have supported instance resizing (up). The resize operation is not live: it _does_ stop and re-start the instance. A resize can happen on the same host, which is helpful in small environments.
 
 Instance resizing lets an instance change its flavor to a larger flavor. An instance can be resized to a larger flavor **only**. This change incurs a small amount of interruption while the instance is stopped, migrated to a larger-sized flavor, and started again. This resize may also relocate the instance to a new hypervisor.  
 

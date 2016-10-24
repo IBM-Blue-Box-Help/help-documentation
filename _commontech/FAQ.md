@@ -21,12 +21,12 @@ This functionality is supported through the **OpenStack API**.  Please see [How 
 
 ### I have a new cloud, and there are already two projects in place. What are these?
 
-The `admin` and `service` projects are created to support the underlying operation of your **IBM Blue Box Cloud**. These projects should be left in place. Do not modify or deploy them.
+The `admin` and `service` projects are created to support the underlying operation of your **IBM Bluemix on OpenStack**. These projects should be left in place. Do not modify or deploy them.
 
 
-### Which ports/URLs etc are publicly accessible on my Blue Box Cloud, and for what purpose?
+### Which ports/URLs etc are publicly accessible on my Bluemix on OpenStack, and for what purpose?
 
-The ports that are open through the firewall to your IBM Blue Box Cloud are:
+The ports that are open through the firewall to your IBM Bluemix on OpenStack are:
 
 ```
 80 - horizon (OpenStack Web Portal)

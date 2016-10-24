@@ -3,7 +3,7 @@ layout: page
 title:  "How to deploy an instance to a specific hypervisor node"
 tags: [nova, deploy, hypervisor]
 dateAdded: September 14th, 2015
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 editor: Leslie Lundquist
 featured: false
 weight: 4
@@ -11,7 +11,7 @@ weight: 4
 
 You may have the need to specify which host an instance is deployed to. While this functionality is not available in Horizon, the API lets you select a specific compute node for instance deployment.
 
-For **IBM Blue Box Cloud 3.0 or newer**, you may receive this error message when targeting a specific compute node:
+For **IBM Bluemix on OpenStack 3.0 or newer**, you may receive this error message when targeting a specific compute node:
 
 `Policy doesn't allow os_compute_api:servers:create:forced_host to be performed` 
 
@@ -20,7 +20,7 @@ In that case you will need to use  _group affinity_ and _group antiaffinity_ wit
 [Here's another article.](https://dev.cloudwatt.com/en/blog/affinity-and-anti-affinity-in-openstack.html)
 
 
-**The instructions that follow are for IBM Blue Box Cloud 3.0.0 or _older_.**
+**The instructions that follow are for IBM Bluemix on OpenStack 3.0.0 or _older_.**
 
 These instructions assume that you have the OpenStack API configured on your local machine. See [Getting Started with the OpenStack API](http://ibm-blue-box-help.github.io/help-documentation/openstack/api/openstack-api-getting-started/) for assistance.
 

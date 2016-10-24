@@ -8,45 +8,45 @@ dateAdded: April 22, 2016
 author: Leslie Lundquist
 ---
 
-## IBM Blue Box Cloud Customer
+## IBM Bluemix on OpenStack Customer
 
 ## Release Notes 3.0.0
 
 #### June 30, 2016
 
 
-This document offers a basic technical description of the latest IBM Blue Box Cloud offerings, including specifics of the 3.0 Dedicated and Local Cloud offerings. Links to detailed documentation can be found in each section.
+This document offers a basic technical description of the latest IBM Bluemix on OpenStack offerings, including specifics of the 3.0 Dedicated and Local Cloud offerings. Links to detailed documentation can be found in each section.
 
 ### Summary of the Latest Release
 
-Release 3.0.0 of IBM Blue Box Cloud includes many updates to the underlying OpenStack platform upon which every IBM Blue Box Cloud is built, as well as upgrades to infrastructure and features of IBM Blue Box Dedicated Cloud and IBM Blue Box Local Cloud. Most notable is the move to the **OpenStack Mitaka** release, which enables many new capabilities. We’ve included some general product improvements such as performance benchmarks and an updated Rally test suite, designed to facilitate smoother operation and deployment. This release also includes many improvements to documentation.
+Release 3.0.0 of IBM Bluemix on OpenStack includes many updates to the underlying OpenStack platform upon which every IBM Bluemix on OpenStack is built, as well as upgrades to infrastructure and features of IBM Bluemix Dedicated on OpenStack and IBM Bluemix Local on OpenStack. Most notable is the move to the **OpenStack Mitaka** release, which enables many new capabilities. We’ve included some general product improvements such as performance benchmarks and an updated Rally test suite, designed to facilitate smoother operation and deployment. This release also includes many improvements to documentation.
 
-Every IBM Blue Box 3.0.0 Cloud has these new features:
+Every IBM Bluemix on OpenStack 3.0.0 Cloud has these new features:
 
 1. [Openstack Mitaka Support.](#openstack-mitaka)
-2. [Keystone-to-Keystone federated identity across multiple Blue Box clouds.](#federated-keystone)
+2. [Keystone-to-Keystone federated identity across multiple Bluemix on OpenStack clouds.](#federated-keystone)
 3. [Updated Documentation Website now accessible through Box Panel.](#new-docs-site)
-4. [Regular updates for IBM Blue Box Cloud Images.](#regular-updates)
+4. [Regular updates for IBM Bluemix on OpenStack Images.](#regular-updates)
 
-IBM Blue Box 3.0.0 Dedicated Cloud features:
+IBM Bluemix on OpenStack 3.0.0 Dedicated Cloud features:
 
 1. [Support for SoftLayer VLAN spanning and connectivity to customer Bare Metal hardware.](#transit-vlan)
 2. [Vyatta with 10G networking.](#10gb-vyatta)
 
-IBM Blue Box 3.0.0 Local Cloud features:
+IBM Bluemix on OpenStack 3.0.0 Local Cloud features:
 
 1. [Hybrid Block Storage Nodes.](#block-storage)
 2. [New Compute Node Types.](#expansion-compute)
-3. [HIPAA-enabled IBM Blue Box Local Cloud.](#hipaa)
-4. [Support for IBM Blue Box Local on PureApp platform (Beta release).](#pure-app)
+3. [HIPAA-enabled IBM Bluemix Local on OpenStack.](#hipaa)
+4. [Support for IBM Bluemix Local on OpenStack on PureApp platform (Beta release).](#pure-app)
 
 [**Known Limitations of this Release**](#known-limitations-of-this-release)
 
 For additional user documentation, please refer to the [main Customer Help page](http://ibm-blue-box-help.github.io/help-documentation/), available online anytime at [_help.blueboxcloud.com_](http://ibm-blue-box-help.github.io/help-documentation/).
 
-A **General Product Overview** for IBM Blue Box Cloud version 2.0 and later [is available](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/general_product_overview/).
+A **General Product Overview** for IBM Bluemix on OpenStack version 2.0 and later [is available](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/general_product_overview/).
 
-### Every IBM Blue Box 3.0.0 Cloud has these new features:
+### Every IBM Bluemix on OpenStack 3.0.0 Cloud has these new features:
 
 <a name="openstack-mitaka"></a>**Openstack Mitaka Support:**
 Several features are now available based on our move to OpenStack Mitaka.
@@ -55,7 +55,7 @@ Several features are now available based on our move to OpenStack Mitaka.
  * The Mitaka release introduces the new **aodh** alert service, which will be installed on any environment that has Ceilometer enabled.
  * For more information, please refer to the [OpenStack Mitaka Release Notes](http://releases.openstack.org/mitaka/).
 
-**Specific OpenStack Services Enabled for IBM Blue Box 3.0.0 in Mitaka Release:**
+**Specific OpenStack Services Enabled for IBM Bluemix on OpenStack 3.0.0 in Mitaka Release:**
 
  *  Block Storage API & Extensions (Cinder v2.0)
  * Compute API & Extensions (Nova v2.1)
@@ -67,22 +67,22 @@ Several features are now available based on our move to OpenStack Mitaka.
  * Orchestration API (Heat v1.0)
  * Telemetry API (Ceilometer v2.0) (plus aodh)
 
-<a name="federated-keystone"></a>**Keystone-to-Keystone federation across multiple IBM Blue Box clouds:**
+<a name="federated-keystone"></a>**Keystone-to-Keystone federation across multiple IBM Bluemix on OpenStack clouds:**
 Keystone-to-Keystone (K2K) federation lets you log in to multiple clouds using your user credentials stored on one Keystone Identity Provider. [We've created a K2K setup article for you.](http://ibm-blue-box-help.github.io/help-documentation/keystone/k2k-federation/)
 
 <a name="new-docs-site"></a>**Updated Documentation Website now accessible through Box Panel:** We've updated and redesigned our customer documentation website, now available at help.blueboxcloud.com, and easily accessible through your Box Panel interface. See the [Box Panel User Guide](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Box_Panel/) for more information.
 
-<a name="regular-updates"></a>**Regular updates for IBM Blue Box Cloud Images:** Regular updates for our supported IBM Blue Box Cloud Images are available through your Box Panel interface. The customer release notes for all individual image updates are published [here](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Image_Release_Notes/). We've also created a [User Guide for Working with Cloud Images](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/).
+<a name="regular-updates"></a>**Regular updates for IBM Bluemix on OpenStack Images:** Regular updates for our supported IBM Bluemix on OpenStack Images are available through your Box Panel interface. The customer release notes for all individual image updates are published [here](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Image_Release_Notes/). We've also created a [User Guide for Working with Cloud Images](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/).
 
-### IBM Blue Box Dedicated 3.0.0 Cloud:
+### IBM Bluemix Dedicated on OpenStack 3.0.0 Cloud:
 
-<a name="transit-vlan"></a>**Support for SoftLayer VLANs spanning and customer-managed Bare Metal hardware connections:** This feature is designed for any IBM Blue Box Dedicated Cloud customer for whom the performance of Bare Metal servers is a strict requirement, but who also need access to secure communication over the SoftLayer private network, between their Bare Metal infrastructure and an OpenStack cloud-instance network. **Note:** To use this feature, the Bare Metal hardware must be in a separate, customer-owned and managed SoftLayer account.
+<a name="transit-vlan"></a>**Support for SoftLayer VLANs spanning and customer-managed Bare Metal hardware connections:** This feature is designed for any IBM Bluemix Dedicated on OpenStack customer for whom the performance of Bare Metal servers is a strict requirement, but who also need access to secure communication over the SoftLayer private network, between their Bare Metal infrastructure and an OpenStack cloud-instance network. **Note:** To use this feature, the Bare Metal hardware must be in a separate, customer-owned and managed SoftLayer account.
 
 <a name="10gb-vyatta"></a>**Vyatta with 10G networking:** This feature is designed for customers with high bandwidth requirements for cloud egress and ingress. 
 
-### IBM Blue Box Local 3.0.0 Cloud:
+### IBM Bluemix Local on OpenStack 3.0.0:
 <a name="expansion-compute"></a>**New Compute Node Types:** Expansion compute nodes address your requirements for faster IO ephemeral, more RAM, and an order of magnitude larger ephemeral storage.  Expansion nodes allow better coverage of instance types and workloads. With this release, compute types are grouped into Availability Zones for easy targeting of workloads to the appropriate compute type.
-You can select from the following compute node extensions to add to your IBM Blue Box Local cloud:
+You can select from the following compute node extensions to add to your IBM Bluemix Local on OpenStack:
 
  * You can select specialized expansion compute nodes: IO, or HIGH STORAGE (New in this release)
  * You can select additional standard or enterprise compute nodes: STANDARD COMPUTE, or ENTERPRISE COMPUTE (Previously available)
@@ -92,11 +92,11 @@ You can select from the following compute node extensions to add to your IBM Blu
 
  * You can select Block Storage: SSD or HYBRID
 
-<a name="hipaa"></a>**HIPAA-enabled Cloud:** A HIPAA-enabled cloud has the same configuration and expansion options as any other IBM Blue Box Cloud offering, but we are enabling _over 50 additional information-security controls_ that support our customers who must store personal health information (PHI). Because of this increased information security capability, a HIPAA-enabled cloud must be HIPAA-enabled from its inception: you cannot upgrade an existing cloud to enable HIPAA protocol. Also, you cannot downgrade from an IBM Blue Box Local HIPAA cloud: the existing HIPAA cloud must be wiped—per HIPAA protocol—and you must order a new Local cloud with non-HIPAA controllers.
+<a name="hipaa"></a>**HIPAA-enabled Cloud:** A HIPAA-enabled cloud has the same configuration and expansion options as any other IBM Bluemix on OpenStack offering, but we are enabling _over 50 additional information-security controls_ that support our customers who must store personal health information (PHI). Because of this increased information security capability, a HIPAA-enabled cloud must be HIPAA-enabled from its inception: you cannot upgrade an existing cloud to enable HIPAA protocol. Also, you cannot downgrade from an IBM Bluemix Local on OpenStack HIPAA cloud: the existing HIPAA cloud must be wiped—per HIPAA protocol—and you must order a new Local cloud with non-HIPAA controllers.
 
- * You can now select HIPAA Enablement for your IBM Blue Box Local Cloud.
+ * You can now select HIPAA Enablement for your IBM Bluemix Local on OpenStack.
 
-<a name="pure-app"></a>**Support for Blue Box on PureApp (Beta release):** PureApp is an existing IBM system for hardware management. With its Beta release, we are making it available as a platform for IBM Blue Box Local, in addition to the Cisco hardware already available.
+<a name="pure-app"></a>**Support for Bluemix on OpenStack on PureApp (Beta release):** PureApp is an existing IBM system for hardware management. With its Beta release, we are making it available as a platform for IBM Bluemix Local on OpenStack, in addition to the Cisco hardware already available.
 
 ### Known Limitations of This Release
 **Horizon Dashboard and LBaaS v2:**

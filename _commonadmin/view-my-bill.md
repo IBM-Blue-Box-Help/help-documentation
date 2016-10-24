@@ -8,7 +8,7 @@ author: Eric French
 dateAdded: April 9th, 2015
 ---
 
-All of your **IBM Blue Box** invoices and payments can be viewed from within Box Panel at any time.
+All of your **IBM Bluemix on OpenStack** invoices and payments can be viewed from within Box Panel at any time.
 
 Log into your [**Box Panel**](https://boxpanel.bluebox.net/) account using your user name and password.
 

@@ -4,7 +4,7 @@ title: "How to Move from Ephemeral Disk to Cinder Storage"
 featured: false
 weight: 5
 tags: [cinder, ephemeral]
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 dateAdded: June 16, 2016
 ---
 

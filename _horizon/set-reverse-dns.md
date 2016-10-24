@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "How do I set a reverse DNS (PTR) record for an IBM Blue Box Cloud instance?"
+title:  "How do I set a reverse DNS (PTR) record for an IBM Bluemix on OpenStack instance?"
 tags: [horizon, reverse dns]
 dateAdded: August 6th, 2015
 featured: false

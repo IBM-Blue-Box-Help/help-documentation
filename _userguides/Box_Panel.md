@@ -11,9 +11,9 @@ dateAdded: April 14, 2016
 
 ## Getting Started with Box Panel
 
-The Box Panel interface gives you a single, consolidated view of assets deployed in your **IBM Blue Box Dedicated** and **IBM Blue Box Local** cloud environments. Its self-service access lets you create support tickets, leverage central authentication for logins and user permissions, monitor various functions, and view your invoices, easily. 
+The Box Panel interface gives you a single, consolidated view of assets deployed in your **IBM Bluemix Dedicated on OpenStack** and **IBM Bluemix Local on OpenStack** cloud environments. Its self-service access lets you create support tickets, leverage central authentication for logins and user permissions, monitor various functions, and view your invoices, easily. 
 
-This user guide gives you an end-to-end overview, so you can get started using Box Panel to monitor and control your IBM Blue Box Cloud. This document applies to Box Panel Version 3.8.3 and later.
+This user guide gives you an end-to-end overview, so you can get started using Box Panel to monitor and control your IBM Bluemix on OpenStack. This document applies to Box Panel Version 3.8.3 and later.
 
 ### Table of Contents
 
@@ -31,7 +31,7 @@ This user guide gives you an end-to-end overview, so you can get started using B
 To get started with Box Panel, log in. 
 
 1. Go to the URL `https://boxpanel.bluebox.net` to be directed to the login page.
-2. Log into your Box Panel account with the login credentials provided by the Blue Box Support Team. If you are a **Secondary** contact and you don't yet have access, you can be added by an **Administrator**. See the **Managing Users and Projects** section for more details.
+2. Log into your Box Panel account with the login credentials provided by the Bluemix on OpenStack Support Team. If you are a **Secondary** contact and you don't yet have access, you can be added by an **Administrator**. See the **Managing Users and Projects** section for more details.
 3. If you do not yet have a Box Panel account, please refer to the **Billing** section for instructions on how to get an account.
 5. After logging in, you'll be directed automatically to the Box Panel Dashboard.
 
@@ -54,7 +54,7 @@ To get started, first navigate to the URL provided in your Lockbox. Then you can
 
 ### Navigating the Box Panel Dashboard
 
-From the Box Panel Dashboard, you can see a consolidated asset view of all of your **IBM Blue Box Dedicated** and **IBM Blue Box Local** instances, on one screen.
+From the Box Panel Dashboard, you can see a consolidated asset view of all of your **IBM Bluemix Dedicated on OpenStack** and **IBM Bluemix Local on OpenStack** instances, on one screen.
 
 The top of the Dashboard displays the infrastructure currently in use, with your list of hosts. 
 
@@ -83,13 +83,13 @@ Each image is displayed as a card. Cards are grouped by operating system.
 
 ### Finding the Help Documentation
 
-From your Box Panel dashboard, you'll see  a link on the Nav Bar (the rightmost link) called **Docs**. If you select that link, a Dropdown menu appears, with the options of **OpenStack**, or **Managed Hosting**. To view the Customer Help documentation for IBM Blue Box Cloud, select **OpenStack**. The Help page will appear. You can browse the documentation by category, or you can search, using the search bar. By hovering over one of the icons, you can see a list of articles within that topic area. 
+From your Box Panel dashboard, you'll see  a link on the Nav Bar (the rightmost link) called **Docs**. If you select that link, a Dropdown menu appears, with the options of **OpenStack**, or **Managed Hosting**. To view the Customer Help documentation for IBM Bluemix on OpenStack, select **OpenStack**. The Help page will appear. You can browse the documentation by category, or you can search, using the search bar. By hovering over one of the icons, you can see a list of articles within that topic area. 
 
 ![ ](http://ibm-blue-box-help.github.io/help-documentation/img/Managed_Hosting.png)
 
 ### Getting Support 
 
-**Note: For immediate support, you can call Blue Box Support at 1-800-613-4305 or email us at support@bluebox.net.**
+**Note: For immediate support, you can call Bluemix on OpenStack Support at 1-800-613-4305 or email us at support@bluebox.net.**
 
 In most cases, you'll want to open a support ticket to get support. By using a ticket, you'll have a record of the issue and the solutions taken to address your issue, complete with logs of your chat sessions with the customer support team.
 
@@ -142,20 +142,20 @@ To view a list of Subscribers for a selected ticket, click on the **Subscribers*
 
 ![ ]()
 
-To have a written conversation with one of our Blue Box support team experts about the topic of this ticket, you can click the green **Post Reply** button, or you can use the live **Chat** feature by clicking on **Chat**. All live chat sessions are recorded and added to the ticket as a transcript.
+To have a written conversation with one of our Bluemix on OpenStack support team experts about the topic of this ticket, you can click the green **Post Reply** button, or you can use the live **Chat** feature by clicking on **Chat**. All live chat sessions are recorded and added to the ticket as a transcript.
 
-**Using the Chat Feature to chat with Blue Box Support**
+**Using the Chat Feature to chat with Bluemix on OpenStack Support**
 
 1. Click the **Chat** tab from your Dashboard. This action automatically directs you to a chat room with support staff. 
 2. From here, you are able to view the support staff members join your conversation on the left-hand side of the chat room.
 3. Once a support member joins, you can compose and send messages from the chat bar. If you need to enter a new line during your chat, press **Control/Command + Enter**.
 4. If you need to escalate your support issue, please call 1-800-613-4305 ext 1.
 
-**Note:** Each customer chat room is private. This means that only the contacts within your customer account and the Blue Box support staff have access to your transcript. No sensitive data (such as credit card numbers, or private keys) persists.
+**Note:** Each customer chat room is private. This means that only the contacts within your customer account and the Bluemix on OpenStack support staff have access to your transcript. No sensitive data (such as credit card numbers, or private keys) persists.
 
 ### Managing Billing 
 
 To view your contracts and monthly billing reports, click the **Account** tab in the Box Panel Dashboard, then click the **Billing** tab.
 
-For further billing support, please contact the Blue Box Support Team, and we will be happy to assist you.
-To add additional line items, such as expansion nodes, to your infrastructure, please contact the Blue Box Support Team. We will create a new monthly contract and help to streamline your setup process in any way that we can.
+For further billing support, please contact the Bluemix on OpenStack Support Team, and we will be happy to assist you.
+To add additional line items, such as expansion nodes, to your infrastructure, please contact the Bluemix on OpenStack Support Team. We will create a new monthly contract and help to streamline your setup process in any way that we can.

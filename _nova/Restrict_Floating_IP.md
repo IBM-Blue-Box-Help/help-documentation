@@ -2,7 +2,7 @@
 layout: page
 title:  "How Can I Restrict Floating IPs?"
 dateAdded: September 2nd, 2016
-author: Blue Box Support
+author: Bluemix on OpenStack Support
 editor: Leslie Lundquist
 featured: true
 weight: 4

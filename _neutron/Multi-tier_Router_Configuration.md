@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Multi-tier Router Configuration Within Your IBM Blue Box Cloud
+title: Multi-tier Router Configuration Within Your IBM Bluemix on OpenStack
 tags: [neutron, networking, router, configuration, multi-tier]
 author: Ulysses Kanigel and Leslie Lundquist
 dateAdded: August 31, 2016

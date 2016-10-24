@@ -13,7 +13,7 @@ If you run a **Nova** command such as `nova list` you could get the following er
 ERROR (UnsupportedVersion): Server doesn't support microversions
 {% endhighlight %}
 
-Recent versions of **Nova** client attempt to use the version 3 API, which adds fine-grained versioning.  This capability is not yet supported in **IBM Blue Box Cloud**.
+Recent versions of **Nova** client attempt to use the version 3 API, which adds fine-grained versioning.  This capability is not yet supported in **IBM Bluemix on OpenStack**.
 
 You can add the following line to your `stackrc` file to resolve this mismatch problem:
 

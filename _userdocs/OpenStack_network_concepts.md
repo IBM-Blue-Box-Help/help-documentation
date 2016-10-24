@@ -10,7 +10,7 @@ editor: Leslie Lundquist
 dateAdded: May 25, 2016
 --- 
 
-This document offers a basic introduction to some common networking concepts. You'll encounter these concepts when working with your IBM Blue Box Cloud.
+This document offers a basic introduction to some common networking concepts. You'll encounter these concepts when working with your IBM Bluemix on OpenStack.
  
 ### Terminology Used in This Document
 
@@ -57,5 +57,5 @@ External networks can "talk" within and outside your cloud. They may include the
 
 * Your cloud's "public network" or "external network" provides access to and from the public Internet. 
 * The SoftLayer private network is intended to provide access to other services in SoftLayer, including other clouds you may wish to communicate with. (See the [Release Notes](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/release_notes_for_customers/) for more information about access to the SoftLayer private network. 
-* The SoftLayer router network connects to the SoftLayer Backend Core Router (BCR), which lets you reach resources outside your own private cloud environment, resources which might reside in a data center at your site (Blue Box Local) or in another private cloud environment owned by you, in a SoftLayer data center or elsewhere (Blue Box Dedicated or your own legacy cloud). 
+* The SoftLayer router network connects to the SoftLayer Backend Core Router (BCR), which lets you reach resources outside your own private cloud environment, resources which might reside in a data center at your site (IBM Bluemix Local on OpenStack) or in another private cloud environment owned by you, in a SoftLayer data center or elsewhere (Bluemix Dedicated on OpenStack or your own legacy cloud). 
 * Public and SoftLayer private networks are physical networks.

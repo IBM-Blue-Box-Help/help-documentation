@@ -9,7 +9,7 @@ author: Yanqi Dou
 editor: Leslie Lundquist, Niraj Patel
 ---
 
-IBM Blue Box Cloud 3.0 comes pre-populated with Cirros 0.3.3 x86_64 images. IBM Blue Box provides other downloadable cloud images, so that you can run instances with the Operating System of your choice. This document tells you what you'll need to know for downloading and working with these images. To be sure you're working with the latest images, you can check the [Cloud Image Release Notes](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Image_Release_Notes/) at any time.
+IBM Bluemix on OpenStack 3.0 comes pre-populated with Cirros 0.3.3 x86_64 images. IBM Bluemix on OpenStack provides other downloadable cloud images, so that you can run instances with the Operating System of your choice. This document tells you what you'll need to know for downloading and working with these images. To be sure you're working with the latest images, you can check the [Cloud Image Release Notes](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Image_Release_Notes/) at any time.
 
 
 ## Pre-requisites
@@ -18,7 +18,7 @@ IBM Blue Box Cloud 3.0 comes pre-populated with Cirros 0.3.3 x86_64 images. IBM 
 
 2. Ensure you have access to Box Panel, so you can get the temporary download URLs for the IBM-provided cloud images.
 
-3. Uploading an image to Glance using `tempUrl` as an image location is supported only on Blue Box Cloud 2.1.0 and onwards.
+3. Uploading an image to Glance using `tempUrl` as an image location is supported only on Bluemix on OpenStack 2.1.0 and onwards.
 
 ## Basic concepts
 
@@ -29,9 +29,9 @@ IBM Blue Box Cloud 3.0 comes pre-populated with Cirros 0.3.3 x86_64 images. IBM 
 | **Flavor**   | The term _flavor_ describes an instance's size, and it defines the pre-determined resource specifications for the amount of vCPU, RAM, and disk space available to an instance.   														      |
 
 
-## Select from alternative cloud images provided by IBM Blue Box
+## Select from alternative cloud images provided by IBM Bluemix on OpenStack
 
-The IBM Blue Box Cloud in this release comes pre-populated with Cirros 0.3.3 x86_64 images. Additional cloud images are available, provided as a customer courtesy by IBM Blue Box.
+The IBM Bluemix on OpenStack in this release comes pre-populated with Cirros 0.3.3 x86_64 images. Additional cloud images are available, provided as a customer courtesy by IBM Bluemix on OpenStack.
 
 You may upload and install separately-acquired operating system software, or you may provision any of the following operating system images that we make available to you as a virtual machine instance.  You are responsible to comply with all applicable operating system license terms and to acquire proper entitlements for each virtual machine instance.
 
@@ -45,7 +45,7 @@ You may upload and install separately-acquired operating system software, or you
 * Windows Server 2012 R2 Datacenter
 * Windows Server 2012 R2 Standard
 
-For any Microsoft Windows operating system virtual computing instances, these are the specific customer provisions: the customer is required to have and maintain customer's own Microsoft Windows License server for activating such Windows operating system virtual computing instances. Refer to [How to activate Windows licenses in IBM Blue Box Cloud](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/Windows_License_Activation/) for more information.
+For any Microsoft Windows operating system virtual computing instances, these are the specific customer provisions: the customer is required to have and maintain customer's own Microsoft Windows License server for activating such Windows operating system virtual computing instances. Refer to [How to activate Windows licenses in IBM Bluemix on OpenStack](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/Windows_License_Activation/) for more information.
 
 
 ## Get cloud image downloads from Box Panel
@@ -60,20 +60,20 @@ For any Microsoft Windows operating system virtual computing instances, these ar
 
 5. The `tempURL` displayed will be valid for next 24 hours so you can download the cloud image.
 
-## <a name="tempURL"></a>Upload an image to IBM Blue Box Cloud Glance repository using your cloud image `tempURL`
+## <a name="tempURL"></a>Upload an image to IBM Bluemix on OpenStack Glance repository using your cloud image `tempURL`
 
 **Notes:**
 
 * Only users with the `cloud_admin` role will be able to make an image public to other users and to the project.
-* Uploading an image to Glance by using the `tempUrl` directly as an image location cannot be used for IBM Blue Box Cloud that has blocked the outbound Internet access from the OpenStack control plane.
-* Uploading an image to Glance by using the `tempUrl` directly as an image location is supported *only* on Blue Box Cloud 2.1.0 and later, **not** on releases PRIOR to 2.1.0.
-* For IBM Blue Box Clouds on releases PRIOR to 2.1 or with no outbound Internet access, follow the instructions in [Upload an image to an IBM Blue Box Cloud Glance repository using downloaded image files](#downloadedimages).
+* Uploading an image to Glance by using the `tempUrl` directly as an image location cannot be used for IBM Bluemix on OpenStack that has blocked the outbound Internet access from the OpenStack control plane.
+* Uploading an image to Glance by using the `tempUrl` directly as an image location is supported *only* on Bluemix on OpenStack 2.1.0 and later, **not** on releases PRIOR to 2.1.0.
+* For IBM Bluemix on OpenStacks on releases PRIOR to 2.1 or with no outbound Internet access, follow the instructions in [Upload an image to an IBM Bluemix on OpenStack Glance repository using downloaded image files](#downloadedimages).
 
 You can either upload an image with the [OpenStack dashboard](#createimage-dashboard) or the [command line client](#createimage-cli).
 
 ### <a name="createimage-dashboard"></a>Upload an image using the OpenStack dashboard
 
-1. Log in to the IBM Blue Box Cloud OpenStack dashboard.
+1. Log in to the IBM Bluemix on OpenStack dashboard.
 2. Under the **Project** panel, expand **Compute** and click **Images**.
 3. Click **Create Image** in the page. Specify the following parameters in the new page, and click **Create Image**.
 
@@ -128,7 +128,7 @@ Check whether the image was created successfully. The image is queued for upload
 $ glance image-show <image-id>
 ```
 	
-## <a name="downloadedimages"></a>Upload an image to an IBM Blue Box Cloud Glance repository using downloaded image files
+## <a name="downloadedimages"></a>Upload an image to an IBM Bluemix on OpenStack Glance repository using downloaded image files
 
 **Notes:**
 
@@ -162,7 +162,7 @@ Follow these steps:
 
 ### <a name="upload-dashboard"></a>Upload an image using the OpenStack dashboard
 
-1. Log in to the IBM Blue Box Cloud OpenStack dashboard.
+1. Log in to the IBM Bluemix on OpenStack dashboard.
 
 2. Under the **Project** panel, expand **Compute** and click **Images**.
 
@@ -252,7 +252,7 @@ net localgroup administrators <YOUR_USERNAME> /add
 
 **Note:** Ensure that proper security group rules are defined for connecting to your instance over `ssh` or `rdp`.
 
-1. Log in to the IBM Blue Box Cloud OpenStack dashboard.
+1. Log in to the IBM Bluemix on OpenStack dashboard.
 
 2. Expand the **Project** panel, then the **Compute** tab in the left navigation area, and click on **Instances**.
 
@@ -272,7 +272,7 @@ Connect to your instance through SSH or VNC. The default `userid` for the Linux 
 	ssh -i <path_of_Your_SSH_private_key_file> <userid>@<ip_of_instance>
 	```
 	
-* View the VNC console of the instance by clicking on the instance name in the IBM Blue Box Cloud OpenStack dashboard, and then click on the **Console** tab. The VNC console connects you with HTTPS.
+* View the VNC console of the instance by clicking on the instance name in the IBM Bluemix on OpenStack dashboard, and then click on the **Console** tab. The VNC console connects you with HTTPS.
   
   ![View the VNC console of your instance]({{site.baseurl}}/img/view_VNC_console.png)
 
@@ -283,11 +283,11 @@ Connect to your instance through SSH or VNC. The default `userid` for the Linux 
 Connect to your instance through Remote Desktop or VNC. You'll need to use the `userid` and `password` specified in the Customization Script during VM provisioning. On your first login, a prompt appears, requesting that you change your password. Please do.
 
 * Use your favorite Remote Desktop client to connect.
-* View the VNC console of the instance by clicking on the instance name in IBM Blue Box Cloud OpenStack dashboard, and then click on the **console** tab. The VNC console connects you with HTTPS.
+* View the VNC console of the instance by clicking on the instance name in IBM Bluemix on OpenStack dashboard, and then click on the **console** tab. The VNC console connects you with HTTPS.
 
 ## Image update
 
-When you receive a notification from IBM Blue Box operations that the cloud images are updated, you can deactivate the existing image and re-create a new image using the download URL you obtained from Box Panel for the updated image.
+When you receive a notification from IBM Bluemix on OpenStack operations that the cloud images are updated, you can deactivate the existing image and re-create a new image using the download URL you obtained from Box Panel for the updated image.
 
 **Using the OpenStack Command Line Client to deactivate the existing image**
 
@@ -309,11 +309,11 @@ When you receive a notification from IBM Blue Box operations that the cloud imag
    $ glance image-show <image_id>
    ```
 
-4. After deactivating the existing image, please re-create the new image by following the steps in [Upload an image to IBM Blue Box Cloud Glance repository using your cloud image tempURL](#tempURL) in this guide.
+4. After deactivating the existing image, please re-create the new image by following the steps in [Upload an image to IBM Bluemix on OpenStack Glance repository using your cloud image tempURL](#tempURL) in this guide.
 
-## Get support from IBM Blue Box operations regarding cloud images
+## Get support from IBM Bluemix on OpenStack operations regarding cloud images
 
-To get support from IBM Blue Box operations regarding a specific cloud image, it will help if the **buildID** of the image can be provided. Get the `buildID` of the image, and then create a support ticket with IBM Blue Box operations and mention the `buildID`. Here is how:
+To get support from IBM Bluemix on OpenStack operations regarding a specific cloud image, it will help if the **buildID** of the image can be provided. Get the `buildID` of the image, and then create a support ticket with IBM Bluemix on OpenStack operations and mention the `buildID`. Here is how:
 
 * From the image file name:  
   Example: `ubuntu-guest-image-14.04-20160301-x86_64.qcow2`

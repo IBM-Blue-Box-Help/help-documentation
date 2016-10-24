@@ -8,7 +8,7 @@ author: Ying Tang
 editor: Leslie Lundquist
 weight: 4
 ---
-In IBM Blue Box Release 3.0, this feature is by default **not enabled**: The `force_config_drive` parameter in the `nova.conf` file is set to `false`. This is because support of this feature depends on the image from which the new instance is booted. Some of the customer images may not support this option. 
+In IBM Bluemix on OpenStack Release 3.0, this feature is by default **not enabled**: The `force_config_drive` parameter in the `nova.conf` file is set to `false`. This is because support of this feature depends on the image from which the new instance is booted. Some of the customer images may not support this option. 
 
 When using config drive, a filesystem is prepared by the hypervisor and attached to the instance. This method reduces any security risk, because arbitrary data from the instance is not processed in the hypervisor context. Traditional file injection, which refers to mounting of the instance filesystem by the hypervisor to write additional files to the instance's file system, presents the possibility that the instance filesystem could be malformed in such a way as to exploit a vulnerability in the hypervisor, resulting in code execution. Vulnerabilities of this kind once were commonplace.
 

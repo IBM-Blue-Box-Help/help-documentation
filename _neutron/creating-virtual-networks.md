@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "Creating virtual networks on Blue Box Cloud"
+title:  "Creating virtual networks on Bluemix on OpenStack"
 tags: [neutron, creating virtual networks]
 dateAdded: September 16th, 2015
 author: Jason Kennedy
@@ -8,9 +8,9 @@ featured: false
 weight: 4
 ---
 
-Managing and maintaining virtual networking in an **OpenStack** cluster can be challenging. Most likely, you do not need to modify the default configuration of your **IBM Blue Box** Cloud.
+Managing and maintaining virtual networking in an **OpenStack** cluster can be challenging. Most likely, you do not need to modify the default configuration of your **IBM Bluemix on OpenStack** Cloud.
 
-**IBM Blue Box** Managed Openstack environments typically have an **Internal** and **External** network: the Internal network houses a customer's internal IP range on the **IBM Blue Box** infrastructure, and the External network owns that customer's floating IP range pool. In most environments, this arrangement is all that's necessary. Traffic segregation can be handled by security group usage that enforces the data flow between instances and your application. This method is the preferred way of handling such requirements, because it can be fine-tuned to meet your needs and expectations.
+**IBM Bluemix on OpenStack** Managed Openstack environments typically have an **Internal** and **External** network: the Internal network houses a customer's internal IP range on the **IBM Bluemix on OpenStack** infrastructure, and the External network owns that customer's floating IP range pool. In most environments, this arrangement is all that's necessary. Traffic segregation can be handled by security group usage that enforces the data flow between instances and your application. This method is the preferred way of handling such requirements, because it can be fine-tuned to meet your needs and expectations.
 
 **Building your own network**
 
