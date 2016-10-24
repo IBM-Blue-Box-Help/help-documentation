@@ -8,13 +8,13 @@ featured: false
 weight: 4
 ---
 
-By default, your **IBM Blue Box** Cloud will use the DHCP service provided by **Neutron** to resolve instances by name.  If the primary controller fails and the secondary controller node assumes control, the resolver address will change, breaking resolution for any running instances.
+By default, your **IBM Bluemix on OpenStack** will use the DHCP service provided by **Neutron** to resolve instances by name.  If the primary controller fails and the secondary controller node assumes control, the resolver address will change, breaking resolution for any running instances.
 
 This article assumes that you have the **OpenStack API** configured on your local machine. For assistance, please see [**Getting Started with the OpenStack API**](http://ibm-blue-box-help.github.io/help-documentation/openstack/api/openstack-api-getting-started/).
 
 To prevent this possibility of breaking resolution in case of failover, we recommend one of the following methods:
 
-If your **IBM Blue Box** Cloud deployment utilizes **Microsoft Active Directory**, you have the option of accessing the **Active Directory** or similar existing internal DNS infrastructure.
+If your **IBM Bluemix on OpenStack** deployment utilizes **Microsoft Active Directory**, you have the option of accessing the **Active Directory** or similar existing internal DNS infrastructure.
 
 Enter the following command, where `10.0.100.100` is the IP address of your **Active Directory** server:
 
