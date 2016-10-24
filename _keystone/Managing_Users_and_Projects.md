@@ -123,7 +123,7 @@ Manage image cache | N | N | N
 Network Feature | cloud_admin | project_admin (within project) |  \_member\_
 --------------- | ----------- | ------------------------------ | -----------
 Create network  | Y | Y | Y
-Create shared network | N | N | N
+Create shared network | Y | N | N
 Update network  | Y | Y | Y (owner)
 Delete network  | Y | Y | Y (owner)
 Create port     | Y | Y | Y
