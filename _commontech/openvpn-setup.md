@@ -7,7 +7,7 @@ dateAdded: January 7th, 2016
 featured: true
 ---
 
-When you need to connect to your internal Blue Box instances, but either you don't have the available floating IP addresses or you prefer to not put those virtual machines on the internet, one recourse is to establish a bastion host with OpenVPN running on it. That way, you can connect and pass through the host to your internal network. In this article, you'll learn how to install and set up your OpenVPN server and client for the connection.
+When you need to connect to your internal Bluemix on OpenStack instances, but either you don't have the available floating IP addresses or you prefer to not put those virtual machines on the internet, one recourse is to establish a bastion host with OpenVPN running on it. That way, you can connect and pass through the host to your internal network. In this article, you'll learn how to install and set up your OpenVPN server and client for the connection.
 Assume that you're already running a virtual machine that has a floating IP allocated to it. We're not going to discuss setting up ufw or go into any hardened of linux, this how-to is strictly about getting OpenVPN up and running on an instance hosted on OpenStack. For the purpose of this example, we're using Ubuntu 14.04.
 
 Complete these steps for your server-side setup.

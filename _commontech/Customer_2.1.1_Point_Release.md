@@ -8,7 +8,7 @@ dateAdded: June 2, 2016
 author: Leslie Lundquist
 ---
 
-### IBM Blue Box Cloud Customer
+### IBM Bluemix on OpenStack Customer
 
 ### Point Release 2.1.1
 
