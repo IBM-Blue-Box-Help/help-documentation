@@ -1,6 +1,6 @@
 ---
 layout: page
-title: IBM Blue Box Cloud Image Release Notes
+title: IBM Bluemix on OpenStack Image Release Notes
 featured: false
 weight: 13
 tags: [userguides, release, images, security, kernel, patch]
@@ -9,9 +9,9 @@ author: Yang Zhang
 editor: Leslie Lundquist, Ying Tang
 ---
 
-# IBM Blue Box Cloud Image Release Notes
+# IBM Bluemix on OpenStack Image Release Notes
 
-Cloud images provided by IBM Blue Box are updated periodically, to apply necessary security patches and other system updates from official sources. Please check the following release notes to get more details about changes applied in each release. The version number of each Image release is just the date by when the latest official patches and updates were applied.
+Cloud images provided by IBM Bluemix on OpenStack are updated periodically, to apply necessary security patches and other system updates from official sources. Please check the following release notes to get more details about changes applied in each release. The version number of each Image release is just the date by when the latest official patches and updates were applied.
 
 #### [Image Release Notes 20160607](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/cloud_images/image_patch_list_20160607/Image_Release_Notes_2016-06-07/) (Released June 7, 2016)
 
