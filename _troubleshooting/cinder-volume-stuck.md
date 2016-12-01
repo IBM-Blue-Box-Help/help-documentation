@@ -6,7 +6,25 @@ dateAdded: November 19th, 2015
 featured: true
 ---
 
-Occasionally, you may run across a Cinder volume that becomes stuck.  In this example, two volumes were stuck in a "creating" state:
+Occasionally, you may run across a Cinder volume that becomes stuck. You can detach a stuck Cinder volume using the command `nova reboot` to update the VM configuration to remove the volume attachment.
+
+
+
+If the `nova reboot` didn't work, you can force the volume to detach from the instance. Then  you should be able to delete the volume. Here’s the command to force a detach:
+
+{% highlight bash %}
+root@ds0100:/etc/libvirt/qemu# virsh detach-disk instance-00000487 vdc --live --config
+Disk detached successfully
+
+root@ds0100:/etc/libvirt/qemu# virsh domblklist instance-00000487
+Target     Source
+------------------------------------------------
+vda        /opt/stack/data/nova/instances/122f1998-65d5-4f7d-a468-e47ac5a99474/disk
+vdb        /opt/stack/data/nova/instances/122f1998-65d5-4f7d-a468-e47ac5a99474/disk.swap
+{% endhighlight %}
+
+
+Other exotic forms of stuckness may occur. In this example, two volumes were stuck in a "creating" state:
 
 {% highlight bash %}
 $ cinder list --all-tenants | egrep "1439ebc1|47405ffa"
