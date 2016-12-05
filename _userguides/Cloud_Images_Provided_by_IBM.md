@@ -85,7 +85,7 @@ You can either upload an image with the [OpenStack dashboard](#createimage-dashb
 	| **Image Location**     | Specify the Cloud Image download `tempURL`.                                                                      |
 	| **Format**             | Select the correct format (for example, `QCOW2`) for the image.                                                  |
 	| **Architecture**       | Specify the architecture (for example, `i386` for a 32-bit architecture or `x86_64` for a 64-bit architecture).  |
-	| **Minimum Disk(GB)**   | For Linux Image, use 5; For Windows Image, use 25.                                                               |
+	| **Minimum Disk(GB)**   | For Linux Image, use 5; For Windows Image, use 30.                                                               |
 	| **Minimum RAM(MB)**    | For Linux Image, use 512; For Windows Image, use 2048.                                                           |
 	| **Copy Data**          | This option must be checked to copy image data to image service.                                                 |
 	| **Public**             | Select this check box to make the image public to all users on all projects.                                     |
@@ -116,7 +116,7 @@ You can upload images through the Glance client. See [Installing OpenStack Clien
 Create an image.
 
 * For Linux Images, use `-- min-disk 5 --min-ram 512`
-* For Windows Images, use `--min-disk 25 --min-ram 2048`
+* For Windows Images, use `--min-disk 30 --min-ram 2048`
 
   ``` 
   $ glance --os-image-api-version 1 image-create --name <image_name> --min-disk <min-disk> --min-ram <min-ram> --disk-format qcow2 --container-format bare --is-public True --copy-from  <tempURL_to_qcow2_image_file>
@@ -176,7 +176,7 @@ Follow these steps:
 	| **Image File**          | Browse to the directory of the image binary file.                                                                |
 	| **Format**              | Select the correct format (for example, `QCOW2`) for the image.                                                  |
 	| **Architecture**        | Specify the architecture (for example, `i386` for a 32-bit architecture or `x86_64` for a 64-bit architecture).  |
-	| **Minimum Disk(GB)**    | For Linux Image, use 5; For Windows Image, use 25                                                                |
+	| **Minimum Disk(GB)**    | For Linux Image, use 5; For Windows Image, use 30                                                                |
 	| **Minimum RAM(MB)**     | For Linux Image, use 512; For Windows Image, use 2048                                                            |
 	| **Public**              | Select this check box to make the image public to all users on all projects.                                     |
 	| **Protected**           | Select this check box to ensure that only users with permissions can delete the image.                           |	 
@@ -204,7 +204,7 @@ See [Installing OpenStack Clients](http://docs.openstack.org/cli-reference/commo
 Create image.
 
 * For Linux Images, use `-- min-disk 5 --min-ram 512`
-* For Windows Images, use `--min-disk 25 --min-ram 2048`
+* For Windows Images, use `--min-disk 30 --min-ram 2048`
 
   ```
   $ glance --os-image-api-version 1 image-create --name <image_name> --min-disk <min-disk> --min-ram <min-ram> --disk-format qcow2 --container-format bare --is-public True --file <path_to_qcow2_image_file>
@@ -246,6 +246,18 @@ To set the initial username and password, use the following script data for the 
 rem cmd
 net user <YOUR_USERNAME> <YOUR_PASSWORD> /logonpasswordchg:yes /add /y
 net localgroup administrators <YOUR_USERNAME> /add
+{% endhighlight %}
+
+### Create a VM instance using the OpenStack command line client
+
+See [How can I create an instance with the Nova command line client?](http://ibm-blue-box-help.github.io/help-documentation/nova/create-vm-with-volumes/) for the details about the steps.
+
+### Set initial username and password
+
+put the **Customization Script** mentioned in the session **Create a VM instance using the OpenStack Dashboard** into one file, for instance: userdata.txt, then pass the `--user-data userdata.txt` option to the `nova boot` command.For example,
+
+{% highlight bash %}
+$ nova boot <vm_name> --flavor <flavor_name> --image <image_name> --security-groups <security_group_name> --nic net-id=<network_ID> --ephemeral size=<size_GBs> --user-data userdata.txt
 {% endhighlight %}
 
 ## Connecting to your instance
