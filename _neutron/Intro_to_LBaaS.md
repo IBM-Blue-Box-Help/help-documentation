@@ -3,7 +3,7 @@ layout: page
 title: "Introduction to Load Balancer as a Service (LBaaS)"
 featured: false
 weight: 6
-tags: [neutron, lbaas, delete]
+tags: [neutron, lbaas, delete, healthmonitor]
 author: Leslie Lundquist
 dateAdded: June 16, 2016
 dateUpdated: January 11, 2017
