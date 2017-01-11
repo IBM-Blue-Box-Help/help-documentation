@@ -43,6 +43,9 @@ To delete a load balancer, you must first remove the objects associated with it.
 # neutron lbaas-listener-delete 966eeb93-8062-4340-bb82-473a10206517
 Deleted listener: 966eeb93-8062-4340-bb82-473a10206517
 
+# neutron lbaas-pool-show dad502f3-fb9f-4f53-ac0e-57c1217e68c7 | grep healthmonitor_id
+| healthmonitor_id    | c3a3c32f-96d0-4744-9957-5947c9fe93cd           |
+
 # neutron lbaas-healthmonitor-delete c3a3c32f-96d0-4744-9957-5947c9fe93cd
 Deleted healthmonitor: c3a3c32f-96d0-4744-9957-5947c9fe93cd
 
