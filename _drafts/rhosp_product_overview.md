@@ -4,7 +4,7 @@ title: IBM Bluemix Private Cloud using RHOSP Product Overview
 featured: false
 weight: 10
 tags: [getting started, release, features, overview]
-dateAdded: March 29, 2016
+dateAdded: Jan 13, 2017
 author: Leslie Lundquist
 ---
 
@@ -61,6 +61,8 @@ For more information about the features that IBM Bluemix Private Cloud provides,
 If you want to view a Bill of Materials of your cloud environment, contact your service team. The configuration may vary depending on SoftLayer data center locations and the current inventory.
 
 ### Components
+
+The following table summarizes the OpenStack components in IBM Bluemix Private Cloud using RHOSP, their API versions, the port numbers, and the RHOSP user documentation that you can refer to. 
 
 <table>
     <tr>
@@ -123,6 +125,8 @@ If you want to view a Bill of Materials of your cloud environment, contact your 
 See also the [IBM Bluemix Private Cloud components](http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/commontech/blue-box-cloud-components/).
 
 ### Box Panel
+
+The Box Panel interface gives you a single, consolidated view of assets deployed in your cloud environment. 
 
 Box Panel is built for deploying and operating a private cloud infrastructure throughout its life cycle, including management of software and services from setting up the rack, to billing, and customer support interaction.
 
