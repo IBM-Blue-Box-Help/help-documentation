@@ -132,11 +132,11 @@ Box Panel is built for deploying and operating a private cloud infrastructure th
 
 The Box Panel Suite includes several applications that handle different functional areas of its functionality:
 
-* **Box Panel**—the information storehouse for managing machines, rack schematics, IP addresses, network deployments, and associated information.
-* **Box Panel Auth**—the app that authorizes users and allows management of users and projects through role-based access control (RBAC).
-* **Box Panel Support**—the app that handles customer ticketing and related support features.
-* **Box Panel Chat**—the app that provides live chat interactions for customers.
-* **Box Panel Messenger Service**—the app that interacts with Site Controller and Ursula to provide automated deployment, expansion, and updating capabilities through an architecture based on services and workers.
+* Box Panel—the information storehouse for managing machines, rack schematics, IP addresses, network deployments, and associated information.
+* Box Panel Auth—the app that authorizes users and allows management of users and projects through role-based access control (RBAC).
+* Box Panel Support—the app that handles customer ticketing and related support features.
+* Box Panel Chat—the app that provides live chat interactions for customers.
+* Box Panel Messenger Service—the app that interacts with Site Controller and Ursula to provide automated deployment, expansion, and updating capabilities through an architecture based on services and workers.
 
 For more information about Box Panel, see the following articles:
 
