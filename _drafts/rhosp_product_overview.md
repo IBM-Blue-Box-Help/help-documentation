@@ -5,7 +5,7 @@ featured: false
 weight: 10
 tags: [getting started, release, features, overview]
 dateAdded: Jan 13, 2017
-author: Leslie Lundquist
+author: Leslie Lundquist, Ying Tang
 ---
 
 ## IBM Bluemix Private Cloud using Red Hat OpenStack Platform (RHOSP)
