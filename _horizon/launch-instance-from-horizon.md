@@ -73,8 +73,9 @@ Occasionally, you may need to create ports beforehand through APIs. After you cr
 
 Make a selection from the list of security groups, then click the plus sign (+) to move it to **Allocated**.   
 
-![The Security Group tab]({{site.baseurl}}/img/Launch_Instance_srg.png)        																																																										 |       
- 
+![The Security Group tab]({{site.baseurl}}/img/Launch_Instance_srg.png)        
+
+			
 #### The Key Pair tab
 
 Specify a key pair. You have the following options:
@@ -110,6 +111,24 @@ If your browser supports the **HTML5 File API**, you may click **Browse** to loa
 In the **Disk Partition** drop-down menu, you can select **Automatic** to resize the disk and set it to a single partition, or you can select **Manual** to create multiple partitions on the disk.
 
 Select the **Configuration Drive** checkbox if you want to write metadata to a special configuration drive, then specify your metadata in the **Metadata** tab. When the instance boots, it attaches to the configuration drive for access to your metadata.
+
+
+#### The Server Groups tab
+
+Server groups can be used to control the affinity and anti-affinity scheduling policy for a group of servers (instances).
+
+Occasionally, you may need to create server groups beforehand through APIs. After you create a server group you'll be able to view this server group in the **Available** table. You can click the plus sign (+) to move it to **Allocated**. 
+
+![Server Groups]({{site.baseurl}}/img/launch_instance_servergroup.png)    
+
+
+#### The Scheduler Hints tab
+
+The scheduler hints can be used to pass additional placement related information to the Nova scheduler. For example, you can use a scheduler hint to ensure that an instance is scheduled on to a host from a certain server group. You can also construct a custom scheduler hint in JSON format. For more details about the scheduling mechanism and the supported hint types, see [Compute Schedulers](https://docs.openstack.org/newton/config-reference/compute/schedulers.html).
+
+![Scheduler Hints]({{site.baseurl}}/img/launch_instance_hints.png)
+
+
 	
 #### The Metadata tab
 
