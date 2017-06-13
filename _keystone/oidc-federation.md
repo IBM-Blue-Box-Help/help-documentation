@@ -619,3 +619,6 @@ $ openstack role add heat_stack_owner --user *federated user ID* --project *proj
 ```
 
 Another known issue is that a federated user is presented with the option to change their password in the settings page. They will not be able to change their password.
+
+Also, please note that federated users should not create local users. Federated admins may not be able to
+change a local user's password.
