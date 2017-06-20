@@ -1,0 +1,14 @@
+---
+layout: page
+title:  "Release Notes"
+categories: release notes, releasenotes
+---
+
+{% for page in site.releasenotes %}
+  <li>
+      {% if page.title %}
+      <a class="page--link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      {% endif %}
+  </li>
+{% endfor %}
+
