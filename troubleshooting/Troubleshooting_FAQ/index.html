@@ -1534,6 +1534,7 @@
   <li><a href="#ports_open">What ports need to be open for OpenStack?</a></li>
   <li><a href="#volume_limit">What does this error mean? “Error: Unable to retrieve volume limit information.”</a></li>
   <li><a href="#port_25">Why is access to port 25 not working for my outbound email?</a></li>
+  <li><a href="#error_rebuild">Why do I get "Error rebuilding server" when doing a nova server rebuild?</a></li>
 </ul>
 
 <h4 id="q-how-can-i-tell-when-my-virtual-machine-last-rebooted">Q. <a name="last_rebooted"></a>How Can I Tell When My Virtual Machine Last Rebooted?</h4>
@@ -1724,6 +1725,11 @@ cinderv2:
 
 <p><a href="https://knowledgelayer.softlayer.com/procedure/outbound-email-port-25">https://knowledgelayer.softlayer.com/procedure/outbound-email-port-25</a></p>
 
+
+<h4 id="error_rebuild">Q. <a name="error_rebuild"></a>Why do I get "Error rebuilding server" when doing a nova server rebuild?</h4>
+
+<p><strong>A.</strong> This error is usually the result of a corrupted image.  You can delete the image used for the rebuild and re-upload it, examining the output of `openstack image show new-image | grep checksum` after the upload completes, to ensure the checksum matches the original checksum of the image file on your computer.</p>
+        
       </div>
     </div>
 
