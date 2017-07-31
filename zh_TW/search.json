@@ -6,9 +6,9 @@
   
    {
      
-        "title"    : "Keystone (Identity)",
+        "title"    : "Cinder (Block Storage)",
         "tags"     : "",
-        "url"      : "/help-documentation/keystone/"
+        "url"      : "/help-documentation/cinder/"
      
    } ,
   
@@ -46,13 +46,17 @@
   
    {
      
-        "title"    : "Cinder (Block Storage)",
+        "title"    : "Keystone (Identity)",
         "tags"     : "",
-        "url"      : "/help-documentation/cinder/"
+        "url"      : "/help-documentation/keystone/"
      
    } ,
   
    {
+     
+        "title"    : "Neutron (Networking)",
+        "tags"     : "",
+        "url"      : "/help-documentation/neutron/"
      
    } ,
   
@@ -82,17 +86,13 @@
   
    {
      
-        "title"    : "Ceilometer (Telemetry)",
-        "tags"     : "",
-        "url"      : "/help-documentation/ceilometer/"
-     
    } ,
   
    {
      
-        "title"    : "Neutron (Networking)",
+        "title"    : "Ceilometer (Telemetry)",
         "tags"     : "",
-        "url"      : "/help-documentation/neutron/"
+        "url"      : "/help-documentation/ceilometer/"
      
    } ,
   
@@ -553,30 +553,6 @@
        "title"    : "使用私有網路設定多個雲端環境之間的網路連線功能",
        "tags"     : "getting started,開始使用,網路,私有網路",
        "url"      : "/help-documentation/gettingstarted/commontech/Connecting_Clouds_with_SoftLayer/"
-     
-   } ,
-  
-   {
-     
-       "title"    : "Notas sobre a liberação 3.1.0",
-       "tags"     : "commontech,release,features,gettingstarted",
-       "url"      : "/help-documentation/gettingstarted/commontech/Customer_3.1.0_Release_Notes/"
-     
-   } ,
-  
-   {
-     
-       "title"    : "Notas sobre a liberação do ponto 3.1.1 para cliente",
-       "tags"     : "release notes,3.1.1",
-       "url"      : "/help-documentation/gettingstarted/commontech/Customer_3.1.1_Point_Release/"
-     
-   } ,
-  
-   {
-     
-       "title"    : "Notas sobre a liberação 4.0.0.0r",
-       "tags"     : "commontech,release,features,gettingstarted,red hat,rhosp",
-       "url"      : "/help-documentation/gettingstarted/commontech/Customer_4.0.0.0r_Release_Notes/"
      
    } ,
   
