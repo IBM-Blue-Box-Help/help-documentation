@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Instance Live Migration</title>
-  <meta name="description" content="Beginning with IBM Bluemix Private Cloud 4.0 release, you can migrate a VM instance from one compute host to another while keeping the VM running. This live ...">
+  <meta name="description" content="Beginning with IBM’s Bluemix Private Cloud 4.0 release, you can migrate a VM instance from one compute host to another while keeping the VM running. Live mig...">
 
   <link rel="stylesheet" href="/help-documentation/css/main.css">
   <link rel="canonical" href="/help-documentation/pt_BR/nova/nova_live_migration/">
@@ -1474,23 +1474,21 @@
       </header>
 
       <div class="post-content">
-        <p>Beginning with IBM Bluemix Private Cloud 4.0 release, you can migrate a VM instance from one compute host to another while keeping the VM running. This live migration is especially useful when you do not want to interrupt the workload running on the VM.</p>
+        <p>Beginning with IBM’s Bluemix Private Cloud 4.0 release, you can migrate a VM instance from one compute host to another while keeping the VM running. Live migration is useful when you do not want to interrupt the workload running on the VM.</p>
 
-<p>Depenging on your needs, you might also consider non-live migration and other types of live migration. See details about these migration types in the <a href="https://docs.openstack.org/admin-guide/compute-configuring-migrations.html#section-configuring-compute-migrations">OpenStack document</a>.</p>
+<p>Depending on your needs and the type of VM being migrated, you might also consider non-live migration and other types of live migration. See details about these migration types in the <a href="https://docs.openstack.org/admin-guide/compute-configuring-migrations.html#section-configuring-compute-migrations">OpenStack document</a>.</p>
 
-<h2 id="before-you-begin">Before you begin</h2>
-
-<p><strong>Notes:</strong></p>
+<h2 id="before-you-begin-you-should-know">Before you begin, you should know:</h2>
 
 <ul>
-  <li>Only the <strong>cloud_admin</strong> role can do live migration for instances.</li>
-  <li>You are recommended to do <em>volume-backed live migration</em> only, that is, live migration for instances that use volumes rather than ephemeral.</li>
-  <li>You are recommended not to do migration when the instance has a big workload. This is because live migration may time out if the CPU or memory usage is high.</li>
+  <li>Only the <strong>cloud_admin</strong> role can live migrate instances.</li>
+  <li>You can only reliably do <em>volume-backed live migration</em>, that is, live migration for instances that use volumes rather than ephemeral disks.</li>
+  <li>Do not live migrate a VM if it has a big workload. Live migration may time out if the CPU or memory usage on the VM is high.</li>
 </ul>
 
-<p>Another type of live migration, the <em>block live migration</em>, requires the disks to be copied from the source to the destination host. It takes more time, puts more load on the network, and has a much bigger impact on performance of the cloud.</p>
+<p>Another type of live migration, <em>block live migration</em>, requires the disks to be copied from the source to the destination host.  It takes more time, puts more load on the network, and has a much bigger impact on performance of the cloud.</p>
 
-<p>You can take the following steps to check whether your VM is <strong>volume-backed</strong>:</p>
+<p>Take the following steps to check whether your VM is <strong>volume-backed</strong>:</p>
 
 <ol>
   <li>Log on to the Horizon dashboard as the <strong>cloud_admin</strong> role.</li>
@@ -1508,16 +1506,16 @@
   </li>
 </ol>
 
-<h2 id="live-migration-steps">Live migration steps</h2>
+<h2 id="live-migration-steps">Live migration steps:</h2>
 
 <p>You can do live migration for your instance either with the Horizon dashboard or with the command line client.</p>
 
-<h3 id="live-migration-using-the-horizon-dashboard">Live migration using the Horizon dashboard</h3>
+<h3 id="live-migration-using-the-horizon-dashboard">Live migration using the Horizon dashboard:</h3>
 
 <ol>
   <li>Log on to the Horizon dashboard as <strong>cloud_admin</strong>.</li>
   <li>Under the <strong>Admin</strong> topic, expand <strong>System</strong>, and click <strong>Instances</strong>.</li>
-  <li>In the instance list table, you can find the source host of the VM in the <strong>Host</strong> column.</li>
+  <li>In the instance list table, find the source host of the VM in the <strong>Host</strong> column.</li>
   <li>In the <strong>Actions</strong> drop-down list beside the VM, click <strong>Live Migrate Instance</strong>, and you will see a pop-up window.</li>
   <li>
     <p>In the pop-up window, check the following options and then click <strong>Summit</strong> to start the migration.</p>
@@ -1529,35 +1527,35 @@
     </ul>
   </li>
   <li>
-    <p>You can watch the migration progress on the right top of the page.</p>
+    <p>You can watch the migration progress on the top-right of the page.</p>
 
     <ul>
       <li>If you see a message like <code class="highlighter-rouge">Info: The instance is preparing the live migration to a new host</code>, live migration has started. You can go to the next step to verify the result.</li>
-      <li>If you see an error message like <code class="highlighter-rouge">Error: Failed to live migrate instance to host &lt;New Host Name&gt;</code>, live migration has failed. See the <a href="#troubleshoot">Troubleshooting</a> section for more information about fixing the issue.</li>
+      <li>If you see an error message like <code class="highlighter-rouge">Error: Failed to live migrate instance to host &lt;New Host Name&gt;</code>, live migration has failed. See the <a href="#troubleshoot">Troubleshooting</a> section for more information about fixing the problem.</li>
     </ul>
   </li>
-  <li>Back in the instance list table, check if the <strong>Host</strong> value is changed. If yes, live migration has been completed successfully. Otherwise, see the <a href="#troubleshoot">Troubleshooting</a> section for more information about fixing the issue.</li>
+  <li>Back in the instance list table, check if the <strong>Host</strong> value is changed. If yes, live migration completed successfully. Otherwise, see the <a href="#troubleshoot">Troubleshooting</a> section for more information about fixing the problem.</li>
 </ol>
 
-<h3 id="live-migration-using-the-command-line">Live migration using the command line</h3>
+<h3 id="live-migration-using-the-command-line">Live migration using the command line:</h3>
 
 <p>You have two options to do live migration with the command line: either with the OpenStack client (recommended, version 3.4.0 or higher) or the Nova client.</p>
 
 <p>In an Openstack client, use the following syntax:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>openstack server migrate &lt;server id or name&gt; # automatically scheduled
-openstack server migrate &lt;server id or name&gt; --live &lt;new host name&gt; # specified new host
+<div class="highlighter-rouge"><pre class="highlight"><code>openstack server migrate &lt;server id or name&gt; # automatically scheduled to a host nova selects for you
+openstack server migrate &lt;server id or name&gt; --live &lt;new host name&gt; # specify new host
 </code></pre>
 </div>
 
 <p>In a Nova client, use the following syntax:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>nova live-migration &lt;server id or name&gt; # automatically scheduled
-nova live-migration &lt;server id or name&gt; &lt;new host name&gt; #  specified new host
+<div class="highlighter-rouge"><pre class="highlight"><code>nova live-migration &lt;server id or name&gt; # automatically scheduled to a host nova selects for you
+nova live-migration &lt;server id or name&gt; &lt;new host name&gt; # specify new host
 </code></pre>
 </div>
 
-<p>From the command line output you cannot know whether the migration is a success or a failure. Instead, run the following commands before and after migration to compare whether the hypervisor hostname has changed, which means a successful live migration.</p>
+<p>The command line does not tell you if the migration completed successfully. Run the following commands before and after migration to compare whether the hypervisor hostname has changed.  If the hostname changed, the status is active, and you can login to the VM the same as before, you have a successful live migration.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>nova list --fields name,OS-EXT-SRV-ATTR:hypervisor_hostname,status
 +--------------------------------------+--------------------------+--------------------------------------+-----------+
@@ -1662,20 +1660,20 @@ nova live-migration &lt;server id or name&gt; &lt;new host name&gt; #  specified
 
 <p><strong>Cause</strong>: The new host does not have enough resources for migration.</p>
 
-<p><strong>Resolution</strong>: You can check the capacity of destination host. If it does not have enough resources left, select another eligible host and do live migration again.</p>
+<p><strong>Resolution</strong>: Check the capacity of the destination host. If it does not have enough resources left, select another eligible host and try live migration again.</p>
 
 <p>Take the following steps to check the capacity of a host:</p>
 
 <ol>
   <li>Log on to the Horizon dashboard as <strong>cloud_admin</strong>.</li>
-  <li>Under the <strong>Admin</strong> topic, expand <strong>System</strong> and click <strong>Hypervisors</strong>. You can view the <strong>used</strong> and <strong>total</strong> resouces of each host about VCPU/RAM/Local Stroage.</li>
+  <li>Under the <strong>Admin</strong> topic, expand <strong>System</strong> and click <strong>Hypervisors</strong>. You can view the <strong>used</strong> and <strong>total</strong> resouces of each host about VCPU/RAM/Local Storage.  Feel free to have us verify the resources across your cluster by opening a support ticket.</li>
 </ol>
 
 <h3 id="the-instance-has-an-invalid-availability-zone-property-in-the-nova-db">The instance has an invalid availability zone property in the Nova DB.</h3>
 
 <p><strong>Cause</strong>: This is a known issue in the OpenStack community. The instance may have an invalid availability zone property in the Nova DB, which causes a failure during the migration or resizing process. You may see <a href="https://bugs.launchpad.net/nova/+bug/1431194">this bug</a> for more information.</p>
 
-<p><strong>Resolution</strong>: This invalid property cannot be found in horizon or command line but only by querying the database. You can contact IBM Bluemix Private Cloud support.</p>
+<p><strong>Resolution</strong>: This invalid property cannot be found in Horizon or the command line but only by querying the database. You can contact IBM Bluemix Private Cloud support to get the availability zone database property for the instance updated.</p>
 
 
       </div>

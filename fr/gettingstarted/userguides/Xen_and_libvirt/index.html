@@ -1483,7 +1483,7 @@
       <div class="post-content">
         <p><em>Republié de l’article de blogue rédigé par Dustin Lundquist et Leslie Lundquist</em></p>
 
-<p>Dans le <a href="/help-documentation/fr/gettingstarted/userguides/qemu_article/">premier article</a> de notre série <em>Optimisation d’OpenStack</em>, nous avons examiné qemu et KVM, ainsi que leurs rôles dans le noyau d’un cloud OpenStack. Le présent article traite de Xen, un autre hyperviseur qui peut bien fonctionner avec qemu et qui offre une alternative à KVM. Nous allons également examiner libvirt, une couche d’abstraction utile pour votre cloud OpenStack et la base d’OpenStack Nova.</p>
+<p>Dans le <a href="http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/qemu_article/">premier article</a> de notre série <em>Optimisation d’OpenStack</em>, nous avons examiné qemu et KVM, ainsi que leurs rôles dans le noyau d’un cloud OpenStack. Le présent article traite de Xen, un autre hyperviseur qui peut bien fonctionner avec qemu et qui offre une alternative à KVM. Nous allons également examiner libvirt, une couche d’abstraction utile pour votre cloud OpenStack et la base d’OpenStack Nova.</p>
 
 <p>De nos jours, IBM Bluemix Private Cloud et plusieurs autres implémentations de cloud basées sur OpenStack utilisent KVM (qui s’apparente presque à qemu). Sur le principe, ces deux types d’hyperviseur (qemu et Xen) sont toutefois interchangeables, avec certaines modifications, grâce à libvirt.</p>
 
@@ -1495,11 +1495,11 @@
 
 <p><strong>Ce que vous devez savoir à propos de Xen</strong></p>
 
-<p>Xen se démarque principalement de KVM dans le sens où son système d’exploitation hôte, tel que Linux, s’exécute également en tant que machine virtuelle sous l’hyperviseur Xen. L’hyperviseur Xen ne virtualise que l’UC et la mémoire et, tout comme qemu, Xen peut utiliser le transfert des périphériques d’entrée-sortie, comme décrit dans l’article précédent, <a href="/help-documentation/fr/gettingstarted/userguides/Improving_Cloud_Performance/">Amélioration des performances de cloud</a>, qui était le deuxième article de blogue de la série.</p>
+<p>Xen se démarque principalement de KVM dans le sens où son système d’exploitation hôte, tel que Linux, s’exécute également en tant que machine virtuelle sous l’hyperviseur Xen. L’hyperviseur Xen ne virtualise que l’UC et la mémoire et, tout comme qemu, Xen peut utiliser le transfert des périphériques d’entrée-sortie, comme décrit dans l’article précédent, <a href="http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/Improving_Cloud_Performance/">Amélioration des performances de cloud</a>, qui était le deuxième article de blogue de la série.</p>
 
 <p><img src="/help-documentation/img/fr/qemu_vs_Xen.png" alt="Comparing_QEMU_and_Xen" /></p>
 
-<p>Comme illustré dans le schéma ci-dessus, l’architecture de Xen s’oppose directement au modèle de cloud QEMU + KVM, que nous avons vu <a href="/help-documentation/fr/gettingstarted/userguides/qemu_article/">dans un article précédent</a>.</p>
+<p>Comme illustré dans le schéma ci-dessus, l’architecture de Xen s’oppose directement au modèle de cloud QEMU + KVM, que nous avons vu <a href="http://ibm-blue-box-help.github.io/help-documentation/gettingstarted/userguides/qemu_article/">dans un article précédent</a>.</p>
 
 <p><strong>Ce que vous devez savoir à propos de libvirt : trois méthodes de génération d’un cloud par libvirt</strong></p>
 

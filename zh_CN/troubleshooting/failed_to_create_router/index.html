@@ -1487,7 +1487,7 @@
 </code></pre>
 </div>
 
-<p><strong>答</strong>：通常，发生此错误的原因是，在尝试将路由器连接到的一个或多个网络中超出 IP 地址范围。可以通过运行 <code class="highlighter-rouge">neutron net-ip-availability-show</code> 来检查网络中还剩下多少个 IP，如<a href="/help-documentation/zh_CN/neutron/Where_Are_These_IPs/">本文</a>中所述。您可能需要使用以下命令来删除分配给不再存在的项目的 IP：</p>
+<p><strong>答</strong>：通常，发生此错误的原因是，在尝试将路由器连接到的一个或多个网络中超出 IP 地址范围。可以通过运行 <code class="highlighter-rouge">neutron net-ip-availability-show</code> 来检查网络中还剩下多少个 IP，如<a href="http://ibm-blue-box-help.github.io/help-documentation/neutron/Where_Are_These_IPs/">本文</a>中所述。您可能需要使用以下命令来删除分配给不再存在的项目的 IP：</p>
 
 <p><code class="highlighter-rouge">nova floating-ip-delete</code></p>
 

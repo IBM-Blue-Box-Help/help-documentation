@@ -1487,7 +1487,7 @@
 </code></pre>
 </div>
 
-<p><strong>答：</strong>通常發生您看到的這個錯誤時，是因為您嘗試將路由器連接至的其中一個或多個網路上的 IP 位址已用盡。您可以透過執行 <code class="highlighter-rouge">neutron net-ip-availability-show</code> 來檢查網路上剩下多少個 IP，如<a href="/help-documentation/zh_TW/neutron/Where_Are_These_IPs/">本文</a>中所詳述。您可能需要使用下列指令，刪除已指派給不再存在之專案的 IP：</p>
+<p><strong>答：</strong>通常發生您看到的這個錯誤時，是因為您嘗試將路由器連接至的其中一個或多個網路上的 IP 位址已用盡。您可以透過執行 <code class="highlighter-rouge">neutron net-ip-availability-show</code> 來檢查網路上剩下多少個 IP，如<a href="http://ibm-blue-box-help.github.io/help-documentation/neutron/Where_Are_These_IPs/">本文</a>中所詳述。您可能需要使用下列指令，刪除已指派給不再存在之專案的 IP：</p>
 
 <p><code class="highlighter-rouge">nova floating-ip-delete</code></p>
 
