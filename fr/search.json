@@ -986,8 +986,8 @@
   
    {
      
-       "title"    : "Utilisation de la connectivité BYOFIP entre IBM Bluemix Private Cloud et un site client",
-       "tags"     : "neutron,neutron(neutron),byofip(byofip)",
+       "title"    : "Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site",
+       "tags"     : "neutron,byofip",
        "url"      : "/help-documentation/neutron/BYOFIP_support/"
      
    } ,

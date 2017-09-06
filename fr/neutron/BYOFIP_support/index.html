@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Utilisation de la connectivité BYOFIP entre IBM Bluemix Private Cloud et un site client</title>
-  <meta name="description" content="Utilisation de la connectivité BYOFIP entre IBM Bluemix Private Cloud et un site clientPrésentationBYOFIP (Bring Your Own Floating IP) est une fonctionnalité...">
+  <title>Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site</title>
+  <meta name="description" content="Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site">
 
   <link rel="stylesheet" href="/help-documentation/css/main.css">
   <link rel="canonical" href="/help-documentation/fr/neutron/BYOFIP_support/">
@@ -1038,7 +1038,7 @@
           
             
             <li>
-                <a class="page-link--active"  href="/help-documentation/fr/neutron/BYOFIP_support/">Utilisation de la connectivité BYOFIP entre IBM Bluemix Private Cloud et un site client</a>
+                <a class="page-link--active"  href="/help-documentation/fr/neutron/BYOFIP_support/">Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site</a>
             </li>
             
           
@@ -1436,7 +1436,7 @@
 
         
 
-        Utilisation de la connectivité BYOFIP entre IBM Bluemix Private Cloud et un site client
+        Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site
 
         
         </h1>
@@ -1463,9 +1463,7 @@
                   
                     <li class="tag"><p>neutron</p></li>
                   
-                    <li class="tag"><p>neutron(neutron)</p></li>
-                  
-                    <li class="tag"><p>byofip(byofip)</p></li>
+                    <li class="tag"><p>byofip</p></li>
                   
                   </ul>
               
@@ -1476,24 +1474,24 @@
       </header>
 
       <div class="post-content">
-        <h1 id="utilisation-de-la-connectivité-byofip-entre-ibm-bluemix-private-cloud-et-un-site-client">Utilisation de la connectivité BYOFIP entre IBM Bluemix Private Cloud et un site client</h1>
+        <h1 id="using-byofip-connectivity-between-ibm-bluemix-private-cloud-and-a-customer-site">Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site</h1>
 
-<h2 id="présentation">Présentation</h2>
-<p>BYOFIP (Bring Your Own Floating IP) est une fonctionnalité qui permet à nos clients IBM d’apporter leurs propres IP flottantes et de configurer un réseau BYOFIP dans leur instance d’IBM Bluemix Private Cloud. En activant cette fonctionnalité, vous pourrez attribuer ces IP flottantes directement à vos machines virtuelles invités. Vous pourrez ensuite vous connecter aux machines virtuelles invités via le réseau BYOFIP à partir de votre site client. Des frais supplémentaires peuvent s’appliquer.</p>
+<h2 id="overview">Overview</h2>
+<p>BYOFIP (Bring Your Own Floating IP) is a feature that lets our IBM customers bring their own floating IPs and set up a BYOFIP network in their IBM Bluemix Private Cloud. By enabling this feature, you’ll be able to assign these floating IPs directly to your guest VMs. Then you can connect to the guest VMs over the BYOFIP network from your customer site. Additional fees may apply.</p>
 
-<h2 id="demande">Demande</h2>
-<p>Pour demander à activer la connectivité BYOFIP, ouvrez un ticket de demande de service et demandez que cette fonctionnalité soit activée pour votre instance d’IBM Bluemix Private Cloud. Vous devrez fournir le ou les sous-réseaux à intégrer à votre cloud. Un ingénieur IBM configure ensuite le réseau externe BYOFIP et un point d’extrémité du tunnel dans les systèmes Vyatta. Ces informations vous sont retransmises par l’intermédiaire du ticket pour que vous puissiez configurer le point d’extrémité du tunnel de votre côté.</p>
+<h2 id="request">Request</h2>
+<p>To request BYOFIP connectivity, please open a support ticket and request that this feature be enabled for your IBM Bluemix Private Cloud. You would need to provide the subnet or subnets that you’d like to bring into your cloud. Then, an IBM engineer sets up the BYOFIP external network and a tunnel endpoint in the Vyattas. This information is passed back to you through the ticket, so you can set up the tunnel endpoint on your end.</p>
 
-<h2 id="connexion-à-une-machine-virtuelle-invité">Connexion à une machine virtuelle invité</h2>
-<p>Une fois qu’un ingénieur IBM a confirmé que la fonctionnalité est activée, vous pouvez vous connecter via le réseau BYOFIP en procédant comme suit dans Horizon ou à l’aide de la ligne de commande :</p>
+<h2 id="connecting-to-a-guest-vm">Connecting to a guest VM</h2>
+<p>After an IBM engineer has confirmed that the feature is turned on, you can connect over the BYOFIP network by performing the following steps on Horizon or by using the command line:</p>
 <ol>
-  <li>Créez un routeur Neutron en <strong>activant la conversion SNAT</strong></li>
-  <li>Définissez la passerelle du routeur sur le réseau BYOFIP</li>
-  <li>Créez un réseau privé</li>
-  <li>Ajoutez une interface sur le routeur au réseau privé</li>
-  <li>Créez des machines virtuelles invités sur le réseau privé et vérifiez que le groupe de sécurité dispose des règles de sécurité appropriées</li>
-  <li>Allouez des IP flottantes à partir du réseau BYOFIP</li>
-  <li>Affectez les IP flottantes que vous avez configurées à l’étape précédente aux machines virtuelles invités</li>
+  <li>Create a Neutron router with <strong>SNAT enabled</strong></li>
+  <li>Set the router gateway to the BYOFIP network</li>
+  <li>Create a private network</li>
+  <li>Add an interface on the router to the private network</li>
+  <li>Create guest VMs on the private network, and ensure that the security group has the proper security rules</li>
+  <li>Allocate floating IPs from the BYOFIP network</li>
+  <li>Assign the floating IPs you set up in the previous step to the guest VMs</li>
 </ol>
 
       </div>

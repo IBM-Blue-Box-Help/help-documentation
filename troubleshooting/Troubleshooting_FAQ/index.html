@@ -1510,6 +1510,7 @@
   <li><a href="#ports_open">What ports need to be open for OpenStack?</a></li>
   <li><a href="#volume_limit">What does this error mean? “Error: Unable to retrieve volume limit information.”</a></li>
   <li><a href="#port_25">Why is access to port 25 not working for my outbound email?</a></li>
+  <li><a href="#probing">Why are my VMs getting stuck on probing EDD?</a></li>
 </ul>
 
 <h4 id="q-how-can-i-tell-when-my-virtual-machine-last-rebooted">Q. <a name="last_rebooted"></a>How Can I Tell When My Virtual Machine Last Rebooted?</h4>
@@ -1699,6 +1700,14 @@ cinderv2:
 <p><strong>A.</strong> SoftLayer no longer allows outbound connections through TCP port 25 (SMTP) on new accounts. Please refer to the following article for more information:</p>
 
 <p><a href="https://knowledgelayer.softlayer.com/procedure/outbound-email-port-25">https://knowledgelayer.softlayer.com/procedure/outbound-email-port-25</a></p>
+
+<h4 id="q-why-are-my-vms-getting-stuck-on-probing-edd">Q. <a name="probing"></a>Why are my VMs getting stuck on probing EDD?</h4>
+
+<p><strong>A.</strong> We’ve seen this happen with CentOS 7 specifically.  You can sometimes resolve it by setting <code class="highlighter-rouge">edd=off</code> on the first kernel line in /boot/grub/grub.conf Please see http://serverfault.com/a/708451 for an example.</p>
+
+<p>Another customer resolved it by switching to Ubuntu 16.04.</p>
+
+<p>Finally, double-check if you potentially made a mistake when creating the flavor for the instance.  Check your flavor specifications carefully, and make sure, for example, you’ve not specifed megabytes of RAM when you meant to specify gigabytes.  Some VMs will not boot with tiny amounts of memory.</p>
 
       </div>
     </div>
