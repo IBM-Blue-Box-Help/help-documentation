@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Launching an instance from the Horizon dashboard (OpenStack Newton release)</title>
+  <meta name="description" content="Steps  Log in to the Horizon dashboard.  Under the Project topic, expand Compute and click Instances. If you have existing instances, you can view a list of ...">
+
+  <link rel="stylesheet" href="/help-documentation/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/help-documentation/horizon/launch-instance-from-horizon_newton/">
+  <link rel="alternate" type="application/rss+xml" title="Blue Box Help" href="http://localhost:4000/help-documentation/feed.xml">
+  
+  <style>
+   .site-header img:first-child {
+       height: 72px;
+}
+</style>
+  
+</head>
+
+
+  <body>
+
+  
+    <header class="site-header">
+
+  <div class="header-wrapper">
+
+    <a class="site-title" href="/help-documentation/"><img src="/help-documentation/img/en/Bluemix-logo-UI.svg" alt="" height="72px"></a>
+
+    <div class="search--pageview">
+
+  <div class="full-view__search hide">
+    <a href="" class="x hide">X</a>
+    <ul id="results-container"></ul>
+    <ul class="results--container"></ul>
+
+  </div>
+  <div class="input-container">
+    <label for="search__fullview" class="hide search--label">Search IBM Bluemix Private Cloud Help</label>
+    <input type="text" id="search-input" placeholder="" name="search" class="search__minview--page">
+    <img src="/help-documentation/img/en/search.svg" class="search-icon" />
+  </div>
+</div>
+
+
+    <a href="mailto:llundquist@us.ibm.com" class="header--request">
+      <p>
+        Submit A Request
+      </p>
+      <img src="/help-documentation/img/en/user.svg">
+    </a>
+    <a id="nav-toggle" href="#"><span></span></a>
+
+    <div>
+  
+    
+      <a style="font-weight: bold;" href=" /help-documentation/horizon/launch-instance-from-horizon_newton/ ">en</a> |
+    
+      <a  href=" /help-documentation/fr/horizon/launch-instance-from-horizon_newton/ ">fr</a> |
+    
+      <a  href=" /help-documentation/de/horizon/launch-instance-from-horizon_newton/ ">de</a> |
+    
+      <a  href=" /help-documentation/ja/horizon/launch-instance-from-horizon_newton/ ">ja</a> |
+    
+      <a  href=" /help-documentation/zh_CN/horizon/launch-instance-from-horizon_newton/ ">zh_CN</a> |
+    
+      <a  href=" /help-documentation/zh_TW/horizon/launch-instance-from-horizon_newton/ ">zh_TW</a> |
+    
+      <a  href=" /help-documentation/pt_BR/horizon/launch-instance-from-horizon_newton/ ">pt_BR</a> |
+    
+  
+</div>
+
+  </div>
+
+</header>
+
+  
+
+  
+  <div class="page-content">
+  
+
+      <div class="main-wrapper">
+        
+<div class="sidebar sidebar--toggled">
+  <ul class="sidebar__nav">
+    <li>
+      <h3 class="title">
+        
+        
+        
+        <a  class="page-link"  href="/help-documentation/gettingstarted">Getting Started (38)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Common Technical Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/connect-to-openvpn-server/">Connecting to your OpenVPN server</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/openvpn-setup/">Setting up OpenVPN server on your instance</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/blue-box-cloud-components/">Bluemix Private Cloud Components</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/detaching-volume/">What Should I Do Prior to Detaching a Volume?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/python-environment-primer/">Virtual python environments and you: A developer's primer</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/FAQ/">Technical FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Building_Blocks/">IBM Bluemix Private Cloud Building Blocks (Community Edition)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Building_Blocks/">Building Blocks for IBM Bluemix Private Cloud with Red Hat</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Product_Overview/">IBM Bluemix Private Cloud with Red Hat - Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/general_product_overview/">General Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Instance_Resize/">Resizing an Instance (Non-live)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Connecting_Clouds_with_SoftLayer/">Set Up Network Connectivity Between Multiple Cloud Environments, Using the Private Network</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Windows_License_Activation/">Customer Guide for Windows Activation</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 7 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Common Administrative Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/adding-removing-subscribers/">Adding or removing subscribers to a ticket</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/view-my-bill/">How do I view my bill?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/report-issue/">How do I report an issue?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/escalating-a-ticket/">How do I escalate a ticket?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/status-pages/">Bluemix Private Cloud Status Pages</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/Transferring_A_Domain_From_Blue_Box/">Transferring A Domain From Blue Box</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 2 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">User Guides</h5>
+        
+        
+          
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Box_Panel/">Box Panel User Guide</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Eternal_Blue-ish_Triangle/">Box Panel, Site Controller, and IBM Bluemix Private Cloud Local</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/qemu_article/">Building Up to OpenStack — QEMU and Your Cloud</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Improving_Cloud_Performance/">Building Up to OpenStack II -- Improving Cloud Performance</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Optimized_Load_Balancing/">Cloud 101 -- Optimized Load Balancing</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_RHOSP/">User's Guide to Cloud Images (IBM Bluemix Private Cloud with Red Hat)</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/">User's Guide to Cloud Images (Community Edition)</a>
+                  </li>
+              
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Image_Release_Notes/">IBM Bluemix Private Cloud Image Release Notes</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 4 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Release Notes</h5>
+        
+        
+          
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.1_Point_Release/">Customer 3.0.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.1_Point_Release/">Customer 3.1.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0c_Release_Notes/">Release Notes 4.0.0.0c</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0r_Release_Notes/">Release Notes 4.0.0.0r</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_2.1.1_Point_Release/">Release Notes 2.1.1</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/release_notes_2.1_for_customers/">Release Notes 2.1</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.0_Release_Notes/">Release Notes 3.0.0</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.0_Release_Notes/">Release Notes 3.1.0</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 6 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/troubleshooting">Troubleshooting (19)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/libvirt_error/">Instance in error status: libvirt error</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ssh-too-long-error/">Why does it take 4-5 seconds to SSH to my instance?</a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ping-instance-error/">Why can't I SSH to an instance, or ping it?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/nova-microversions-error/">Error: 'Server doesn't support microversions' When Running Nova Commands</a>
+          </li>
+          
+        
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Bad_Availability_Zone/">Cloud Foundry: Invalid Availability Zone Error</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failed_to_create_router/">Attempt to Create a Router is Failing</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/How_many_connections_can_HAProxy_handle/">How Many Simultaneous Connections can HAProxy Handle?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/CLI-authentication-error/">When using any of the OpenStack CLIs on Windows, I get authentication failure errors</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/floating-ips-error/">Why are all the floating IPs that were assigned to me not available?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/horizon-delete-error/">Why can't I delete my project/tenant from the Horizon dashboard?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/no-valid-host-error/">Error: No valid host was found</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Cannot_See_New_vCPUs/">Why Can't I See My New vCPUs Listed in Horizon?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failure_prepping_block_device/">Error: Failure prepping block device</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/delete_security_group/">Why Can’t I Delete A Security Group?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/Troubleshooting_FAQ/">Troubleshooting FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Unable_to_ping_tenant_network/">Why Can't I Ping Across My Tenant Networks?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Why_No_vIP_Failover_With_L2pop/">Why can't I use L2pop when I want my vIP instances to failover?</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 11 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/openstack">Open Stack (15)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">User Docs</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/launch-instance-from-volume/">How to Launch an Instance from a Volume</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/import-vhd-image-lvm/">Importing a VHD image that uses linux volume management for its root directory</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/OpenStack_network_concepts/">OpenStack Network Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating-an-Instance-with-a-Specific-Fixed-IP/">Creating an Instance with a Specific Fixed IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Mitaka_CLI_notes/">OpenStack Mitaka CLI Notes</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/Why-Choose-OpenStack/">Why Choose OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/openstack-storage-concepts/">OpenStack Storage Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Ursula_and_OpenStack/">Ursula and OpenStack</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating_Instances_With_Static_IP/">How to Create An Instance With Static IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/quotas/">Quotas</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/How_to_Isolate_Tenants/">How to Isolate Tenants (Projects)</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/external-reference-material/">External reference materials</a>
+          </li>
+          
+        
+        <li><a href="" class="page-link view">View More ( 3 )</a></li>
+      </ul>
+
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">API</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/floating-ip-address/">Creating a floating IP address using the OpenStack API</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/openstack-api-getting-started/">Getting Started with the OpenStack API</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/api/OpenStack_Client_Versions/">Requirements for OpenStack client versions</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 1 )</a></li>
+      </ul>
+    </li>
+
+
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/horizon">Horizon [GUI] (10)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/creating-additional-networks-with-horizon/">Creating Additional Networks in OpenStack Using the Horizon Panel</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Making_Snapshots_in_Horizon/">Using Horizon for Snapshots</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/allocate-floating-ip/">Allocating and Attaching a Public (Floating) IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/create-volume-from-horizon/">Creating a volume from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/horizon-for-administrators/">Horizon for Administrators</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/launch-instance-from-horizon/">Launching an instance from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            <li>
+                <a class="page-link--active"  href="/help-documentation/horizon/launch-instance-from-horizon_newton/">Launching an instance from the Horizon dashboard (OpenStack Newton release)</a>
+            </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/set-reverse-dns/">How do I set a reverse DNS (PTR) record for an IBM Bluemix Private Cloud instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/using-horizon/">Using Horizon</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Horizon_troubleshooting_FAQ/">Horizon Troubleshooting FAQ</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/nova">Nova [Compute] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/windows-user-and-password/">How do I set an initial username and password on a Windows instance in OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/nova_live_migration/">Instance Live Migration</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/CLI-create-public-instance/">How to Create an Instance and Make it Available Publicly Using the Command Line</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Nova_boot_speed/">What happens behind the scenes when I boot a virtual machine, and how can I make it boot faster?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Restrict_Floating_IP/">How Can I Restrict Floating IPs?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/config_drive_for_instances/">Can I create an instance and add files to it using config drive?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/create-vm-with-volumes/">How can I create an instance with the Nova command line client?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/define-flavor-vcpu/">How can I define flavor vCPU topology?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/deploy-to-specific-hypervisor/">How to deploy an instance to a specific hypervisor node</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/maximum-flavor-spec/">What is the maximum spec I can set for a flavor?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/migrate-instance/">Migrating an instance to a new cloud</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Metadata_service_FAQ/">Metadata Service in OpenStack Neutron and Nova</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/hypervisor-statistics/">How can I get hypervisor statistics?</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/neutron">Neutron [Networking] (22)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/network_ip_availability/">How Can I Check My Network IP Availability?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/isolatetwoprojectnetworksconnectedtoonesharedrouter/">How can you isolate project networks connected to a shared router?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/time-ip-associated-with-instance/">How can I find the time a floating IP was associated or disassociated from an instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Load_Balancing_Methods/">Load Balancing Methods</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Multi-tier_Router_Configuration/">Multi-tier Router Configuration Within Your IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/set-up-dns-records/">How do I set up DNS records pointing to OpenStack instances?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/routing_internal_traffic_between_projects/">Routing Internal Traffic Between Projects</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/add-ip-to-instance/">Add a Specific Fixed Private IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-dns.for-instances/">Configuring DNS for Instances</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/configure-multi-nics/">Configuring multiple network interfaces for your own cloud images</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-ha-ip/">How to configure a highly-available IP</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/creating-virtual-networks/">Creating virtual networks on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/when_create_port_fails/">When creating port failed, how could I do ?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_Can_I_See_My_IPs/">How Can I See My IPs?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_to_update_DNS/">How Can I Update DNS?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/vpn-vlan-directlink/">VPN, VLAN, and Direct Link</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/BYOFIP_support/">Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Intro_to_LBaaS/">Introduction to Load Balancer as a Service (LBaaS)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Security_groups_CLI/">Using the CLI to Set Up Security Groups</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/Network_Use_Cases_White_Paper/">IBM Blue Box Network Use Cases</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Where_Are_These_IPs/">Where Are the First Two IPs?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/glance">Glance [Images] (6)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/glance/FAQ_Working_with_Windows_Images/">Working with Windows Images FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/compatible-glance-images/">Is there a list of official OpenStack-compatible images that I can download for use with Glance? (CentOS, Ubuntu, etc.)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/disk-capacity-constraints/">Disk Capacity Constraints</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/Image_Properties_on_Power/">Optimal Settings for Glance Images on Power Compute</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/imagesnapshot/">Difference Between Image and Snapshot</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/cinder">Cinder [Block Storage] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/read-only-cinder-error/">What causes read-only Cinder volumes and how can I fix them?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/cinder-volume-stuck/">Cinder Volume Stuck</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/alternative_method_for_volume_encryption/">Alternative Method For Block Storage Volume Encryption (using an Ubuntu Guest VM)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Bug_Creating_Encrypted_Volumes/">Creating Encrypted Volumes with Cinder is Not Supported</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/Managing_block_storage/">Managing Block Storage</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cli-create-volume/">Creating a volume with the command line</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/create-volume-from-snapshot/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/resize_cinder_volume/">How Can I Resize a Cinder Volume?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/supported_volume_types/">Which Cinder Volume Types are supported in Cloud Instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Ephemeral_to_Cinder/">How to Move from Ephemeral Disk to Cinder Storage</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/volume_clone/">Can I enable volume full clone more than copy-on-write clone?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Force_snapshot_on_attached_volume/">How to Force a Snapshot on an Attached Volume</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cinder-failed-connection-error/">What do I do if the Cinder client returns 'ERROR: Unable to establish connection' message and fails to connect?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/keystone">Keystone [Identity] (8)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/oidc-federation/">OpenID Connect Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/saml-federation/">Keystone SAML Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/RBAC_Definitions/">Role-Based Access Control</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/Managing_Users_and_Projects/">Managing Users and Projects</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/k2k-federation/">Keystone to Keystone (K2K) Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/tenants-security-groups-keystone/">Projects and Security Groups</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/custom-domains-keystone/">Custom Domains within Keystone V3</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/keystone/Getting_Started_with_K2K_Identity/">Getting Started with Keystone Federated Identity</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/heat">Heat [Orchestration] (7)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Getting_Started_With_Heat/">Getting Started With Heat Templates</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/autoscaling-with-heat/">Using Heat for autoscaling</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Deploying_apps_with_UCD/">Deploying Applications with IBM UrbanCode Deploy and IBM Bluemix Private Cloud</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_load_balancer/">Using Heat for provisioning servers with a load balancer</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using-ucd-ucdp/">Using IBM Urban Code Deploy with IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_deployment/">Using Heat With a Self-signed Certificate</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/ceilometer">Ceilometer [Telemetry] (1)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/ceilometer/compatible-glance-images/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+
+<article>
+
+  <div class="page-container">
+
+    <div class="main-content">
+      <header class="post-header">
+
+        <h1 class="post-title">
+        
+
+        
+
+        Launching an instance from the Horizon dashboard (OpenStack Newton release)
+
+        
+        </h1>
+
+
+
+
+        
+        <div class="post-data">
+          <img src='/help-documentation/img/en/avatar.png' />
+          <ul class="author--info">
+            <li>
+              <span class="author">by Ying Tang </span>
+              <span class="dot">&#9679;</span>
+              <span class="date"> March 31, 2017</span>
+            </li>
+            <li>
+              <span class="job-title"></span>
+            </li>
+            <li class="tags">
+              
+                <h4>Tags:</h4>
+                  <ul class="tag--list">
+                  
+                    <li class="tag"><p>horizon</p></li>
+                  
+                    <li class="tag"><p>instance</p></li>
+                  
+                    <li class="tag"><p>launch</p></li>
+                  
+                    <li class="tag"><p>newton</p></li>
+                  
+                    <li class="tag"><p>rhosp</p></li>
+                  
+                  </ul>
+              
+            </li>
+          </ul>
+        </div>
+        
+      </header>
+
+      <div class="post-content">
+        <h3 id="steps">Steps</h3>
+<ol>
+  <li>Log in to the Horizon dashboard.</li>
+  <li>Under the <strong>Project</strong> topic, expand <strong>Compute</strong> and click <strong>Instances</strong>. If you have existing instances, you can view a list of your instances with their details, such as name, IP address, and status. For information about managing your instances, please see <a href="#manage-instance">How to manage your instances</a>.</li>
+  <li>Click <strong>Launch Instance</strong> on the upper right portion of the Horizon dashboard. The <strong>Launch Instance</strong> dialog is displayed.</li>
+</ol>
+
+<p><img src="/help-documentation/img/en/Launch_Instance.png" alt="Launch an instance" /></p>
+
+<p>Navigate through the following tabs and provide the values, then click <strong>Launch Instance</strong> on the lower right side of the dialog box.</p>
+
+<h3 id="fill-in-values-in-the-launch-instance-dialog-box">Fill in values in the Launch Instance dialog box</h3>
+
+<h4 id="the-details-tab">The Details tab</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Values</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Instance Name</td>
+      <td>Assign a name to your virtual machine. The name that you assign here becomes the initial host name of the server. Server names are not guaranteed to be unique when created, thus you could have two instances with the same host name.</td>
+    </tr>
+    <tr>
+      <td>Availability Zone</td>
+      <td>By default, this value is set to the Availability Zone (AZ) given by the cloud provider, for example, <code class="highlighter-rouge">compute_standard</code>.</td>
+    </tr>
+    <tr>
+      <td>Count</td>
+      <td>To launch multiple instances, enter a value greater than 1. The default is 1.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_details.png" alt="The Details tab" /></p>
+
+<p>To continue, click <strong>Next</strong> or click on the <strong>Source</strong> tab.</p>
+
+<h4 id="the-source-tab">The Source tab</h4>
+
+<p>The <strong>Select Boot Source</strong> field offers these options:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Options</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Image</td>
+      <td>Make a selection from the list of private and public images in the <strong>Available</strong> table, then click the plus sign (+) to move it to <strong>Allocated</strong>. Optionally, you can click <strong>Yes</strong> on <strong>Create New Volume</strong> to enable more volume creation options. If you’ve created a new volume with this instance, you can click <strong>Yes</strong> on the <strong>Delete Volume on Instance Delete</strong> option if you want to delete this volume when the instance is terminated.</td>
+    </tr>
+    <tr>
+      <td>Instance Snapshot</td>
+      <td>Make a selection from the snapshots in the <strong>Available</strong> table, and click the plus sign (+) to move it to <strong>Allocated</strong>.</td>
+    </tr>
+    <tr>
+      <td>Volume</td>
+      <td>Make a selection from the volumes in the <strong>Available</strong> table, then click the plus sign (+) to move it to <strong>Allocated</strong>. Optionally, you can click <strong>Yes</strong> on the <strong>Delete Volume on Instance Delete</strong> option to delete this volume when the instance is terminated.</td>
+    </tr>
+    <tr>
+      <td>Volume Snapshot</td>
+      <td>Make a selection from the volume snapshots in the <strong>Available</strong> table, then click the plus sign (+) to move it to <strong>Allocated</strong>. Optionally, you can click <strong>Yes</strong> on the <strong>Delete Volume on Instance Delete</strong> option to delete this volume when the instance is terminated.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_source_image.png" alt="The Source tab" /></p>
+
+<p><strong>Note:</strong> The <strong>Image</strong> option is set by default, so you don’t have to select one before booting. If you use the <strong>Image</strong> option, you can select from the public images provided by IBM, or you can upload and use your own image. For information about how to upload an image to IBM Bluemix Private Cloud, see <a href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/">Cloud images provided by IBM Bluemix Private Cloud</a>.</p>
+
+<h4 id="the-flavor-tab">The Flavor tab</h4>
+
+<p>Make a selection from the list of flavors, then click the plus sign (+) to move it to <strong>Allocated</strong>.</p>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_flavor.PNG" alt="The Flavor tab" /></p>
+
+<h4 id="the-networks-tab">The Networks tab</h4>
+
+<p>Make a selection from the list of networks, then click the plus sign (+) to move it to <strong>Allocated</strong>. You can allocate multiple networks to the instance.</p>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_network.png" alt="The Flavor tab" /></p>
+
+<h4 id="the-network-ports-tab">The Network Ports tab</h4>
+
+<p>If you do not specify any network port, a default one is assigned to the instance when the instance is created and booted.</p>
+
+<p>Occasionally, you may need to create ports beforehand through APIs. After you create a port and associate it with one of the networks that you’ve selected in the
+ <strong>Networks</strong> tab, you’ll be able to view this port in the <strong>Available</strong> table. You can click the plus sign (+) to move it to <strong>Allocated</strong>.</p>
+
+<p><img src="/help-documentation/img/en/launch_instance_port.png" alt="The Flavor tab" /></p>
+
+<h4 id="the-security-groups-tab">The Security Groups tab</h4>
+
+<p>Make a selection from the list of security groups, then click the plus sign (+) to move it to <strong>Allocated</strong>.</p>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_srg.png" alt="The Security Group tab" /></p>
+
+<h4 id="the-key-pair-tab">The Key Pair tab</h4>
+
+<p>Specify a key pair. You have the following options:</p>
+
+<ul>
+  <li>Select from a list of stored key pairs, then click the plus sign (+) to move your selection to <strong>Allocated</strong>.</li>
+  <li>Click <strong>Import Key Pair</strong> to import your own key pair. Copy and paste your public key, then click <strong>Import Key Pair</strong>.</li>
+  <li>
+    <p>Click <strong>Create Key Pair</strong> to create and store a new key pair. Specify the key pair name, then click <strong>Create Key Pair</strong>.</p>
+
+    <p><img src="/help-documentation/img/en/launch_instance_kp.PNG" alt="Create a new key pair" /></p>
+
+    <p>You’ll be promoted to save the new key pair to the local host.</p>
+
+    <p><img src="/help-documentation/img/en/newton_launch_instance_kp_new.PNG" alt="Create a new key pair and save" /></p>
+  </li>
+</ul>
+
+<h4 id="the-configuration-tab">The Configuration tab</h4>
+
+<p>Custom scripts attached to instances can perform specific actions when the instance is launched. You can type your script directly into the <strong>Customization Script</strong> field.</p>
+
+<p><strong>For Linux instances:</strong> The default username is <code class="highlighter-rouge">ibmcloud</code>. To enable password authentication through console and SSH, use the following script data for the Customization Script (substitute the relevant <em>password</em> in place of <code class="highlighter-rouge">&lt;YOUR_PASSWORD&gt;</code>):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#cloud-config password: &lt;YOUR_PASSWORD&gt; chpasswd: { expire: False } ssh_pwauth: True
+</code></pre>
+</div>
+
+<p><strong>For Windows instances:</strong> To set up your initial username and password, use the following script data for the Customization Script (substitute the relevant <em>username</em> and <em>password</em> in place of <code class="highlighter-rouge">&lt;YOUR_USERNAME&gt;</code> and <code class="highlighter-rouge">&lt;YOUR_PASSWORD&gt;</code>).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rem cmd
+net user &lt;YOUR_USERNAME&gt; &lt;YOUR_PASSWORD&gt; /logonpasswordchg:yes /add /y
+net localgroup administrators &lt;YOUR_USERNAME&gt; /add
+</code></pre>
+</div>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_script.PNG" alt="Custom script" /></p>
+
+<p>If your browser supports the <strong>HTML5 File API</strong>, you may click <strong>Browse</strong> to load your script from a file. The size of your script should not exceed <strong>16 Kb</strong>.</p>
+
+<p>In the <strong>Disk Partition</strong> drop-down menu, you can select <strong>Automatic</strong> to resize the disk and set it to a single partition, or you can select <strong>Manual</strong> to create multiple partitions on the disk.</p>
+
+<p>Select the <strong>Configuration Drive</strong> checkbox if you want to write metadata to a special configuration drive, then specify your metadata in the <strong>Metadata</strong> tab. When the instance boots, it attaches to the configuration drive for access to your metadata.</p>
+
+<h4 id="the-server-groups-tab">The Server Groups tab</h4>
+
+<p>Server groups can be used to control the affinity and anti-affinity scheduling policy for a group of servers (instances).</p>
+
+<p>Occasionally, you may need to create server groups beforehand through APIs. After you create a server group you’ll be able to view this server group in the <strong>Available</strong> table. You can click the plus sign (+) to move it to <strong>Allocated</strong>.</p>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_servergroup.png" alt="Server Groups" /></p>
+
+<h4 id="the-scheduler-hints-tab">The Scheduler Hints tab</h4>
+
+<p>The scheduler hints can be used to pass additional placement related information to the Nova scheduler. For example, you can use a scheduler hint to ensure that an instance is scheduled on to a host from a certain server group. You can also construct a custom scheduler hint in JSON format. For more details about the scheduling mechanism and the supported hint types, see <a href="https://docs.openstack.org/newton/config-reference/compute/schedulers.html">Compute Schedulers</a>.</p>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_hints.png" alt="Scheduler Hints" /></p>
+
+<h4 id="the-metadata-tab">The Metadata tab</h4>
+
+<p>Glance provides a common API to define key and value pairs that tag metadata for different types of resources (images, artifacts, volumes, flavors, aggregates, and so on). If the image that you select contains pre-defined metadata, you’ll see that in the <strong>Available metadata</strong> column.</p>
+
+<p>You can create additional key and value pairs in the <strong>Custom</strong> field and click the plus sign (+) to move them to the <strong>Existing metadata</strong> list. For example, custom metadata is a parameter that you’d want to pass to the application, so it can be installed with the instance.</p>
+
+<p><img src="/help-documentation/img/en/newton_launch_instance_meta.PNG" alt="Custom meta" /></p>
+
+<p>For more information about Glance metadata, see <a href="http://docs.openstack.org/developer/glance/metadefs-concepts.html">Metadata Definition Concepts</a> and <a href="http://docs.openstack.org/developer/glance/glancemetadefcatalogapi.html">Using Glance’s Metadata Definitions Catalog Public APIs</a>.</p>
+
+<h2 id="how-to-connect-to-your-instance">How to connect to your instance</h2>
+
+<p><strong>Note:</strong> Be sure that proper security group rules are defined for connecting to your instance over <code class="highlighter-rouge">ssh</code> or <code class="highlighter-rouge">rdp</code>.</p>
+
+<ol>
+  <li>
+    <p>Log into the IBM Bluemix Private Cloud Horizon dashboard.</p>
+  </li>
+  <li>
+    <p>Expand the <strong>Project</strong> panel, then the <strong>Compute</strong> tab in the left navigation area, and click on <strong>Instances</strong>.</p>
+  </li>
+  <li>
+    <p>Locate your instance in the list of running instances and note its IP address, such as <code class="highlighter-rouge">192.168.100.237</code>.</p>
+  </li>
+  <li>
+    <p>Create a connection to your instance by specifying its IP address.</p>
+  </li>
+</ol>
+
+<h3 id="connecting-to-linux-instances">Connecting to Linux instances</h3>
+
+<p>Connect to your instance through SSH or VNC. The default <code class="highlighter-rouge">userid</code> for the Linux images provided by IBM is <strong>ibmcloud</strong>. Once you’ve connected to your Linux instance, you can use the <code class="highlighter-rouge">sudo</code> command to execute commands that normally require root access. Sudo is configured not to require a password for the default <code class="highlighter-rouge">userid</code>.</p>
+
+<ul>
+  <li>
+    <p>Using your favorite SSH client, open a connection to the correct IP address of the VM instance, employing the private SSH key of the keypair that you specified during provisioning:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  ssh -i &lt;path_of_Your_SSH_private_key_file&gt; &lt;userid&gt;@&lt;ip_of_instance&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>From the IBM Bluemix Private Cloud Horizon dashboard, view the VNC console of the instance by clicking <strong>Console</strong> from the drop-down list in the <strong>Actions</strong> column of the instance. The VNC console connects you with HTTPS.</p>
+  </li>
+</ul>
+
+<p><strong>Note:</strong> To log in to a new Linux instance, via the console, as <code class="highlighter-rouge">ibmcloud</code> user, you must have specified a password previously, in the Customization Script during provisioning.</p>
+
+<h3 id="connecting-to-windows-instances">Connecting to Windows instances</h3>
+
+<p>Connect to your instance through Remote Desktop or VNC. You’ll need to use the <code class="highlighter-rouge">userid</code> and <code class="highlighter-rouge">password</code> you specified in the Customization Script during VM provisioning. On your first login, a prompt appears, requesting that you change your password. Please do.</p>
+
+<ul>
+  <li>Use your favorite Remote Desktop client to connect.</li>
+  <li>From the IBM Bluemix Private Cloud Horizon dashboard, view the VNC console of the instance by clicking <strong>Console</strong> from the drop-down list in the <strong>Actions</strong> column of the instance. The VNC console connects you with HTTPS.</li>
+</ul>
+
+<h2 id="how-to-manage-your-instances"><a name="manage-instance"></a>How to manage your instances</h2>
+
+<p>Under the <strong>Project</strong> topic, expand <strong>Compute</strong> and click <strong>Instances</strong>.</p>
+
+<p>The dashboard displays the list of instances for the current project. In the Actions column, a drop-down list displays your options, as shown below:</p>
+
+<p><img src="/help-documentation/img/en/launch_instance_more.png" alt="Instance options" /></p>
+
+<ul>
+  <li><strong>Creates snapshot:</strong> creates a snapshot of the instance.*</li>
+  <li><strong>Associate Floating IP:</strong> associates an available floating IP to a port of your instance.</li>
+  <li><strong>Attach an Interface:</strong> attaches the interface to a network.</li>
+  <li><strong>Detach an Interface:</strong> removes a port that you created for the instance.</li>
+  <li><strong>Edit instance:</strong> changes the instance name, or uploads the security groups.</li>
+  <li><strong>Update metedata:</strong> updates the custom metadata that you specified for the instance.</li>
+  <li><strong>Edit Security Groups:</strong> removes an existing security group or assigns a new security group.</li>
+  <li><strong>Console:</strong> views the VNC console of the instance.</li>
+  <li><strong>View Log:</strong> views the instance log.</li>
+  <li><strong>Pause instance:</strong> pauses the instance and saves its state in memory. This option keeps the resources (vCPUs and memory).</li>
+  <li><strong>Suspend instance:</strong> suspends the instance and saves its state to the disk. This option frees up resources (vCPUs and memory).</li>
+  <li><strong>Shelve instance:</strong> shelves the image and shuts down the instance.</li>
+  <li><strong>Resize instance:</strong> updates the flavor setting of the instance.</li>
+  <li><strong>Lock instance:</strong> locks the instance.</li>
+  <li><strong>Unlock instance:</strong> unlocks the instance.</li>
+  <li><strong>Soft Reboot Instance:</strong> performs a graceful shutdown and restart of the instance.</li>
+  <li><strong>Hard Reboot Instance:</strong> performs the equivalent of a power reset of the server.</li>
+  <li><strong>Shut off Instance:</strong> performs a power off the instance.</li>
+  <li><strong>Rebuild Instance:</strong> rebuilds the instance with another image.</li>
+  <li><strong>Delete Instance:</strong> delete the instance.</li>
+</ul>
+
+<p>Click the option for the operation you need to apply.</p>
+
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="footer__wrapper--light">
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Products</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-local" class="nav--item__link">Private Cloud Local</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="nav--item__link">Sales</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-faq" class="nav--item__link">FAQs</a>
+      </li>
+    
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Our Story</a>
+      </li>
+ <li class="footer--nav__item">
+        <a href="https://github.com/blueboxgroup?cm_mc_uid=04946053248414876234663&cm_mc_sid_50200000=1489010497" class="nav--item__link">On GitHub</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://blueboxstatus.com/" class="nav--item__link">System Status</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Support</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Box Panel</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Resources
+        </a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Case Studies</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Videos</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">News</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="hhttps://www.ibm.com/blogs/bluemix/">Recent Blog Posts</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/the-power-of-openstack/" class="nav--item__link">The Power of OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/08/blue-box-storage-models-explained/" class="nav--item__link">IBM Bluemix Private Cloud Storage Models</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.blueboxcloud.com/insight/blog-article/github-ibm-com-running-on-blue-box" class="nav--item__link">IBM Github Runs on Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/10/building-up-to-openstack/" class="nav--item__link">Building up to OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/keystone-to-keystone-federated-identity-on-blue-box-cloud/" class="nav--item__link">Get Started with Keystone Federation</a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer__wrapper--dark">
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.facebook.com/BlueBoxGroup/" class="list--item__link">Facebook</a>
+      </li>
+      <li class="list--item">
+        <a href="https://twitter.com/bluebox?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="list--item__link">Twitter</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.linkedin.com/company/blue-box-group" class="list--item__link">LinkedIn</a>
+      </li>
+      <li class="list--item">
+        <a href="https://plus.google.com/+BlueBoxSeattle/posts" class="list--item__link">Google +</a>
+      </li>
+      <li class="list--item">
+        <a href="https://github.com/blueboxgroup" class="list--item__link">GitHub</a>
+      </li>
+    </ul>
+
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="list--item__link">Contact</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Legal</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Privacy Policy</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Terms and Conditions</a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="footer__wrapper--black">
+    <p>
+        &copy; 2017 IBM Bluemix
+    </p>
+  </div>
+</footer>
+
+
+
+    <script src="/help-documentation/js/vendor/simple-jekyll-search.js" type="text/javascript"></script>
+
+
+    <script>
+        SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/help-documentation/search.json',
+          searchResultTemplate: '<li class="search-item"><a href="{url}" class="item-title">{title}</a><ul class="tag--list">{tags}</ul></li>'
+        });
+    </script>
+  <script src="/help-documentation/js/scripts.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Keystone to Keystone (K2K) Federation on IBM Bluemix Private Cloud</title>
+  <meta name="description" content="  What is K2K Federation?  Managing Groups  Managing Mappings  Using Horizon  Using the Python API Libraries  More Mappings and Groups">
+
+  <link rel="stylesheet" href="/help-documentation/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/help-documentation/keystone/k2k-federation/">
+  <link rel="alternate" type="application/rss+xml" title="Blue Box Help" href="http://localhost:4000/help-documentation/feed.xml">
+  
+  <style>
+   .site-header img:first-child {
+       height: 72px;
+}
+</style>
+  
+</head>
+
+
+  <body>
+
+  
+    <header class="site-header">
+
+  <div class="header-wrapper">
+
+    <a class="site-title" href="/help-documentation/"><img src="/help-documentation/img/en/Bluemix-logo-UI.svg" alt="" height="72px"></a>
+
+    <div class="search--pageview">
+
+  <div class="full-view__search hide">
+    <a href="" class="x hide">X</a>
+    <ul id="results-container"></ul>
+    <ul class="results--container"></ul>
+
+  </div>
+  <div class="input-container">
+    <label for="search__fullview" class="hide search--label">Search IBM Bluemix Private Cloud Help</label>
+    <input type="text" id="search-input" placeholder="" name="search" class="search__minview--page">
+    <img src="/help-documentation/img/en/search.svg" class="search-icon" />
+  </div>
+</div>
+
+
+    <a href="mailto:llundquist@us.ibm.com" class="header--request">
+      <p>
+        Submit A Request
+      </p>
+      <img src="/help-documentation/img/en/user.svg">
+    </a>
+    <a id="nav-toggle" href="#"><span></span></a>
+
+    <div>
+  
+    
+      <a style="font-weight: bold;" href=" /help-documentation/keystone/k2k-federation/ ">en</a> |
+    
+      <a  href=" /help-documentation/fr/keystone/k2k-federation/ ">fr</a> |
+    
+      <a  href=" /help-documentation/de/keystone/k2k-federation/ ">de</a> |
+    
+      <a  href=" /help-documentation/ja/keystone/k2k-federation/ ">ja</a> |
+    
+      <a  href=" /help-documentation/zh_CN/keystone/k2k-federation/ ">zh_CN</a> |
+    
+      <a  href=" /help-documentation/zh_TW/keystone/k2k-federation/ ">zh_TW</a> |
+    
+      <a  href=" /help-documentation/pt_BR/keystone/k2k-federation/ ">pt_BR</a> |
+    
+  
+</div>
+
+  </div>
+
+</header>
+
+  
+
+  
+  <div class="page-content">
+  
+
+      <div class="main-wrapper">
+        
+<div class="sidebar sidebar--toggled">
+  <ul class="sidebar__nav">
+    <li>
+      <h3 class="title">
+        
+        
+        
+        <a  class="page-link"  href="/help-documentation/gettingstarted">Getting Started (38)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Common Technical Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/connect-to-openvpn-server/">Connecting to your OpenVPN server</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/openvpn-setup/">Setting up OpenVPN server on your instance</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/blue-box-cloud-components/">Bluemix Private Cloud Components</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/detaching-volume/">What Should I Do Prior to Detaching a Volume?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/python-environment-primer/">Virtual python environments and you: A developer's primer</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/FAQ/">Technical FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Building_Blocks/">IBM Bluemix Private Cloud Building Blocks (Community Edition)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Building_Blocks/">Building Blocks for IBM Bluemix Private Cloud with Red Hat</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Product_Overview/">IBM Bluemix Private Cloud with Red Hat - Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/general_product_overview/">General Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Instance_Resize/">Resizing an Instance (Non-live)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Connecting_Clouds_with_SoftLayer/">Set Up Network Connectivity Between Multiple Cloud Environments, Using the Private Network</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Windows_License_Activation/">Customer Guide for Windows Activation</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 7 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Common Administrative Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/adding-removing-subscribers/">Adding or removing subscribers to a ticket</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/view-my-bill/">How do I view my bill?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/report-issue/">How do I report an issue?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/escalating-a-ticket/">How do I escalate a ticket?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/status-pages/">Bluemix Private Cloud Status Pages</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/Transferring_A_Domain_From_Blue_Box/">Transferring A Domain From Blue Box</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 2 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">User Guides</h5>
+        
+        
+          
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Box_Panel/">Box Panel User Guide</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Eternal_Blue-ish_Triangle/">Box Panel, Site Controller, and IBM Bluemix Private Cloud Local</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/qemu_article/">Building Up to OpenStack — QEMU and Your Cloud</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Improving_Cloud_Performance/">Building Up to OpenStack II -- Improving Cloud Performance</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Optimized_Load_Balancing/">Cloud 101 -- Optimized Load Balancing</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_RHOSP/">User's Guide to Cloud Images (IBM Bluemix Private Cloud with Red Hat)</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/">User's Guide to Cloud Images (Community Edition)</a>
+                  </li>
+              
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Image_Release_Notes/">IBM Bluemix Private Cloud Image Release Notes</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 4 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Release Notes</h5>
+        
+        
+          
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.1_Point_Release/">Customer 3.0.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.1_Point_Release/">Customer 3.1.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0c_Release_Notes/">Release Notes 4.0.0.0c</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0r_Release_Notes/">Release Notes 4.0.0.0r</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_2.1.1_Point_Release/">Release Notes 2.1.1</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/release_notes_2.1_for_customers/">Release Notes 2.1</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.0_Release_Notes/">Release Notes 3.0.0</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.0_Release_Notes/">Release Notes 3.1.0</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 6 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/troubleshooting">Troubleshooting (19)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/libvirt_error/">Instance in error status: libvirt error</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ssh-too-long-error/">Why does it take 4-5 seconds to SSH to my instance?</a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ping-instance-error/">Why can't I SSH to an instance, or ping it?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/nova-microversions-error/">Error: 'Server doesn't support microversions' When Running Nova Commands</a>
+          </li>
+          
+        
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Bad_Availability_Zone/">Cloud Foundry: Invalid Availability Zone Error</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failed_to_create_router/">Attempt to Create a Router is Failing</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/How_many_connections_can_HAProxy_handle/">How Many Simultaneous Connections can HAProxy Handle?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/CLI-authentication-error/">When using any of the OpenStack CLIs on Windows, I get authentication failure errors</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/floating-ips-error/">Why are all the floating IPs that were assigned to me not available?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/horizon-delete-error/">Why can't I delete my project/tenant from the Horizon dashboard?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/no-valid-host-error/">Error: No valid host was found</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Cannot_See_New_vCPUs/">Why Can't I See My New vCPUs Listed in Horizon?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failure_prepping_block_device/">Error: Failure prepping block device</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/delete_security_group/">Why Can’t I Delete A Security Group?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/Troubleshooting_FAQ/">Troubleshooting FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Unable_to_ping_tenant_network/">Why Can't I Ping Across My Tenant Networks?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Why_No_vIP_Failover_With_L2pop/">Why can't I use L2pop when I want my vIP instances to failover?</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 11 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/openstack">Open Stack (15)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">User Docs</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/launch-instance-from-volume/">How to Launch an Instance from a Volume</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/import-vhd-image-lvm/">Importing a VHD image that uses linux volume management for its root directory</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/OpenStack_network_concepts/">OpenStack Network Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating-an-Instance-with-a-Specific-Fixed-IP/">Creating an Instance with a Specific Fixed IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Mitaka_CLI_notes/">OpenStack Mitaka CLI Notes</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/Why-Choose-OpenStack/">Why Choose OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/openstack-storage-concepts/">OpenStack Storage Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Ursula_and_OpenStack/">Ursula and OpenStack</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating_Instances_With_Static_IP/">How to Create An Instance With Static IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/quotas/">Quotas</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/How_to_Isolate_Tenants/">How to Isolate Tenants (Projects)</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/external-reference-material/">External reference materials</a>
+          </li>
+          
+        
+        <li><a href="" class="page-link view">View More ( 3 )</a></li>
+      </ul>
+
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">API</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/floating-ip-address/">Creating a floating IP address using the OpenStack API</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/openstack-api-getting-started/">Getting Started with the OpenStack API</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/api/OpenStack_Client_Versions/">Requirements for OpenStack client versions</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 1 )</a></li>
+      </ul>
+    </li>
+
+
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/horizon">Horizon [GUI] (10)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/creating-additional-networks-with-horizon/">Creating Additional Networks in OpenStack Using the Horizon Panel</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Making_Snapshots_in_Horizon/">Using Horizon for Snapshots</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/allocate-floating-ip/">Allocating and Attaching a Public (Floating) IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/create-volume-from-horizon/">Creating a volume from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/horizon-for-administrators/">Horizon for Administrators</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/launch-instance-from-horizon/">Launching an instance from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/launch-instance-from-horizon_newton/">Launching an instance from the Horizon dashboard (OpenStack Newton release)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/set-reverse-dns/">How do I set a reverse DNS (PTR) record for an IBM Bluemix Private Cloud instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/using-horizon/">Using Horizon</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Horizon_troubleshooting_FAQ/">Horizon Troubleshooting FAQ</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/nova">Nova [Compute] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/windows-user-and-password/">How do I set an initial username and password on a Windows instance in OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/nova_live_migration/">Instance Live Migration</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/CLI-create-public-instance/">How to Create an Instance and Make it Available Publicly Using the Command Line</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Nova_boot_speed/">What happens behind the scenes when I boot a virtual machine, and how can I make it boot faster?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Restrict_Floating_IP/">How Can I Restrict Floating IPs?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/config_drive_for_instances/">Can I create an instance and add files to it using config drive?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/create-vm-with-volumes/">How can I create an instance with the Nova command line client?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/define-flavor-vcpu/">How can I define flavor vCPU topology?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/deploy-to-specific-hypervisor/">How to deploy an instance to a specific hypervisor node</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/maximum-flavor-spec/">What is the maximum spec I can set for a flavor?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/migrate-instance/">Migrating an instance to a new cloud</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Metadata_service_FAQ/">Metadata Service in OpenStack Neutron and Nova</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/hypervisor-statistics/">How can I get hypervisor statistics?</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/neutron">Neutron [Networking] (22)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/network_ip_availability/">How Can I Check My Network IP Availability?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/isolatetwoprojectnetworksconnectedtoonesharedrouter/">How can you isolate project networks connected to a shared router?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/time-ip-associated-with-instance/">How can I find the time a floating IP was associated or disassociated from an instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Load_Balancing_Methods/">Load Balancing Methods</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Multi-tier_Router_Configuration/">Multi-tier Router Configuration Within Your IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/set-up-dns-records/">How do I set up DNS records pointing to OpenStack instances?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/routing_internal_traffic_between_projects/">Routing Internal Traffic Between Projects</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/add-ip-to-instance/">Add a Specific Fixed Private IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-dns.for-instances/">Configuring DNS for Instances</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/configure-multi-nics/">Configuring multiple network interfaces for your own cloud images</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-ha-ip/">How to configure a highly-available IP</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/creating-virtual-networks/">Creating virtual networks on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/when_create_port_fails/">When creating port failed, how could I do ?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_Can_I_See_My_IPs/">How Can I See My IPs?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_to_update_DNS/">How Can I Update DNS?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/vpn-vlan-directlink/">VPN, VLAN, and Direct Link</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/BYOFIP_support/">Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Intro_to_LBaaS/">Introduction to Load Balancer as a Service (LBaaS)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Security_groups_CLI/">Using the CLI to Set Up Security Groups</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/Network_Use_Cases_White_Paper/">IBM Blue Box Network Use Cases</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Where_Are_These_IPs/">Where Are the First Two IPs?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/glance">Glance [Images] (6)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/glance/FAQ_Working_with_Windows_Images/">Working with Windows Images FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/compatible-glance-images/">Is there a list of official OpenStack-compatible images that I can download for use with Glance? (CentOS, Ubuntu, etc.)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/disk-capacity-constraints/">Disk Capacity Constraints</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/Image_Properties_on_Power/">Optimal Settings for Glance Images on Power Compute</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/imagesnapshot/">Difference Between Image and Snapshot</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/cinder">Cinder [Block Storage] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/read-only-cinder-error/">What causes read-only Cinder volumes and how can I fix them?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/cinder-volume-stuck/">Cinder Volume Stuck</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/alternative_method_for_volume_encryption/">Alternative Method For Block Storage Volume Encryption (using an Ubuntu Guest VM)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Bug_Creating_Encrypted_Volumes/">Creating Encrypted Volumes with Cinder is Not Supported</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/Managing_block_storage/">Managing Block Storage</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cli-create-volume/">Creating a volume with the command line</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/create-volume-from-snapshot/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/resize_cinder_volume/">How Can I Resize a Cinder Volume?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/supported_volume_types/">Which Cinder Volume Types are supported in Cloud Instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Ephemeral_to_Cinder/">How to Move from Ephemeral Disk to Cinder Storage</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/volume_clone/">Can I enable volume full clone more than copy-on-write clone?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Force_snapshot_on_attached_volume/">How to Force a Snapshot on an Attached Volume</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cinder-failed-connection-error/">What do I do if the Cinder client returns 'ERROR: Unable to establish connection' message and fails to connect?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/keystone">Keystone [Identity] (8)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/oidc-federation/">OpenID Connect Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/saml-federation/">Keystone SAML Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/RBAC_Definitions/">Role-Based Access Control</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/Managing_Users_and_Projects/">Managing Users and Projects</a>
+              </li>
+            
+          
+        
+          
+            
+            <li>
+                <a class="page-link--active"  href="/help-documentation/keystone/k2k-federation/">Keystone to Keystone (K2K) Federation on IBM Bluemix Private Cloud</a>
+            </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/tenants-security-groups-keystone/">Projects and Security Groups</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/custom-domains-keystone/">Custom Domains within Keystone V3</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/keystone/Getting_Started_with_K2K_Identity/">Getting Started with Keystone Federated Identity</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/heat">Heat [Orchestration] (7)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Getting_Started_With_Heat/">Getting Started With Heat Templates</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/autoscaling-with-heat/">Using Heat for autoscaling</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Deploying_apps_with_UCD/">Deploying Applications with IBM UrbanCode Deploy and IBM Bluemix Private Cloud</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_load_balancer/">Using Heat for provisioning servers with a load balancer</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using-ucd-ucdp/">Using IBM Urban Code Deploy with IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_deployment/">Using Heat With a Self-signed Certificate</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/ceilometer">Ceilometer [Telemetry] (1)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/ceilometer/compatible-glance-images/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+
+<article>
+
+  <div class="page-container">
+
+    <div class="main-content">
+      <header class="post-header">
+
+        <h1 class="post-title">
+        
+
+        
+
+        Keystone to Keystone (K2K) Federation on IBM Bluemix Private Cloud
+
+        
+        </h1>
+
+
+
+
+        
+        <div class="post-data">
+          <img src='/help-documentation/img/en/avatar.png' />
+          <ul class="author--info">
+            <li>
+              <span class="author">by Elvin Tubillara </span>
+              <span class="dot">&#9679;</span>
+              <span class="date"> June 24th, 2016</span>
+            </li>
+            <li>
+              <span class="job-title"></span>
+            </li>
+            <li class="tags">
+              
+                <h4>Tags:</h4>
+                  <ul class="tag--list">
+                  
+                    <li class="tag"><p>federation</p></li>
+                  
+                    <li class="tag"><p>keystone</p></li>
+                  
+                    <li class="tag"><p>k2k</p></li>
+                  
+                  </ul>
+              
+            </li>
+          </ul>
+        </div>
+        
+      </header>
+
+      <div class="post-content">
+        <ul>
+  <li><a href="#what_is_k2k?">What is K2K Federation?</a></li>
+  <li><a href="#managing_groups">Managing Groups</a></li>
+  <li><a href="#managing_mappings">Managing Mappings</a></li>
+  <li><a href="#using_horizon">Using Horizon</a></li>
+  <li><a href="#using_the_python_api_libraries">Using the Python API Libraries</a></li>
+  <li><a href="#more_mappings_and_groups">More Mappings and Groups</a></li>
+</ul>
+
+<h2 id="what-is-k2k-federation">What is K2K Federation?</h2>
+<p>Keystone to Keystone (K2K) federation is a way to use credentials from one Keystone instance for logging in across multiple
+IBM Bluemix Private Cloud instances. One Bluemix Private Cloud instance is designated as an Identity Provider and other cloud instances are designated as Service Providers. The Identity Provider stores the user’s credentials and asserts to the Service Providers that the user is, in fact, a valid user. The user’s ID and password are never sent to the Service Providers, only assertions from the Identity Provider are sent.</p>
+
+<h2 id="how-does-k2k-work">How does K2K work?</h2>
+<p>The user signs into the Identity Provider, receives a signed SAML assertion from the Identity Provider
+and then uses that SAML assertion to authenticate into the Service Providers. The log in process
+for handling the SAML flow is handled by the K2K authentication plugin (found in <code class="highlighter-rouge">keystoneauth1</code>).
+Credentials are managed only on the Identity Provider, and they are accepted by Service Providers through assertions.</p>
+
+<p>If several Bluemix Private clouds have been set up with the K2K feature, one cloud instance
+is designated as the Identity Provider and the others are designated as Service Providers. Service Providers use mappings to
+select the user attributes from the Identity Provider that are utilized to map to a local group. Once the user logs in using K2K federation, the user is granted the roles assigned to the group.</p>
+
+<p>By default, a mapping called <code class="highlighter-rouge">mapping-for-k2k-federation</code>
+is created for the <code class="highlighter-rouge">cloud_admin</code> credentials on the Identity Provider by which they are mapped to a local group called <code class="highlighter-rouge">cloud_admin</code>. This group has the role <code class="highlighter-rouge">cloud_admin</code> access to the demo project.</p>
+
+<p>The flow of setting up K2K federation is as follows:</p>
+
+<p><strong>1. First, manage groups on the Service Provider (Federated users will have the same access rights as the group)</strong></p>
+
+<p><strong>2. Next, manage mappings on the Service Provider (Map remote Identity Provider users to local service provider groups)</strong></p>
+
+<h2 id="managing-groups">Managing Groups</h2>
+
+<p>K2K Federation works by federating Identity Provider users to a group on the Service Provider. The group is granted access by assigning that group a role on a project. The available roles are as follows:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">project_admin</code> - The <code class="highlighter-rouge">admin</code> role for the project.</li>
+  <li><code class="highlighter-rouge">cloud_admin</code> - The <code class="highlighter-rouge">admin</code> role for the cloud instance.</li>
+  <li><code class="highlighter-rouge">_member_</code> - A member of a project.</li>
+  <li><code class="highlighter-rouge">heat_stack_owner</code> - An owner for heat stacks.</li>
+</ul>
+
+<p>To use the group commands, a credential source file is required. You’ll need to create a file containing the credentials and replace the tags shown in angle brackets <code class="highlighter-rouge">&lt; &gt;</code> with the appropriate information:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#This file is cloud_adminrc
+export OS_IDENTITY_API_VERSION=3
+export OS_PASSWORD=&lt;cloud_admin password&gt; #Change this
+export OS_AUTH_URL=https://&lt;service provider fqdn&gt;:5000/v3
+export OS_USERNAME=cloud_admin
+export OS_TENANT_NAME=demo
+export OS_CACERT=/opt/stack/ssl/openstack.crt
+export OS_NO_CACHE=True
+</code></pre>
+</div>
+
+<p>After the credential source file is made, you can source the file and use any of the OpenStack commands below to manage groups and roles.
+<strong>Note: These commands run on the Service Provider.</strong></p>
+
+<p><strong>Source the credentials into the environment</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source cloud_adminrc
+</code></pre>
+</div>
+
+<p><strong>To list groups</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack group list
+</code></pre>
+</div>
+
+<p><strong>To create a group</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack group create --help
+$ openstack group create &lt;new group name here&gt;
+</code></pre>
+</div>
+
+<p><strong>To list roles</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack role list
+</code></pre>
+</div>
+
+<p><strong>To list role assignments</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack role assignment list --name
+</code></pre>
+</div>
+
+<p><strong>To list projects</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack project list
+</code></pre>
+</div>
+
+<p><strong>For help looking at adding role assignment</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack role add --help
+</code></pre>
+</div>
+
+<p><strong>To add a role assignment for a group to have a role on a project</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack role  add &lt;role&gt; --project &lt;project&gt; --group &lt;group&gt;
+</code></pre>
+</div>
+
+<p>Federated users are mapped into groups on the Service Provider. By default, a group called <code class="highlighter-rouge">cloud_admin</code> exists if K2K federation is enabled. This group has the role  <code class="highlighter-rouge">cloud_admin</code> on the “demo” project.</p>
+
+<p>Here’s the order of operations for granting access for groups:</p>
+<ol>
+  <li>First, create or edit the group.</li>
+  <li>Then, create or edit the role assignments for groups on projects.</li>
+</ol>
+
+<p><strong>Example 1.</strong> Creating a <code class="highlighter-rouge">cloud_admin</code> group.</p>
+
+<p>The commands below show how to source a file with the authentication information for the Service Provider <code class="highlighter-rouge">cloud_admin</code> user.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source cloud_adminrc
+$ openstack group list
+$ openstack group create cloud_admin --or-show
+$ openstack role assignment list --name --group cloud_admin
+</code></pre>
+</div>
+
+<p>Next, create the role assignment if it doesn’t exist.
+<strong>These commands add the role <code class="highlighter-rouge">cloud_admin</code> for the group <code class="highlighter-rouge">cloud_admin</code> for the “demo” project.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack role add cloud_admin --group cloud_admin --project demo
+$ openstack role assignment list --name --group cloud_admin
+</code></pre>
+</div>
+<p>After executing the <code class="highlighter-rouge">openstack role assignment list</code> command you should see an output similar to this one:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># +-------------+------+---------------------+--------------+--------+-----------+
+# | Role        | User | Group               | Project      | Domain | Inherited |
+# +-------------+------+---------------------+--------------+--------+-----------+
+# | cloud_admin |      | cloud_admin@Default | demo@Default |        | False     |
+# +-------------+------+---------------------+--------------+--------+-----------+
+</code></pre>
+</div>
+
+<p><strong>Example 2.</strong> Creating a group with member access.</p>
+
+<p>The commands below show how to source a file with the authentication information for the Service Provider <code class="highlighter-rouge">cloud_admin</code> user.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source cloud_adminrc
+$ openstack group list
+$ openstack group create demo_member_group --or-show
+$ openstack role assignment list --name --group demo_member_group
+$ openstack role add _member_ --group demo_member_group --project demo
+$ openstack role assignment list --name --group demo_member_group
+</code></pre>
+</div>
+
+<p>After entering the <code class="highlighter-rouge">openstack role assignment list</code> command you should see an output similar to this one:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># +----------+------+---------------------------+--------------+--------+-----------+
+# | Role     | User | Group                     | Project      | Domain | Inherited |
+# +----------+------+---------------------------+--------------+--------+-----------+
+# | _member_ |      | demo_member_group@Default | demo@Default |        | False     |
+# +----------+------+---------------------------+--------------+--------+-----------+
+</code></pre>
+</div>
+
+<h2 id="managing-mappings"><a name="managing_mappings"></a>Managing Mappings</h2>
+<p>The <code class="highlighter-rouge">cloud_admin</code> user on the Service Provider has access to read and set mappings for K2K federation. Please note that the <code class="highlighter-rouge">cloud_admin</code> Service Provider user <em>cannot</em> delete existing mappings or create new mappings.</p>
+
+<p>To use the mapping commands, a v3 credentials source file is required. You’ll create a file containing the credentials and replace the tags in angle brackets <code class="highlighter-rouge">&lt; &gt;</code> with the appropriate information:</p>
+
+<p>More information on managing mappings can be found in the OpenStack documentation:
+http://docs.openstack.org/developer/keystone/mapping_combinations.html
+http://docs.openstack.org/developer/keystone/federation/federated_identity.html#mapping-combinations</p>
+
+<p>When a user logs on to the Service Provider through K2K federation, using their Identity Provider account, a user account is created locally on the Service Provider. <strong>Please note that the user account created during federation is ephemeral. It may be deleted at a later time without warning.</strong></p>
+
+<p>In the default mapping, the <code class="highlighter-rouge">cloud_admin</code> on the Identity Provider user is federated, so that a local <code class="highlighter-rouge">cloud_admin</code> user
+is created in the federated domain. This user is different than the <code class="highlighter-rouge">cloud_admin</code> user in the “Default” domain. The
+ephemeral <code class="highlighter-rouge">cloud_admin</code> user in the federated domain may be deleted in the future.</p>
+
+<p>We need the source file created from the previous section so we can run the following mapping commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source cloud_adminrc
+$ openstack mapping list
+$ openstack mapping show mapping-for-k2k-federation
+$ openstack mapping show mapping-for-k2k-federation --format json
+$ openstack mapping show --help
+$ openstack mapping set mapping-for-k2k-federation --rules &lt;mappings file&gt;
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">openstack mapping list</code> command shows a list of mappings. It should show the <code class="highlighter-rouge">mapping-for-k2k-federation</code> mapping.</p>
+
+<p>The <code class="highlighter-rouge">openstack mapping show mapping-for-k2k-federation</code> command shows the details of the given mapping. It should contain a <code class="highlighter-rouge">json</code> listing of the rules for the mapping.</p>
+
+<p>The <code class="highlighter-rouge">openstack mapping set mapping-for-k2k-federation --rules newmappings.json</code>
+command shows how to update and set the <code class="highlighter-rouge">mapping-for-k2k-federation</code> mapping.</p>
+
+<p>The mappings file should follow the format given here:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[
+   {
+      "local": [
+        &lt;group&gt;
+      ],
+      "remote": [
+        &lt;condition&gt;
+      ]
+   }
+]
+</code></pre>
+</div>
+
+<p>The <strong>rules file</strong> should contain a list of rules that map the remote users to a group that exists on the Service Provider.
+The local section contains a rule specifying the group that the remote users should map to. <strong>The local group rule is required.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud_admin"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>The remote section includes rules that specify which remote users should be allowed access.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openstack_user"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"any_one_of"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"cloud_admin"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>The possible user attributes types that can be given in the remote rules are these:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>openstack_user
+openstack_user_domain
+openstack_roles
+openstack_project
+openstack_project_domain
+</code></pre>
+</div>
+
+<p>The possible actions to filter on remote attributes are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>empty
+any_ony_of
+not_any_of
+blacklist
+whitelist
+</code></pre>
+</div>
+
+<p>To set the username we can use <strong>{0}</strong> in the local section to indicate to use a field from the remote section. Then we can additional information to the new federated username. <strong>For K2K federation it is important to add some information to indicate which cloud you are using</strong>. We can reference the remote section in the local section by index (“{i}”, where i is the index of the remote field), :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[
+  {
+    "local": [
+      {
+        "user": {
+          "name": "my_cloud/{0}"
+        }
+      },
+               ...
+    ],
+    "remote": [
+      {
+        "type": "openstack_user"
+      },
+               ...
+    ]
+  }
+]
+</code></pre>
+</div>
+
+<p>Here are some example scenarios:</p>
+
+<p><strong>Example 1.</strong> Mapping the <code class="highlighter-rouge">cloud_admin</code> user to a <code class="highlighter-rouge">cloud_admin</code> group and setting the username to be <code class="highlighter-rouge">my_cloud/cloud_admin</code> in the federated domain. This is the default mapping file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[
+  {
+    "local": [
+      {
+        "user": {
+          "name": "my_cloud/{0}"
+        }
+      },
+      {
+        "group": {
+          "domain": {
+            "name": "Default"
+          },
+          "name": "cloud_admin"
+        }
+      }
+    ],
+    "remote": [
+      {
+        "type": "openstack_user"
+      },
+      {
+        "type": "openstack_user",
+        "any_one_of": [
+          "cloud_admin"
+        ]
+      }
+    ]
+  }
+]
+</code></pre>
+</div>
+
+<p><strong>Example 2.</strong> Member mappings</p>
+
+<p>This example maps users who have the role <code class="highlighter-rouge">_member_</code> on project “demo” on the Identity Provider to a group (<code class="highlighter-rouge">demo_member_group</code> from Group Example 2) on the Service Provider. We assume that the <code class="highlighter-rouge">demo_member_group</code> is a group on the
+Service Provider, with the <code class="highlighter-rouge">_member_</code> role on the “demo” project on the Service Provider.</p>
+
+<p>We are running a series of bash commands to <code class="highlighter-rouge">cat</code> the following string into a file and then set the mapping.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cat &lt;&lt;EOF &gt; federated_member_mapping.json
+[
+  {
+    "local": [
+      {
+        "user": {
+          "name": "my_cloud/{0}"
+        }
+      },
+      {
+        "group": {
+          "domain": {
+            "name": "Default"
+          },
+          "name": "demo_member_group"
+        }
+      }
+    ],
+    "remote": [
+      {
+        "type": "openstack_user"
+      },
+      {
+        "type": "openstack_project",
+        "any_one_of": [
+          "demo"
+        ]
+      },
+      {
+        "type": "openstack_roles",
+        "any_one_of": [
+          "_member_"
+        ]
+      }
+    ]
+  }
+]
+EOF
+$ openstack mapping set mapping-for-k2k-federation --rules federated_member_mapping.json
+</code></pre>
+</div>
+
+<p><strong>Example 3.</strong> Multiple rules</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[
+  {
+    "local": [
+      {
+        "user": {
+          "name": "my_cloud/{0}"
+        }
+      },
+      {
+        "group": {
+          "domain": {
+            "name": "Default"
+          },
+          "name": "cloud_admin"
+        }
+      }
+    ],
+    "remote": [
+      {
+        "type": "openstack_user"
+      },
+      {
+        "type": "openstack_user",
+        "any_one_of": [
+          "cloud_admin"
+        ]
+      }
+    ]
+  },
+  {
+    "local": [
+      {
+        "user": {
+          "name": "my_cloud/{0}"
+        }
+      },
+      {
+        "group": {
+          "domain": {
+            "name": "Default"
+          },
+          "name": "demo_member_group"
+        }
+      }
+    ],
+    "remote": [
+      {
+        "type": "openstack_user"
+      },
+      {
+        "type": "openstack_project",
+        "any_one_of": [
+          "demo"
+        ]
+      },
+      {
+        "type": "openstack_roles",
+        "any_one_of": [
+          "_member_"
+        ]
+      }
+    ]
+  }
+]
+</code></pre>
+</div>
+
+<h2 id="using-horizon"><a name="using_horizon"></a>Using Horizon</h2>
+<p>The OpenStack dashboard on the Identity Provider should have a drop-down menu labeled <strong>Authenticate with Keystone to Keystone Federation</strong>.</p>
+
+<ul>
+  <li>If you select the <strong>Identity Provider</strong> option, federation will not be used. The user will be signed into the Identity Provider OpenStack cloud.</li>
+  <li>If the <strong>Service Provider</strong> option is selected, federation is used. The Identity Provider user credential will be federated to the Service Provider.</li>
+  <li>To switch between providers, the user will need to log out and re-select the provider.</li>
+</ul>
+
+<p><strong>Please note:</strong> The Horizon login screen for K2K for IBM Bluemix Private Cloud 3.0.0 is not a standard OpenStack feature. It may change in future releases.</p>
+
+<p><img src="/help-documentation/img/en/k2k_auth.png" alt="The Horizon login screen for Bluemix Private Cloud" /></p>
+
+<h2 id="using-the-python-api-libraries"><a name="using_the_python_api_libraries"></a>Using the Python API Libraries</h2>
+
+<p>Next, you’ll make a source file which you will use to authenticate using the K2K authentication plugin. The token <code class="highlighter-rouge">OS_SERVICE_PROVIDER</code> refers to the Service Provider ID, which you can obtain by running the following command against the Identity Provider:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack server provider list
+</code></pre>
+</div>
+
+<p>Here we can create a source file that will be used by our Python script to list instances on the Service Provider(Sp), by using the <code class="highlighter-rouge">cloud_admin</code> credentials from the Identity Provider (IdP).</p>
+
+<p>This source file (federationrc) contains authentication credentials for logging into the <strong>Idp</strong>, and the <strong>Sp</strong> target information.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># This file is federationrc
+export OS_USERNAME=cloud_admin
+export OS_PASSWORD=&lt;cloud admin password&gt;
+export OS_AUTH_URL=https://k2kf-idp.open-test.ibmcloud.com:5000/v3
+export OS_PROJECT_NAME=demo
+export OS_DOMAIN_NAME=Default
+export OS_SERVICE_PROVIDER=&lt;service provider id&gt;
+</code></pre>
+</div>
+
+<p>You can see the list of Service Providers by running the following commands on the Identity Provider:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack service provider list
+</code></pre>
+</div>
+
+<p>The following code uses the Keystone-to-Keystone <code class="highlighter-rouge">auth</code> plugin to get an unscoped token.
+This unscoped token is used to get a scoped token, which is then scoped to one of the projects
+to which the federated user will have access. Once you have the scoped token, you can list the server instances on the Service Provider.</p>
+
+<p>Create a file called list_servers.py:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/usr/bin/python</span>
+
+from keystoneauth1 import session
+from keystoneauth1.identity.v3 import Token
+from keystoneauth1.identity.v3.k2k import Keystone2Keystone
+from keystoneauth1.identity.v3.password import Password
+from keystoneclient.v3.client import Client
+
+from novaclient import client
+import os
+
+<span class="c"># we get these variables from sourcing a file</span>
+OS_AUTH_URL <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">'OS_AUTH_URL'</span><span class="o">)</span>
+OS_USERNAME <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">'OS_USERNAME'</span><span class="o">)</span>
+OS_PASSWORD <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">'OS_PASSWORD'</span><span class="o">)</span>
+OS_PROJECT_NAME <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">'OS_PROJECT_NAME'</span><span class="o">)</span>
+OS_DOMAIN_NAME <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">'OS_DOMAIN_NAME'</span><span class="o">)</span>
+OS_SERVICE_PROVIDER <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">'OS_SERVICE_PROVIDER'</span><span class="o">)</span>
+
+
+def get_project_and_federated_session<span class="o">()</span>:
+    <span class="c"># authenticate to the idp</span>
+    idp_auth <span class="o">=</span> Password<span class="o">(</span><span class="nv">auth_url</span><span class="o">=</span>OS_AUTH_URL,
+                        <span class="nv">username</span><span class="o">=</span>OS_USERNAME,
+                        <span class="nv">password</span><span class="o">=</span>OS_PASSWORD,
+                        <span class="nv">user_domain_name</span><span class="o">=</span>OS_DOMAIN_NAME,
+                        <span class="nv">project_name</span><span class="o">=</span>OS_PROJECT_NAME,
+                        <span class="nv">project_domain_name</span><span class="o">=</span>OS_DOMAIN_NAME<span class="o">)</span>
+
+    <span class="c"># get unscoped auth using k2k auth plugin</span>
+    unscoped_auth <span class="o">=</span> Keystone2Keystone<span class="o">(</span><span class="nv">base_plugin</span><span class="o">=</span>idp_auth,
+                                      <span class="nv">service_provider</span><span class="o">=</span>OS_SERVICE_PROVIDER<span class="o">)</span>
+
+    <span class="c"># get first available project and scoped auth</span>
+    sess <span class="o">=</span> session.Session<span class="o">()</span>
+    unscoped_access_info <span class="o">=</span> unscoped_auth.get_access<span class="o">(</span>sess<span class="o">)</span>
+    unscoped_client <span class="o">=</span> Client<span class="o">(</span><span class="nv">session</span><span class="o">=</span>sess, <span class="nv">auth</span><span class="o">=</span>unscoped_auth<span class="o">)</span>
+
+    <span class="c"># Get first project</span>
+    projects <span class="o">=</span> unscoped_client.federation.projects.list<span class="o">()</span>
+    project <span class="o">=</span> projects[0]
+
+    <span class="c"># Create a session with a scoped token for the project</span>
+    unscoped_token <span class="o">=</span> unscoped_access_info.auth_token
+    scoped_token <span class="o">=</span> Token<span class="o">(</span><span class="nv">auth_url</span><span class="o">=</span>unscoped_auth.auth_url,
+                         <span class="nv">token</span><span class="o">=</span>unscoped_token,
+                         <span class="nv">project_id</span><span class="o">=</span>project.id,
+                         <span class="nv">reauthenticate</span><span class="o">=</span>False<span class="o">)</span>
+    federated_session <span class="o">=</span> session.Session<span class="o">(</span><span class="nv">auth</span><span class="o">=</span>scoped_token<span class="o">)</span>
+    <span class="k">return </span>project, federated_session
+
+
+def main<span class="o">()</span>:
+    project, scoped_session <span class="o">=</span> get_project_and_federated_session<span class="o">()</span>
+    nova <span class="o">=</span> client.Client<span class="o">(</span><span class="nv">version</span><span class="o">=</span>2, <span class="nv">session</span><span class="o">=</span>scoped_session<span class="o">)</span>
+    print <span class="s2">"The servers running on project %s are: "</span> % project.name
+    <span class="k">for </span>server <span class="k">in </span>nova.servers.list<span class="o">()</span>:
+        print server.name
+
+<span class="k">if </span>__name__ <span class="o">==</span> <span class="s1">'__main__'</span>:
+    main<span class="o">()</span></code></pre></figure>
+
+<p>The python script can be ran by doing the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source federationrc
+$ chmod 700 list_servers.py
+$ ./list_servers.py
+</code></pre>
+</div>
+
+<h2 id="more-mappings-and-groups"><a name="more_mappings_and_groups"></a>More Mappings and Groups</h2>
+<p><strong>Example 1.</strong> Heat Users</p>
+
+<p>Currently an issue exists with federated users and with the trustor/trustee feature in Keystone, which prevents
+the federated Heat user from delegating their <code class="highlighter-rouge">heat_stack_owner</code> role.</p>
+
+<p><strong>Create Heat federation group</strong></p>
+
+<p>Source a file with the authentication info for the Service Provider <code class="highlighter-rouge">cloud_admin</code> user: <code class="highlighter-rouge">source cloud_adminrc</code></p>
+
+<p>Here we use the role <code class="highlighter-rouge">heat_stack_owner</code> and NOT <code class="highlighter-rouge">heat_stack_user</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack group list
+$ openstack group create heat_stack_owner_group --or-show
+$ openstack role assignment list --name --group heat_stack_owner_group
+$ openstack role add heat_stack_owner --group heat_stack_owner_group --project demo
+$ openstack role assignment list --name --group heat_stack_owner_group
+# +------------------+------+--------------------------------+--------------+--------+-----------+
+# | Role             | User | Group                          | Project      | Domain | Inherited |
+# +------------------+------+--------------------------------+--------------+--------+-----------+
+# | heat_stack_owner |      | heat_stack_owner_group@Default | demo@Default |        | False     |
+# +------------------+------+--------------------------------+--------------+--------+-----------+
+</code></pre>
+</div>
+
+<p><strong>Create Heat federation mappings</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cat &lt;&lt;EOF &gt; federated_heat_stack_owner_mapping.json
+[
+  {
+    "local": [
+      {
+        "user": {
+          "name": my_cloud/"{0}"
+        }
+      },
+      {
+        "group": {
+          "domain": {
+            "name": "Default"
+          },
+          "name": "heat_stack_owner_group"
+        }
+      }
+    ],
+    "remote": [
+      {
+        "type": "openstack_user"
+      },
+      {
+        "type": "openstack_roles",
+        "any_one_of": [
+          "heat_stack_owner"
+        ]
+      }
+    ]
+  }
+]
+EOF
+$ openstack mapping set mapping-for-k2k-federation --rules federated_heat_stack_owner_mapping.json
+</code></pre>
+</div>
+
+<p>You’ll need to use a workaround for the trust delegation by assigning the <code class="highlighter-rouge">heat_stack_owner</code> role to the user directly. This is the user that is created during federated log in. The user’s domain is federated, and it could have the value of <strong>None</strong> (<code class="highlighter-rouge">Federation=None</code>).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack user list
+</code></pre>
+</div>
+<p>The federated user should have a domain of None: <code class="highlighter-rouge">openstack user show &lt;federated user&gt;</code></p>
+
+<p>Here we require the user ID:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ openstack role add heat_stack_owner --user &lt;federated user ID&gt; --project &lt;project&gt;
+</code></pre>
+</div>
+
+<p>A known issue is that a federated user is presented with the option to change
+their password in the settings page. They will not be able to change their password.</p>
+
+<p>Also, please note that federated users should not create local users. Federated admins may not be able to
+change a local user’s password.</p>
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="footer__wrapper--light">
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Products</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-local" class="nav--item__link">Private Cloud Local</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="nav--item__link">Sales</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-faq" class="nav--item__link">FAQs</a>
+      </li>
+    
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Our Story</a>
+      </li>
+ <li class="footer--nav__item">
+        <a href="https://github.com/blueboxgroup?cm_mc_uid=04946053248414876234663&cm_mc_sid_50200000=1489010497" class="nav--item__link">On GitHub</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://blueboxstatus.com/" class="nav--item__link">System Status</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Support</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Box Panel</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Resources
+        </a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Case Studies</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Videos</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">News</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="hhttps://www.ibm.com/blogs/bluemix/">Recent Blog Posts</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/the-power-of-openstack/" class="nav--item__link">The Power of OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/08/blue-box-storage-models-explained/" class="nav--item__link">IBM Bluemix Private Cloud Storage Models</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.blueboxcloud.com/insight/blog-article/github-ibm-com-running-on-blue-box" class="nav--item__link">IBM Github Runs on Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/10/building-up-to-openstack/" class="nav--item__link">Building up to OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/keystone-to-keystone-federated-identity-on-blue-box-cloud/" class="nav--item__link">Get Started with Keystone Federation</a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer__wrapper--dark">
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.facebook.com/BlueBoxGroup/" class="list--item__link">Facebook</a>
+      </li>
+      <li class="list--item">
+        <a href="https://twitter.com/bluebox?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="list--item__link">Twitter</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.linkedin.com/company/blue-box-group" class="list--item__link">LinkedIn</a>
+      </li>
+      <li class="list--item">
+        <a href="https://plus.google.com/+BlueBoxSeattle/posts" class="list--item__link">Google +</a>
+      </li>
+      <li class="list--item">
+        <a href="https://github.com/blueboxgroup" class="list--item__link">GitHub</a>
+      </li>
+    </ul>
+
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="list--item__link">Contact</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Legal</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Privacy Policy</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Terms and Conditions</a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="footer__wrapper--black">
+    <p>
+        &copy; 2017 IBM Bluemix
+    </p>
+  </div>
+</footer>
+
+
+
+    <script src="/help-documentation/js/vendor/simple-jekyll-search.js" type="text/javascript"></script>
+
+
+    <script>
+        SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/help-documentation/search.json',
+          searchResultTemplate: '<li class="search-item"><a href="{url}" class="item-title">{title}</a><ul class="tag--list">{tags}</ul></li>'
+        });
+    </script>
+  <script src="/help-documentation/js/scripts.js"></script>
+
+  </body>
+
+</html>

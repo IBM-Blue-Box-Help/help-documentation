@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Setting up OpenVPN server on your instance</title>
+  <meta name="description" content="When you need to connect to your internal Bluemix Private Cloud instances, but either you don’t have the available floating IP addresses or you prefer to not...">
+
+  <link rel="stylesheet" href="/help-documentation/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/help-documentation/gettingstarted/commontech/openvpn-setup/">
+  <link rel="alternate" type="application/rss+xml" title="Blue Box Help" href="http://localhost:4000/help-documentation/feed.xml">
+  
+  <style>
+   .site-header img:first-child {
+       height: 72px;
+}
+</style>
+  
+</head>
+
+
+  <body>
+
+  
+    <header class="site-header">
+
+  <div class="header-wrapper">
+
+    <a class="site-title" href="/help-documentation/"><img src="/help-documentation/img/en/Bluemix-logo-UI.svg" alt="" height="72px"></a>
+
+    <div class="search--pageview">
+
+  <div class="full-view__search hide">
+    <a href="" class="x hide">X</a>
+    <ul id="results-container"></ul>
+    <ul class="results--container"></ul>
+
+  </div>
+  <div class="input-container">
+    <label for="search__fullview" class="hide search--label">Search IBM Bluemix Private Cloud Help</label>
+    <input type="text" id="search-input" placeholder="" name="search" class="search__minview--page">
+    <img src="/help-documentation/img/en/search.svg" class="search-icon" />
+  </div>
+</div>
+
+
+    <a href="mailto:llundquist@us.ibm.com" class="header--request">
+      <p>
+        Submit A Request
+      </p>
+      <img src="/help-documentation/img/en/user.svg">
+    </a>
+    <a id="nav-toggle" href="#"><span></span></a>
+
+    <div>
+  
+    
+      <a style="font-weight: bold;" href=" /help-documentation/gettingstarted/commontech/openvpn-setup/ ">en</a> |
+    
+      <a  href=" /help-documentation/fr/gettingstarted/commontech/openvpn-setup/ ">fr</a> |
+    
+      <a  href=" /help-documentation/de/gettingstarted/commontech/openvpn-setup/ ">de</a> |
+    
+      <a  href=" /help-documentation/ja/gettingstarted/commontech/openvpn-setup/ ">ja</a> |
+    
+      <a  href=" /help-documentation/zh_CN/gettingstarted/commontech/openvpn-setup/ ">zh_CN</a> |
+    
+      <a  href=" /help-documentation/zh_TW/gettingstarted/commontech/openvpn-setup/ ">zh_TW</a> |
+    
+      <a  href=" /help-documentation/pt_BR/gettingstarted/commontech/openvpn-setup/ ">pt_BR</a> |
+    
+  
+</div>
+
+  </div>
+
+</header>
+
+  
+
+  
+  <div class="page-content">
+  
+
+      <div class="main-wrapper">
+        
+<div class="sidebar sidebar--toggled">
+  <ul class="sidebar__nav">
+    <li>
+      <h3 class="title">
+        
+        
+        
+        <a  class="page-link"  href="/help-documentation/gettingstarted">Getting Started (38)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list" >
+        <h5 class="sub__head">Common Technical Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/connect-to-openvpn-server/">Connecting to your OpenVPN server</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link--active"  href="/help-documentation/gettingstarted/commontech/openvpn-setup/">Setting up OpenVPN server on your instance</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/blue-box-cloud-components/">Bluemix Private Cloud Components</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/detaching-volume/">What Should I Do Prior to Detaching a Volume?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/python-environment-primer/">Virtual python environments and you: A developer's primer</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/FAQ/">Technical FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Building_Blocks/">IBM Bluemix Private Cloud Building Blocks (Community Edition)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Building_Blocks/">Building Blocks for IBM Bluemix Private Cloud with Red Hat</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Product_Overview/">IBM Bluemix Private Cloud with Red Hat - Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/general_product_overview/">General Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Instance_Resize/">Resizing an Instance (Non-live)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Connecting_Clouds_with_SoftLayer/">Set Up Network Connectivity Between Multiple Cloud Environments, Using the Private Network</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Windows_License_Activation/">Customer Guide for Windows Activation</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 7 )</a></li>
+      </ul>
+      
+      <ul  class="article__list" >
+        <h5 class="sub__head">Common Administrative Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/adding-removing-subscribers/">Adding or removing subscribers to a ticket</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/view-my-bill/">How do I view my bill?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/report-issue/">How do I report an issue?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/escalating-a-ticket/">How do I escalate a ticket?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/status-pages/">Bluemix Private Cloud Status Pages</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/Transferring_A_Domain_From_Blue_Box/">Transferring A Domain From Blue Box</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 2 )</a></li>
+      </ul>
+      
+      <ul  class="article__list" >
+        <h5 class="sub__head">User Guides</h5>
+        
+        
+          
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Box_Panel/">Box Panel User Guide</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Eternal_Blue-ish_Triangle/">Box Panel, Site Controller, and IBM Bluemix Private Cloud Local</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/qemu_article/">Building Up to OpenStack — QEMU and Your Cloud</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Improving_Cloud_Performance/">Building Up to OpenStack II -- Improving Cloud Performance</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Optimized_Load_Balancing/">Cloud 101 -- Optimized Load Balancing</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_RHOSP/">User's Guide to Cloud Images (IBM Bluemix Private Cloud with Red Hat)</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/">User's Guide to Cloud Images (Community Edition)</a>
+                  </li>
+              
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Image_Release_Notes/">IBM Bluemix Private Cloud Image Release Notes</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 4 )</a></li>
+      </ul>
+      
+      <ul  class="article__list" >
+        <h5 class="sub__head">Release Notes</h5>
+        
+        
+          
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.1_Point_Release/">Customer 3.0.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.1_Point_Release/">Customer 3.1.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0c_Release_Notes/">Release Notes 4.0.0.0c</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0r_Release_Notes/">Release Notes 4.0.0.0r</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_2.1.1_Point_Release/">Release Notes 2.1.1</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/release_notes_2.1_for_customers/">Release Notes 2.1</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.0_Release_Notes/">Release Notes 3.0.0</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.0_Release_Notes/">Release Notes 3.1.0</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 6 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/troubleshooting">Troubleshooting (19)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/libvirt_error/">Instance in error status: libvirt error</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ssh-too-long-error/">Why does it take 4-5 seconds to SSH to my instance?</a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ping-instance-error/">Why can't I SSH to an instance, or ping it?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/nova-microversions-error/">Error: 'Server doesn't support microversions' When Running Nova Commands</a>
+          </li>
+          
+        
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Bad_Availability_Zone/">Cloud Foundry: Invalid Availability Zone Error</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failed_to_create_router/">Attempt to Create a Router is Failing</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/How_many_connections_can_HAProxy_handle/">How Many Simultaneous Connections can HAProxy Handle?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/CLI-authentication-error/">When using any of the OpenStack CLIs on Windows, I get authentication failure errors</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/floating-ips-error/">Why are all the floating IPs that were assigned to me not available?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/horizon-delete-error/">Why can't I delete my project/tenant from the Horizon dashboard?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/no-valid-host-error/">Error: No valid host was found</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Cannot_See_New_vCPUs/">Why Can't I See My New vCPUs Listed in Horizon?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failure_prepping_block_device/">Error: Failure prepping block device</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/delete_security_group/">Why Can’t I Delete A Security Group?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/Troubleshooting_FAQ/">Troubleshooting FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Unable_to_ping_tenant_network/">Why Can't I Ping Across My Tenant Networks?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Why_No_vIP_Failover_With_L2pop/">Why can't I use L2pop when I want my vIP instances to failover?</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 11 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/openstack">Open Stack (15)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">User Docs</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/launch-instance-from-volume/">How to Launch an Instance from a Volume</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/import-vhd-image-lvm/">Importing a VHD image that uses linux volume management for its root directory</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/OpenStack_network_concepts/">OpenStack Network Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating-an-Instance-with-a-Specific-Fixed-IP/">Creating an Instance with a Specific Fixed IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Mitaka_CLI_notes/">OpenStack Mitaka CLI Notes</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/Why-Choose-OpenStack/">Why Choose OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/openstack-storage-concepts/">OpenStack Storage Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Ursula_and_OpenStack/">Ursula and OpenStack</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating_Instances_With_Static_IP/">How to Create An Instance With Static IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/quotas/">Quotas</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/How_to_Isolate_Tenants/">How to Isolate Tenants (Projects)</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/external-reference-material/">External reference materials</a>
+          </li>
+          
+        
+        <li><a href="" class="page-link view">View More ( 3 )</a></li>
+      </ul>
+
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">API</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/floating-ip-address/">Creating a floating IP address using the OpenStack API</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/openstack-api-getting-started/">Getting Started with the OpenStack API</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/api/OpenStack_Client_Versions/">Requirements for OpenStack client versions</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 1 )</a></li>
+      </ul>
+    </li>
+
+
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/horizon">Horizon [GUI] (10)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/creating-additional-networks-with-horizon/">Creating Additional Networks in OpenStack Using the Horizon Panel</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Making_Snapshots_in_Horizon/">Using Horizon for Snapshots</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/allocate-floating-ip/">Allocating and Attaching a Public (Floating) IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/create-volume-from-horizon/">Creating a volume from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/horizon-for-administrators/">Horizon for Administrators</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/launch-instance-from-horizon/">Launching an instance from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/launch-instance-from-horizon_newton/">Launching an instance from the Horizon dashboard (OpenStack Newton release)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/set-reverse-dns/">How do I set a reverse DNS (PTR) record for an IBM Bluemix Private Cloud instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/using-horizon/">Using Horizon</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Horizon_troubleshooting_FAQ/">Horizon Troubleshooting FAQ</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/nova">Nova [Compute] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/windows-user-and-password/">How do I set an initial username and password on a Windows instance in OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/nova_live_migration/">Instance Live Migration</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/CLI-create-public-instance/">How to Create an Instance and Make it Available Publicly Using the Command Line</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Nova_boot_speed/">What happens behind the scenes when I boot a virtual machine, and how can I make it boot faster?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Restrict_Floating_IP/">How Can I Restrict Floating IPs?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/config_drive_for_instances/">Can I create an instance and add files to it using config drive?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/create-vm-with-volumes/">How can I create an instance with the Nova command line client?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/define-flavor-vcpu/">How can I define flavor vCPU topology?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/deploy-to-specific-hypervisor/">How to deploy an instance to a specific hypervisor node</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/maximum-flavor-spec/">What is the maximum spec I can set for a flavor?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/migrate-instance/">Migrating an instance to a new cloud</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Metadata_service_FAQ/">Metadata Service in OpenStack Neutron and Nova</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/hypervisor-statistics/">How can I get hypervisor statistics?</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/neutron">Neutron [Networking] (22)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/network_ip_availability/">How Can I Check My Network IP Availability?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/isolatetwoprojectnetworksconnectedtoonesharedrouter/">How can you isolate project networks connected to a shared router?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/time-ip-associated-with-instance/">How can I find the time a floating IP was associated or disassociated from an instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Load_Balancing_Methods/">Load Balancing Methods</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Multi-tier_Router_Configuration/">Multi-tier Router Configuration Within Your IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/set-up-dns-records/">How do I set up DNS records pointing to OpenStack instances?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/routing_internal_traffic_between_projects/">Routing Internal Traffic Between Projects</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/add-ip-to-instance/">Add a Specific Fixed Private IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-dns.for-instances/">Configuring DNS for Instances</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/configure-multi-nics/">Configuring multiple network interfaces for your own cloud images</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-ha-ip/">How to configure a highly-available IP</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/creating-virtual-networks/">Creating virtual networks on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/when_create_port_fails/">When creating port failed, how could I do ?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_Can_I_See_My_IPs/">How Can I See My IPs?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_to_update_DNS/">How Can I Update DNS?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/vpn-vlan-directlink/">VPN, VLAN, and Direct Link</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/BYOFIP_support/">Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Intro_to_LBaaS/">Introduction to Load Balancer as a Service (LBaaS)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Security_groups_CLI/">Using the CLI to Set Up Security Groups</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/Network_Use_Cases_White_Paper/">IBM Blue Box Network Use Cases</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Where_Are_These_IPs/">Where Are the First Two IPs?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/glance">Glance [Images] (6)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/glance/FAQ_Working_with_Windows_Images/">Working with Windows Images FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/compatible-glance-images/">Is there a list of official OpenStack-compatible images that I can download for use with Glance? (CentOS, Ubuntu, etc.)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/disk-capacity-constraints/">Disk Capacity Constraints</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/Image_Properties_on_Power/">Optimal Settings for Glance Images on Power Compute</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/imagesnapshot/">Difference Between Image and Snapshot</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/cinder">Cinder [Block Storage] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/read-only-cinder-error/">What causes read-only Cinder volumes and how can I fix them?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/cinder-volume-stuck/">Cinder Volume Stuck</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/alternative_method_for_volume_encryption/">Alternative Method For Block Storage Volume Encryption (using an Ubuntu Guest VM)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Bug_Creating_Encrypted_Volumes/">Creating Encrypted Volumes with Cinder is Not Supported</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/Managing_block_storage/">Managing Block Storage</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cli-create-volume/">Creating a volume with the command line</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/create-volume-from-snapshot/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/resize_cinder_volume/">How Can I Resize a Cinder Volume?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/supported_volume_types/">Which Cinder Volume Types are supported in Cloud Instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Ephemeral_to_Cinder/">How to Move from Ephemeral Disk to Cinder Storage</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/volume_clone/">Can I enable volume full clone more than copy-on-write clone?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Force_snapshot_on_attached_volume/">How to Force a Snapshot on an Attached Volume</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cinder-failed-connection-error/">What do I do if the Cinder client returns 'ERROR: Unable to establish connection' message and fails to connect?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/keystone">Keystone [Identity] (8)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/oidc-federation/">OpenID Connect Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/saml-federation/">Keystone SAML Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/RBAC_Definitions/">Role-Based Access Control</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/Managing_Users_and_Projects/">Managing Users and Projects</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/k2k-federation/">Keystone to Keystone (K2K) Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/tenants-security-groups-keystone/">Projects and Security Groups</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/custom-domains-keystone/">Custom Domains within Keystone V3</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/keystone/Getting_Started_with_K2K_Identity/">Getting Started with Keystone Federated Identity</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/heat">Heat [Orchestration] (7)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Getting_Started_With_Heat/">Getting Started With Heat Templates</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/autoscaling-with-heat/">Using Heat for autoscaling</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Deploying_apps_with_UCD/">Deploying Applications with IBM UrbanCode Deploy and IBM Bluemix Private Cloud</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_load_balancer/">Using Heat for provisioning servers with a load balancer</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using-ucd-ucdp/">Using IBM Urban Code Deploy with IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_deployment/">Using Heat With a Self-signed Certificate</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/ceilometer">Ceilometer [Telemetry] (1)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/ceilometer/compatible-glance-images/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+
+<article>
+
+  <div class="page-container">
+
+    <div class="main-content">
+      <header class="post-header">
+
+        <h1 class="post-title">
+        
+
+        
+
+        Setting up OpenVPN server on your instance
+
+        
+        </h1>
+
+
+
+
+        
+        <div class="post-data">
+          <img src='/help-documentation/img/en/avatar.png' />
+          <ul class="author--info">
+            <li>
+              <span class="author">by Jason Kennedy </span>
+              <span class="dot">&#9679;</span>
+              <span class="date"> January 7th, 2016</span>
+            </li>
+            <li>
+              <span class="job-title"></span>
+            </li>
+            <li class="tags">
+              
+                <h4>Tags:</h4>
+                  <ul class="tag--list">
+                  
+                    <li class="tag"><p>getting started</p></li>
+                  
+                    <li class="tag"><p>setting up openVPN</p></li>
+                  
+                  </ul>
+              
+            </li>
+          </ul>
+        </div>
+        
+      </header>
+
+      <div class="post-content">
+        <p>When you need to connect to your internal Bluemix Private Cloud instances, but either you don’t have the available floating IP addresses or you prefer to not put those virtual machines on the internet, one recourse is to establish a bastion host with OpenVPN running on it. That way, you can connect and pass through the host to your internal network. In this article, you’ll learn how to install and set up your OpenVPN server and client for the connection.
+Assume that you’re already running a virtual machine that has a floating IP allocated to it. We’re not going to discuss setting up ufw or go into any hardened of linux, this how-to is strictly about getting OpenVPN up and running on an instance hosted on OpenStack. For the purpose of this example, we’re using Ubuntu 14.04.</p>
+
+<p>Complete these steps for your server-side setup.</p>
+
+<h2 id="step-1---openvpn-configuration">Step 1 - OpenVPN Configuration</h2>
+
+<p>Before we install any packages, first we’ll update Ubuntu’s repository lists.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">apt-get update</code></pre></figure>
+
+<p>Then we can install OpenVPN and Easy-RSA.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">apt-get install openvpn easy-rsa</code></pre></figure>
+
+<p>The example VPN server configuration file needs to be extracted to <code class="highlighter-rouge">/etc/openvpn</code> so we can incorporate it into our setup. This extraction can be done with one command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf</code></pre></figure>
+
+<p>Once extracted, open <code class="highlighter-rouge">server.conf</code> in a text editor. This tutorial will use <strong>Vim</strong> but you can use whichever editor you prefer.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/openvpn/server.conf</code></pre></figure>
+
+<p>There are several changes to make in this file. You will see a section looking like this:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Diffie hellman parameters.</span>
+<span class="c"># Generate your own with:</span>
+<span class="c">#   openssl dhparam -out dh1024.pem 1024</span>
+<span class="c"># Substitute 2048 for 1024 if you are using</span>
+<span class="c"># 2048 bit keys.</span>
+dh dh1024.pem</code></pre></figure>
+
+<p>Edit <code class="highlighter-rouge">dh1024.pem</code> to say <code class="highlighter-rouge">dh2048.pem</code></p>
+
+<p>This change will double the RSA key length used when generating server and client keys.</p>
+
+<p>Still in the <code class="highlighter-rouge">server.conf</code> file, now look for this section:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># If enabled, this directive will configure</span>
+<span class="c"># all clients to redirect their default</span>
+<span class="c"># network gateway through the VPN, causing</span>
+<span class="c"># all IP traffic such as web browsing and</span>
+<span class="c"># and DNS lookups to go through the VPN</span>
+<span class="c"># (The OpenVPN server machine may need to NAT</span>
+<span class="c"># or bridge the TUN/TAP interface to the internet</span>
+<span class="c"># in order for this to work properly).</span>
+;push <span class="s2">"redirect-gateway def1 bypass-dhcp"</span></code></pre></figure>
+
+<p>Uncomment <code class="highlighter-rouge">push "redirect-gateway def1 bypass-dhcp"</code> so the VPN server passes on clients’ web traffic to its destination. The line should look like this when done:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">push <span class="s2">"redirect-gateway def1 bypass-dhcp"</span></code></pre></figure>
+
+<p>The next edit to make is in this area of the file:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Certain Windows-specific network settings</span>
+<span class="c"># can be pushed to clients, such as DNS</span>
+<span class="c"># or WINS server addresses.  CAVEAT:</span>
+<span class="c"># http://openvpn.net/faq.html#dhcpcaveats</span>
+<span class="c"># The addresses below refer to the public</span>
+<span class="c"># DNS servers provided by opendns.com.</span>
+;push <span class="s2">"dhcp-option DNS 208.67.222.222"</span>
+;push <span class="s2">"dhcp-option DNS 208.67.220.220"</span></code></pre></figure>
+
+<p>Uncomment <code class="highlighter-rouge">push "dhcp-option DNS 208.67.222.222"</code> and <code class="highlighter-rouge">push "dhcp-option DNS 208.67.220.220"</code>. The entries should look like this when done:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">push <span class="s2">"dhcp-option DNS 208.67.222.222"</span>
+push <span class="s2">"dhcp-option DNS 208.67.220.220"</span></code></pre></figure>
+
+<p>This entry tells the server to push <strong>OpenDNS</strong> to connected clients for DNS resolution where possible. Using push can help prevent DNS requests from leaking outside the VPN connection. However, it’s important to specify desired DNS resolvers in client devices as well. Though <strong>OpenDNS</strong> is the default used by <strong>OpenVPN</strong>, you can use whichever DNS services you prefer.</p>
+
+<p>The last area to change in the <code class="highlighter-rouge">server.conf</code> file is here:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># You can uncomment this out on</span>
+<span class="c"># non-Windows systems.</span>
+;user nobody
+;group nogroup</code></pre></figure>
+
+<p>Uncomment <code class="highlighter-rouge">user nobody</code> and <code class="highlighter-rouge">group nogroup</code>. The entry should look like this when done:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">user nobody
+group nogroup</code></pre></figure>
+
+<p>By default, <strong>OpenVPN</strong> runs as the root user and thus has full root access to the system. Instead, confine <strong>OpenVPN</strong> to the <code class="highlighter-rouge">user nobody</code> and <code class="highlighter-rouge">group nogroup</code>, which is an unprivileged user with no default login capabilities, often reserved for running untrusted applications such as web-facing servers.</p>
+
+<p>Now save your changes and exit <strong>Vim</strong>.</p>
+
+<h3 id="packet-forwarding">Packet Forwarding</h3>
+
+<p>We need  a <code class="highlighter-rouge">sysctl</code> setting that tells the server’s kernel to forward traffic from client devices out to the Internet. Otherwise, the traffic will stop at the server. Enable packet forwarding during runtime by entering this command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo </span>1 &gt; /proc/sys/net/ipv4/ip_forward</code></pre></figure>
+
+<p>We now need to make this forwarding permanent, so the server still forwards traffic after rebooting.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/sysctl.conf</code></pre></figure>
+
+<p>Near the top of the <code class="highlighter-rouge">sysctl</code> file, you will see:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Uncomment the next line to enable packet forwarding for IPv4</span>
+<span class="c">#net.ipv4.ip_forward=1</span></code></pre></figure>
+
+<p>Uncomment net.ipv4.ip_forward. The line should look like this when done:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Uncomment the next line to enable packet forwarding for IPv4</span>
+net.ipv4.ip_forward<span class="o">=</span>1</code></pre></figure>
+
+<p>Save your changes and exit <strong>Vim</strong>.</p>
+
+<h3 id="uncomplicated-firewall-ufw">Uncomplicated Firewall (ufw)</h3>
+
+<p><code class="highlighter-rouge">ufw</code> is a front-end for iptables. Setting up <code class="highlighter-rouge">ufw</code> is not difficult. It’s included by default in Ubuntu 14.04, so we only need to make a few rules and configuration edits, then switch the firewall on. As a reference for more uses for <code class="highlighter-rouge">ufw</code>, see <strong>How To Set up a Firewall with UFW on an Ubuntu and Debian Cloud Server</strong>.</p>
+
+<p>First, set <code class="highlighter-rouge">ufw</code> to allow SSH. In the command prompt, enter:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ufw allow ssh</code></pre></figure>
+
+<p>This tutorial will use <strong>OpenVPN</strong> over UDP, so ufw must also allow UDP traffic over port 1194.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ufw allow 1194/udp</code></pre></figure>
+
+<p>The <code class="highlighter-rouge">ufw</code> forwarding policy needs to be set as well. We’ll do this in ufw’s primary configuration file.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/default/ufw</code></pre></figure>
+
+<p>Look for <code class="highlighter-rouge">DEFAULT_FORWARD_POLICY="DROP"</code>. This entry must be changed from <code class="highlighter-rouge">DROP</code> to <code class="highlighter-rouge">ACCEPT.</code> The entry should look like this when done:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">DEFAULT_FORWARD_POLICY</span><span class="o">=</span><span class="s2">"ACCEPT"</span></code></pre></figure>
+
+<p>Next we will add additional <code class="highlighter-rouge">ufw</code> rules for network address translation and IP masquerading of connected clients.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/ufw/before.rules</code></pre></figure>
+
+<p>Make the top of your <code class="highlighter-rouge">before.rules</code> file look like the example that follows. The area in red for <code class="highlighter-rouge">OPENVPN RULES</code> must be added:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#</span>
+<span class="c"># rules.before</span>
+<span class="c">#</span>
+<span class="c"># Rules that should be run before the ufw command line added rules. Custom</span>
+<span class="c"># rules should be added to one of these chains:</span>
+<span class="c">#   ufw-before-input</span>
+<span class="c">#   ufw-before-output</span>
+<span class="c">#   ufw-before-forward</span>
+<span class="c">#</span>
+
+<span class="c"># START OPENVPN RULES</span>
+<span class="c"># NAT table rules</span>
+<span class="k">*</span>nat
+:POSTROUTING ACCEPT <span class="o">[</span>0:0]
+<span class="c"># Allow traffic from OpenVPN client to eth0</span>
+-A POSTROUTING -s 10.8.0.0/8 -o eth0 -j MASQUERADE
+COMMIT
+<span class="c"># END OPENVPN RULES</span>
+
+<span class="c"># Don't delete these required lines, otherwise there will be errors</span>
+<span class="k">*</span>filter</code></pre></figure>
+
+<p>With the changes made to <code class="highlighter-rouge">ufw</code>, we can now enable it. Enter into the command prompt:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ufw <span class="nb">enable</span></code></pre></figure>
+
+<p>Enabling <code class="highlighter-rouge">ufw</code> will return the following prompt:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Command may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>?</code></pre></figure>
+
+<p>Answer <code class="highlighter-rouge">y</code>. The result will be this output:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Firewall is active and enabled on system startup</code></pre></figure>
+
+<p>To check ufw’s primary firewall rules:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ufw status</code></pre></figure>
+
+<p>The status command should return these results:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere
+1194/udp                   ALLOW       Anywhere
+22 <span class="o">(</span>v6<span class="o">)</span>                    ALLOW       Anywhere <span class="o">(</span>v6<span class="o">)</span>
+1194/udp <span class="o">(</span>v6<span class="o">)</span>              ALLOW       Anywhere <span class="o">(</span>v6<span class="o">)</span></code></pre></figure>
+
+<h2 id="step-2---creating-a-certificate-authority-and-server-side-certificate--key">Step 2 - Creating a Certificate Authority and Server-Side Certificate &amp; Key</h2>
+
+<p><strong>OpenVPN</strong> uses certificates to encrypt traffic.</p>
+
+<h3 id="configure-and-build-the-certificate-authority">Configure and Build the Certificate Authority</h3>
+
+<p>It is now time to set up our own Certificate Authority (CA) and generate a certificate and key for the <strong>OpenVPN</strong> server. <strong>OpenVPN</strong> supports bidirectional authentication based on certificates, meaning that the client must authenticate the server certificate and the server must authenticate the client certificate before mutual trust is established. We will use Easy RSA’s scripts we copied earlier to do this.</p>
+
+<p>First, copy over the Easy-RSA generation scripts.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cp -r /usr/share/easy-rsa/ /etc/openvpn</code></pre></figure>
+
+<p>Then make the key storage directory.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir /etc/openvpn/easy-rsa/keys</code></pre></figure>
+
+<p>Easy-RSA has a variables file we can edit to create certificates exclusive to our person, business, or whatever entity we choose. This information is copied to the certificates and keys, and it will help identify the keys later.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/openvpn/easy-rsa/vars</code></pre></figure>
+
+<p>The variables below should be changed according to your preference.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">KEY_COUNTRY</span><span class="o">=</span><span class="s2">"US"</span>
+<span class="nb">export </span><span class="nv">KEY_PROVINCE</span><span class="o">=</span><span class="s2">"TX"</span>
+<span class="nb">export </span><span class="nv">KEY_CITY</span><span class="o">=</span><span class="s2">"Dallas"</span>
+<span class="nb">export </span><span class="nv">KEY_ORG</span><span class="o">=</span><span class="s2">"My Company Name"</span>
+<span class="nb">export </span><span class="nv">KEY_EMAIL</span><span class="o">=</span><span class="s2">"sammy@example.com"</span>
+<span class="nb">export </span><span class="nv">KEY_OU</span><span class="o">=</span><span class="s2">"MYOrganizationalUnit"</span></code></pre></figure>
+
+<p>In the same vars file, also edit this one line shown below. For simplicity, we will use server as the key name. If you want to use a different name, you would also need to update the <strong>OpenVPN</strong> configuration files that reference <code class="highlighter-rouge">server.key</code> and <code class="highlighter-rouge">server.crt</code>.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">KEY_NAME</span><span class="o">=</span><span class="s2">"server"</span></code></pre></figure>
+
+<p>We need to generate the Diffie-Hellman parameters; this can take several minutes.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">openssl dhparam -out /etc/openvpn/dh2048.pem 2048</code></pre></figure>
+
+<p>Now let’s change directories so that we’re working directly out of where we moved Easy-RSA’s scripts to earlier in Step 2.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/openvpn/easy-rsa</code></pre></figure>
+
+<p>Initialize the PKI (Public Key Infrastructure). Pay attention to the dot (.) and space in front of <code class="highlighter-rouge">./varscommand</code>. That signifies the current working directory (source).</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">. ./vars</code></pre></figure>
+
+<p>The output from the above command is shown below. Since we haven’t generated anything in the keysdirectory yet, the warning is nothing to be concerned about.</p>
+
+<p>NOTE: If you run <code class="highlighter-rouge">./clean-all</code>, I will be doing a <code class="highlighter-rouge">rm -rf</code> on <code class="highlighter-rouge">/etc/openvpn/easy-rsa/keys</code>
+Now we’ll clear the working directory of any possible old or example keys to make way for our new ones.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./clean-all</code></pre></figure>
+
+<p>This final command builds the certificate authority (CA) by invoking an interactive <strong>OpenSSL</strong> command. The output will prompt you to confirm the Distinguished Name variables that were entered earlier into the Easy-RSA’s variable file (country name, organization, etc.).</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./build-ca</code></pre></figure>
+
+<p>Simply press ENTER to pass through each prompt. If something must be changed, you can do that from within the prompt.</p>
+
+<h3 id="generate-a-certificate-and-key-for-the-server">Generate a Certificate and Key for the Server</h3>
+
+<p>Still working from <code class="highlighter-rouge">/etc/openvpn/easy-rsa</code>, now enter the command to build the server’s key. Where you see server marked in red is the export <code class="highlighter-rouge">KEY_NAME</code> variable we set in Easy-RSA’s vars file earlier in Step 2.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./build-key-server server</code></pre></figure>
+
+<p>Similar output is generated as when we ran <code class="highlighter-rouge">./build-ca</code>, and you can again press ENTER to confirm each line of the Distinguished Name. However, this time there are two additional prompts:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Please enter the following <span class="s1">'extra'</span> attributes
+to be sent with your certificate request
+A challenge password <span class="o">[]</span>:
+An optional company name <span class="o">[]</span>:</code></pre></figure>
+
+<p>Both should be left blank, so just press ENTER to pass through each one.</p>
+
+<p>Two additional queries at the end require a positive (<code class="highlighter-rouge">y</code>) response:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Sign the certificate? <span class="o">[</span>y/n]
+1 out of 1 certificate requests certified, commit? <span class="o">[</span>y/n]</code></pre></figure>
+
+<p>The last prompt above should complete with:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Write out database with 1 new entries
+Data Base Updated</code></pre></figure>
+
+<h3 id="move-the-server-certificates-and-keys">Move the Server Certificates and Keys</h3>
+
+<p>OpenVPN expects to see the server’s CA, certificate and key in <code class="highlighter-rouge">/etc/openvpn</code>. Let’s copy them into the proper location.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cp /etc/openvpn/easy-rsa/keys/<span class="o">{</span>server.crt,server.key,ca.crt<span class="o">}</span> /etc/openvpn</code></pre></figure>
+
+<p>You can verify the copy operation was successful with this command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ls /etc/openvpn</code></pre></figure>
+
+<p>You should see the certificate and key files for the server.</p>
+
+<p>At this point, the <strong>OpenVPN</strong> server is ready to go. Start it and check the status.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">service openvpn start
+service openvpn status</code></pre></figure>
+
+<p>The status command should return this result:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">VPN <span class="s1">'server'</span> is running</code></pre></figure>
+
+<p>Congratulations! Your OpenVPN server is operational.</p>
+
+<p>If the status message says the VPN is not running, take a look at the <code class="highlighter-rouge">/var/log/syslog file</code> for errors such as:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Options error: --key fails with <span class="s1">'server.key'</span>: No such file or directory</code></pre></figure>
+
+<p>That error indicates that <code class="highlighter-rouge">server.key</code> was not copied to <code class="highlighter-rouge">/etc/openvpn</code> correctly. Re-copy the file and try again.</p>
+
+<h2 id="step-3---generate-certificates-and-keys-for-clients">Step 3 - Generate Certificates and Keys for Clients</h2>
+
+<p>So far we’ve installed and configured the <strong>OpenVPN</strong> server, created a Certificate Authority, and created the server’s own certificate and key. In this step, we use the server’s CA to generate certificates and keys for each client device that will be connecting to the VPN. These files later will be installed onto the client devices, such as a laptop or smartphone.</p>
+
+<h3 id="key-and-certificate-building">Key and Certificate Building</h3>
+
+<p>It’s ideal for each client connecting to the VPN to have its own unique certificate and key. This setup is preferable to generating one general certificate and key to use among all client devices.</p>
+
+<p><strong>Note:</strong> By default, <strong>OpenVPN</strong> does not allow simultaneous connections to the server from clients using the same certificate and key. (See <code class="highlighter-rouge">duplicate-cn</code> in <code class="highlighter-rouge">/etc/openvpn/server.conf</code>.)</p>
+
+<p>To create separate authentication credentials for each device you intend to connect to the VPN, you should complete this step for each device, but change the name <code class="highlighter-rouge">client1</code> below to something different such as <code class="highlighter-rouge">client2</code> or <code class="highlighter-rouge">iphone2</code>. With separate credentials per device, they can later be deactivated at the server individually, if need be. The remaining examples in this tutorial will use <code class="highlighter-rouge">client1</code> as our example client device’s name.</p>
+
+<p>As we did with the server’s key, now we build one for our <code class="highlighter-rouge">client1</code> example. You should still be working out of <code class="highlighter-rouge">/etc/openvpn/easy-rsa</code>.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./build-key client1</code></pre></figure>
+
+<p>Once again, you’ll be asked to change or confirm the Distinguished Name variables and these two prompts which should be left blank. Press ENTER to accept the defaults.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Please enter the following <span class="s1">'extra'</span> attributes
+to be sent with your certificate request
+A challenge password <span class="o">[]</span>:
+An optional company name <span class="o">[]</span>:</code></pre></figure>
+
+<p>As before, these two confirmations at the end of the build process require a (<code class="highlighter-rouge">y</code>) response:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Sign the certificate? <span class="o">[</span>y/n]
+1 out of 1 certificate requests certified, commit? <span class="o">[</span>y/n]</code></pre></figure>
+
+<p>If the key build was successful, the output will again be:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Write out database with 1 new entries
+Data Base Updated</code></pre></figure>
+
+<p>The example client configuration file should be copied to the Easy-RSA key directory too. We’ll use it as a template which will be downloaded to client devices for editing. In the copy process, we are changing the name of the example file from <code class="highlighter-rouge">client.conf</code> to <code class="highlighter-rouge">client.ovpn</code> because the <code class="highlighter-rouge">.ovpn</code> file extension is what the clients will expect to use.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/easy-rsa/keys/client.ovpn</code></pre></figure>
+
+<p>You can repeat this section again for each client, replacing <code class="highlighter-rouge">client1</code> with the appropriate client name throughout.</p>
+
+<h3 id="transferring-certificates-and-keys-to-client-devices">Transferring Certificates and Keys to Client Devices</h3>
+
+<p>Recall from the steps above that we created the client certificates and keys, and that they are stored on the <strong>OpenVPN</strong> server in the <code class="highlighter-rouge">/etc/openvpn/easy-rsa/keys</code> directory.</p>
+
+<p>For each client we need to transfer the client certificate, key, and profile template files to a folder on our local computer or another client device.</p>
+
+<p>In this example, our <code class="highlighter-rouge">client1</code> device requires its certificate and key, located on the server in:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/etc/openvpn/easy-rsa/keys/client1.crt
+/etc/openvpn/easy-rsa/keys/client1.key</code></pre></figure>
+
+<p>The <code class="highlighter-rouge">ca.crt</code> and <code class="highlighter-rouge">client.ovpn</code> files are the same for all clients. Download these two files as well; notice that the <code class="highlighter-rouge">ca.crt</code> file is in a different directory than the others.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/etc/openvpn/easy-rsa/keys/client.ovpn
+/etc/openvpn/ca.crt</code></pre></figure>
+
+<p>While the exact applications used to accomplish this transfer will depend on your choice and device’s operating system, you want the application to use SFTP (SSH file transfer protocol) or SCP (Secure Copy) on the backend. This will transport your client’s VPN authentication files over an encrypted connection.</p>
+
+<p>Here is an example SCP command using our <code class="highlighter-rouge">client1</code> example. It places the file <code class="highlighter-rouge">client1.key</code> into the Downloads directory on the local computer.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">scp root@your-server-ip:/etc/openvpn/easy-rsa/keys/client1.key Downloads/</code></pre></figure>
+
+<p>Here are several tools and tutorials for securely transfering files from the server to a local computer:</p>
+
+<p>WinSCP
+How To Use SFTP to Securely Transfer Files with a Remote Server
+How To Use Filezilla to Transfer and Manage Files Securely on your VPS</p>
+
+<p>At the end of this section, make sure you have these four files on your client device:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">client1.crt
+client1.key
+client.ovpn
+ca.crt</code></pre></figure>
+
+<h2 id="step-4---creating-a-unified-openvpn-profile-for-client-devices">Step 4 - Creating a Unified OpenVPN Profile for Client Devices</h2>
+
+<p>There are several methods for managing the client files but the easiest uses a unified profile. This is created by modifying the client.ovpn template file to include the server’s Certificate Authority, and the client’s certificate and its key. Once merged, only the single client.ovpn profile needs to be imported into the client’s OpenVPN application.</p>
+
+<p>We will create a single profile for our client1 device on the local computer we downloaded all the client files to. This local computer could itself be an intended client or just a temporary work area to merge the authentication files. The original client.ovpn template file should be duplicated and renamed. How you do this will depend on the operating system of your local computer.</p>
+
+<p>Note: The name of your duplicated client.ovpn doesn’t need to be related to the client device. The client-side OpenVPN application will use the file name as an identifier for the VPN connection itself. Instead, you should duplicate client.ovpn to whatever you want the VPN’s nametag to be in your operating system. For example: work.ovpn will be identified as work, school.ovpn as school, etc.</p>
+
+<p>In this tutorial, we’ll name the VPN connection Test1 so Test1.ovpn will be the file name referenced from this point on. Once named, we then must open Test1.ovpn in a text editor; you can use whichever editor you prefer.</p>
+
+<p>The first area of attention will be for the IP address of your Droplet. Near the top of the file, change my-server-1 to reflect your VPN’s IP.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># The hostname/IP and port of the server.</span>
+<span class="c"># You can have multiple remote entries</span>
+<span class="c"># to load balance between the servers.</span>
+remote my-server-1 1194</code></pre></figure>
+
+<p>Next, find the area shown below and uncomment <code class="highlighter-rouge">user nobody</code> and <code class="highlighter-rouge">group nogroup</code>, just like we did in <code class="highlighter-rouge">server.conf</code> in Step 1. Note: This step doesn’t apply to Windows so you can skip it. The entry should look like this when done:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Downgrade privileges after initialization (non-Windows only)</span>
+user nobody
+group nogroup</code></pre></figure>
+
+<p>The area given below needs the three lines shown to be commented out so we can instead include the certificate and key directly in the <code class="highlighter-rouge">Test1.ovpn</code> file. It should look like this when done:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># SSL/TLS parms.</span>
+<span class="c"># . . .</span>
+<span class="c">#ca ca.crt</span>
+<span class="c">#cert client.crt</span>
+<span class="c">#key client.key</span></code></pre></figure>
+
+<p>To merge the individual files into the one unified profile, the contents of the <code class="highlighter-rouge">ca.crt</code>, <code class="highlighter-rouge">client1.crt</code>, and <code class="highlighter-rouge">client1.key</code> files are pasted directly into the <code class="highlighter-rouge">.ovpn</code> profile using a basic XML-like syntax. The XML at the end of the file should take this form:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">&lt;ca&gt;
+<span class="o">(</span>insert ca.crt here<span class="o">)</span>
+&lt;/ca&gt;
+&lt;cert&gt;
+<span class="o">(</span>insert client1.crt here<span class="o">)</span>
+&lt;/cert&gt;
+&lt;key&gt;
+<span class="o">(</span>insert client1.key here<span class="o">)</span>
+&lt;/key&gt;</code></pre></figure>
+
+<p>When finished, the end of the file should be similar to this abbreviated example:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">&lt;ca&gt;
+-----BEGIN CERTIFICATE-----
+. . .
+-----END CERTIFICATE-----
+&lt;/ca&gt;
+
+&lt;cert&gt;
+Certificate:
+. . .
+-----END CERTIFICATE-----
+. . .
+-----END CERTIFICATE-----
+&lt;/cert&gt;
+
+&lt;key&gt;
+-----BEGIN PRIVATE KEY-----
+. . .
+-----END PRIVATE KEY-----
+&lt;/key&gt;</code></pre></figure>
+
+<p>The <code class="highlighter-rouge">client1.crt</code> file has some extra information in it; it’s fine to just include the whole file.</p>
+
+<p>Save the changes and exit. We now have a unified <strong>OpenVPN</strong> client profile to configure our <code class="highlighter-rouge">client1</code>.</p>
+
+<p>From here, we just need to feed the <code class="highlighter-rouge">.ovpn</code> file into the VPN client of our choice, whether that be Tunnelblick, Viscosity (both for OSX) or of your choice.</p>
+
+<p>Before we test this, though, we need to make sure that OpenStack is prepared to allow this traffic to go through. Let’s take a look at our instances:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>nova list +--------------------------------------+----------------+--------+------------+-------------+--------------------------------------+
+| ID | Name | Status | Task State | Power State | Networks | +--------------------------------------+----------------+--------+------------+-------------+--------------------------------------+
+| 4f239959-be46-4fd3-963a-7c70db305d74 | jkbastion | ACTIVE | - | Running | <span class="nv">internal</span><span class="o">=</span>10.230.7.72, 173.247.105.20 | | 0d3c2002-ea02-4311-8142-b622f05407b4 | jkinternal-ssh | ACTIVE | - | Running | <span class="nv">internal</span><span class="o">=</span>10.230.7.68 | | 746e0ef8-48ee-4867-9c9d-e3d53a7e68bc | jkinternal-web | ACTIVE | - | Running | <span class="nv">internal</span><span class="o">=</span>10.230.7.69 | +--------------------------------------+----------------+--------+------------+-------------+--------------------------------------+</code></pre></figure>
+
+<p>Formatting aside due to constrained space, what we have here are 3 instances; jkbastion, which has a floating IP, and also jkinternal-ssh and jkinternal-web, which obviously correlate to web and ssh (the web VM is running nginx).</p>
+
+<p>Also, let’s peek at our security groups, to make sure we’re allowing UDP 1194 to our bastion host:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>nova secgroup-list
++--------------------------------------+-----------+------------------------+
+| Id                                   | Name      | Description            |
++--------------------------------------+-----------+------------------------+
+| 55608023-c88e-4446-b67c-b64e741df5cb | default   | default                |
+| f33a4643-4440-4649-8ba6-aef09b00b7f7 | jkbastion | bastion security group |
+| dcec8a37-9541-4286-a4ad-0290a44efbae |  jksec    | Jason Kennedy<span class="s1">'s shiz   |
++------------------------------ --------+-----------+------------------------+</span></code></pre></figure>
+
+<p>Details of jkbastion:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>nova secgroup-list-rules f33a4643-4440-4649-8ba6-aef09b00b7f7
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| tcp         | 22        | 22      | 0.0.0.0/0 |              |
+| udp         | 1194      | 1194    | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+</code></pre></figure>
+
+<p>That should do it! With the VPN connected, you should be able to hit internal virtual machines with the services you need.</p>
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="footer__wrapper--light">
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Products</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-local" class="nav--item__link">Private Cloud Local</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="nav--item__link">Sales</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-faq" class="nav--item__link">FAQs</a>
+      </li>
+    
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Our Story</a>
+      </li>
+ <li class="footer--nav__item">
+        <a href="https://github.com/blueboxgroup?cm_mc_uid=04946053248414876234663&cm_mc_sid_50200000=1489010497" class="nav--item__link">On GitHub</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://blueboxstatus.com/" class="nav--item__link">System Status</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Support</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Box Panel</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Resources
+        </a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Case Studies</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Videos</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">News</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="hhttps://www.ibm.com/blogs/bluemix/">Recent Blog Posts</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/the-power-of-openstack/" class="nav--item__link">The Power of OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/08/blue-box-storage-models-explained/" class="nav--item__link">IBM Bluemix Private Cloud Storage Models</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.blueboxcloud.com/insight/blog-article/github-ibm-com-running-on-blue-box" class="nav--item__link">IBM Github Runs on Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/10/building-up-to-openstack/" class="nav--item__link">Building up to OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/keystone-to-keystone-federated-identity-on-blue-box-cloud/" class="nav--item__link">Get Started with Keystone Federation</a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer__wrapper--dark">
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.facebook.com/BlueBoxGroup/" class="list--item__link">Facebook</a>
+      </li>
+      <li class="list--item">
+        <a href="https://twitter.com/bluebox?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="list--item__link">Twitter</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.linkedin.com/company/blue-box-group" class="list--item__link">LinkedIn</a>
+      </li>
+      <li class="list--item">
+        <a href="https://plus.google.com/+BlueBoxSeattle/posts" class="list--item__link">Google +</a>
+      </li>
+      <li class="list--item">
+        <a href="https://github.com/blueboxgroup" class="list--item__link">GitHub</a>
+      </li>
+    </ul>
+
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="list--item__link">Contact</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Legal</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Privacy Policy</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Terms and Conditions</a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="footer__wrapper--black">
+    <p>
+        &copy; 2017 IBM Bluemix
+    </p>
+  </div>
+</footer>
+
+
+
+    <script src="/help-documentation/js/vendor/simple-jekyll-search.js" type="text/javascript"></script>
+
+
+    <script>
+        SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/help-documentation/search.json',
+          searchResultTemplate: '<li class="search-item"><a href="{url}" class="item-title">{title}</a><ul class="tag--list">{tags}</ul></li>'
+        });
+    </script>
+  <script src="/help-documentation/js/scripts.js"></script>
+
+  </body>
+
+</html>

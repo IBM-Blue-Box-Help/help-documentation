@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How Many Simultaneous Connections can HAProxy Handle?</title>
+  <meta name="description" content="Please Note: This article is NOT specifically related to OpenStack Neutron LBaaS, only to HAProxy running inside instances.">
+
+  <link rel="stylesheet" href="/help-documentation/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/help-documentation/troubleshooting/How_many_connections_can_HAProxy_handle/">
+  <link rel="alternate" type="application/rss+xml" title="Blue Box Help" href="http://localhost:4000/help-documentation/feed.xml">
+  
+  <style>
+   .site-header img:first-child {
+       height: 72px;
+}
+</style>
+  
+</head>
+
+
+  <body>
+
+  
+    <header class="site-header">
+
+  <div class="header-wrapper">
+
+    <a class="site-title" href="/help-documentation/"><img src="/help-documentation/img/en/Bluemix-logo-UI.svg" alt="" height="72px"></a>
+
+    <div class="search--pageview">
+
+  <div class="full-view__search hide">
+    <a href="" class="x hide">X</a>
+    <ul id="results-container"></ul>
+    <ul class="results--container"></ul>
+
+  </div>
+  <div class="input-container">
+    <label for="search__fullview" class="hide search--label">Search IBM Bluemix Private Cloud Help</label>
+    <input type="text" id="search-input" placeholder="" name="search" class="search__minview--page">
+    <img src="/help-documentation/img/en/search.svg" class="search-icon" />
+  </div>
+</div>
+
+
+    <a href="mailto:llundquist@us.ibm.com" class="header--request">
+      <p>
+        Submit A Request
+      </p>
+      <img src="/help-documentation/img/en/user.svg">
+    </a>
+    <a id="nav-toggle" href="#"><span></span></a>
+
+    <div>
+  
+    
+      <a style="font-weight: bold;" href=" /help-documentation/troubleshooting/How_many_connections_can_HAProxy_handle/ ">en</a> |
+    
+      <a  href=" /help-documentation/fr/troubleshooting/How_many_connections_can_HAProxy_handle/ ">fr</a> |
+    
+      <a  href=" /help-documentation/de/troubleshooting/How_many_connections_can_HAProxy_handle/ ">de</a> |
+    
+      <a  href=" /help-documentation/ja/troubleshooting/How_many_connections_can_HAProxy_handle/ ">ja</a> |
+    
+      <a  href=" /help-documentation/zh_CN/troubleshooting/How_many_connections_can_HAProxy_handle/ ">zh_CN</a> |
+    
+      <a  href=" /help-documentation/zh_TW/troubleshooting/How_many_connections_can_HAProxy_handle/ ">zh_TW</a> |
+    
+      <a  href=" /help-documentation/pt_BR/troubleshooting/How_many_connections_can_HAProxy_handle/ ">pt_BR</a> |
+    
+  
+</div>
+
+  </div>
+
+</header>
+
+  
+
+  
+  <div class="page-content">
+  
+
+      <div class="main-wrapper">
+        
+<div class="sidebar sidebar--toggled">
+  <ul class="sidebar__nav">
+    <li>
+      <h3 class="title">
+        
+        
+        
+        <a  class="page-link"  href="/help-documentation/gettingstarted">Getting Started (38)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Common Technical Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/connect-to-openvpn-server/">Connecting to your OpenVPN server</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/openvpn-setup/">Setting up OpenVPN server on your instance</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/blue-box-cloud-components/">Bluemix Private Cloud Components</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/detaching-volume/">What Should I Do Prior to Detaching a Volume?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/python-environment-primer/">Virtual python environments and you: A developer's primer</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commontech/FAQ/">Technical FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Building_Blocks/">IBM Bluemix Private Cloud Building Blocks (Community Edition)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Building_Blocks/">Building Blocks for IBM Bluemix Private Cloud with Red Hat</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/RHOSP_Product_Overview/">IBM Bluemix Private Cloud with Red Hat - Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/general_product_overview/">General Product Overview</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Instance_Resize/">Resizing an Instance (Non-live)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Connecting_Clouds_with_SoftLayer/">Set Up Network Connectivity Between Multiple Cloud Environments, Using the Private Network</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commontech/Windows_License_Activation/">Customer Guide for Windows Activation</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 7 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Common Administrative Questions</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/adding-removing-subscribers/">Adding or removing subscribers to a ticket</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/view-my-bill/">How do I view my bill?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/report-issue/">How do I report an issue?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/escalating-a-ticket/">How do I escalate a ticket?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/status-pages/">Bluemix Private Cloud Status Pages</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/gettingstarted/commonadmin/Transferring_A_Domain_From_Blue_Box/">Transferring A Domain From Blue Box</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 2 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">User Guides</h5>
+        
+        
+          
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Box_Panel/">Box Panel User Guide</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Eternal_Blue-ish_Triangle/">Box Panel, Site Controller, and IBM Bluemix Private Cloud Local</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/qemu_article/">Building Up to OpenStack — QEMU and Your Cloud</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Improving_Cloud_Performance/">Building Up to OpenStack II -- Improving Cloud Performance</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/gettingstarted/userguides/Optimized_Load_Balancing/">Cloud 101 -- Optimized Load Balancing</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_RHOSP/">User's Guide to Cloud Images (IBM Bluemix Private Cloud with Red Hat)</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Cloud_Images_Provided_by_IBM/">User's Guide to Cloud Images (Community Edition)</a>
+                  </li>
+              
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/gettingstarted/userguides/Image_Release_Notes/">IBM Bluemix Private Cloud Image Release Notes</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 4 )</a></li>
+      </ul>
+      
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">Release Notes</h5>
+        
+        
+          
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.1_Point_Release/">Customer 3.0.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.1_Point_Release/">Customer 3.1.1 Point Release Notes</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0c_Release_Notes/">Release Notes 4.0.0.0c</a>
+                  </li>
+              
+             
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_4.0.0.0r_Release_Notes/">Release Notes 4.0.0.0r</a>
+                </li>
+              
+         
+             
+                <li>
+                <a class="page-link" href="/help-documentation/releasenotes/Customer_2.1.1_Point_Release/">Release Notes 2.1.1</a>
+                </li>
+              
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/release_notes_2.1_for_customers/">Release Notes 2.1</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.0.0_Release_Notes/">Release Notes 3.0.0</a>
+                  </li>
+              
+             
+         
+             
+                
+                  
+                  <li class="hidden non-featured">
+                    <a class="page-link" href="/help-documentation/releasenotes/Customer_3.1.0_Release_Notes/">Release Notes 3.1.0</a>
+                  </li>
+              
+             
+         
+        <li><a href="" class="page-link view">View More ( 6 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/troubleshooting">Troubleshooting (19)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/libvirt_error/">Instance in error status: libvirt error</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ssh-too-long-error/">Why does it take 4-5 seconds to SSH to my instance?</a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/ping-instance-error/">Why can't I SSH to an instance, or ping it?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/nova-microversions-error/">Error: 'Server doesn't support microversions' When Running Nova Commands</a>
+          </li>
+          
+        
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Bad_Availability_Zone/">Cloud Foundry: Invalid Availability Zone Error</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failed_to_create_router/">Attempt to Create a Router is Failing</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link--active"  href="/help-documentation/troubleshooting/How_many_connections_can_HAProxy_handle/">How Many Simultaneous Connections can HAProxy Handle?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/CLI-authentication-error/">When using any of the OpenStack CLIs on Windows, I get authentication failure errors</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/floating-ips-error/">Why are all the floating IPs that were assigned to me not available?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/horizon-delete-error/">Why can't I delete my project/tenant from the Horizon dashboard?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/no-valid-host-error/">Error: No valid host was found</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Cannot_See_New_vCPUs/">Why Can't I See My New vCPUs Listed in Horizon?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/failure_prepping_block_device/">Error: Failure prepping block device</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/delete_security_group/">Why Can’t I Delete A Security Group?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/troubleshooting/Troubleshooting_FAQ/">Troubleshooting FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Unable_to_ping_tenant_network/">Why Can't I Ping Across My Tenant Networks?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="hidden non-featured">
+                  <a class="page-link" href="/help-documentation/troubleshooting/Why_No_vIP_Failover_With_L2pop/">Why can't I use L2pop when I want my vIP instances to failover?</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 11 )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/openstack">Open Stack (15)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">User Docs</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/launch-instance-from-volume/">How to Launch an Instance from a Volume</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/import-vhd-image-lvm/">Importing a VHD image that uses linux volume management for its root directory</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/OpenStack_network_concepts/">OpenStack Network Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating-an-Instance-with-a-Specific-Fixed-IP/">Creating an Instance with a Specific Fixed IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Mitaka_CLI_notes/">OpenStack Mitaka CLI Notes</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/Why-Choose-OpenStack/">Why Choose OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/userdocs/openstack-storage-concepts/">OpenStack Storage Concepts</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Ursula_and_OpenStack/">Ursula and OpenStack</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/Creating_Instances_With_Static_IP/">How to Create An Instance With Static IP</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/quotas/">Quotas</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/How_to_Isolate_Tenants/">How to Isolate Tenants (Projects)</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/userdocs/external-reference-material/">External reference materials</a>
+          </li>
+          
+        
+        <li><a href="" class="page-link view">View More ( 3 )</a></li>
+      </ul>
+
+      <ul  class="article__list slide-up-hidden" >
+        <h5 class="sub__head">API</h5>
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/floating-ip-address/">Creating a floating IP address using the OpenStack API</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/openstack/api/openstack-api-getting-started/">Getting Started with the OpenStack API</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/openstack/api/OpenStack_Client_Versions/">Requirements for OpenStack client versions</a>
+              </li>
+            
+          
+        
+        <li><a href="" class="page-link view">View More ( 1 )</a></li>
+      </ul>
+    </li>
+
+
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/horizon">Horizon [GUI] (10)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/creating-additional-networks-with-horizon/">Creating Additional Networks in OpenStack Using the Horizon Panel</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Making_Snapshots_in_Horizon/">Using Horizon for Snapshots</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/allocate-floating-ip/">Allocating and Attaching a Public (Floating) IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/create-volume-from-horizon/">Creating a volume from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/horizon-for-administrators/">Horizon for Administrators</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/launch-instance-from-horizon/">Launching an instance from the Horizon dashboard</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/launch-instance-from-horizon_newton/">Launching an instance from the Horizon dashboard (OpenStack Newton release)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/set-reverse-dns/">How do I set a reverse DNS (PTR) record for an IBM Bluemix Private Cloud instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/horizon/using-horizon/">Using Horizon</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/horizon/Horizon_troubleshooting_FAQ/">Horizon Troubleshooting FAQ</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/nova">Nova [Compute] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/windows-user-and-password/">How do I set an initial username and password on a Windows instance in OpenStack?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/nova_live_migration/">Instance Live Migration</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/CLI-create-public-instance/">How to Create an Instance and Make it Available Publicly Using the Command Line</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Nova_boot_speed/">What happens behind the scenes when I boot a virtual machine, and how can I make it boot faster?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Restrict_Floating_IP/">How Can I Restrict Floating IPs?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/config_drive_for_instances/">Can I create an instance and add files to it using config drive?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/create-vm-with-volumes/">How can I create an instance with the Nova command line client?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/define-flavor-vcpu/">How can I define flavor vCPU topology?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/deploy-to-specific-hypervisor/">How to deploy an instance to a specific hypervisor node</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/maximum-flavor-spec/">What is the maximum spec I can set for a flavor?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/nova/migrate-instance/">Migrating an instance to a new cloud</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/Metadata_service_FAQ/">Metadata Service in OpenStack Neutron and Nova</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/nova/hypervisor-statistics/">How can I get hypervisor statistics?</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/neutron">Neutron [Networking] (22)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/network_ip_availability/">How Can I Check My Network IP Availability?</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/isolatetwoprojectnetworksconnectedtoonesharedrouter/">How can you isolate project networks connected to a shared router?</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/time-ip-associated-with-instance/">How can I find the time a floating IP was associated or disassociated from an instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Load_Balancing_Methods/">Load Balancing Methods</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Multi-tier_Router_Configuration/">Multi-tier Router Configuration Within Your IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/set-up-dns-records/">How do I set up DNS records pointing to OpenStack instances?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/routing_internal_traffic_between_projects/">Routing Internal Traffic Between Projects</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/add-ip-to-instance/">Add a Specific Fixed Private IP to an Instance</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-dns.for-instances/">Configuring DNS for Instances</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/configure-multi-nics/">Configuring multiple network interfaces for your own cloud images</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/configure-ha-ip/">How to configure a highly-available IP</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/creating-virtual-networks/">Creating virtual networks on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/when_create_port_fails/">When creating port failed, how could I do ?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_Can_I_See_My_IPs/">How Can I See My IPs?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/How_to_update_DNS/">How Can I Update DNS?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/vpn-vlan-directlink/">VPN, VLAN, and Direct Link</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/BYOFIP_support/">Using BYOFIP Connectivity Between IBM Bluemix Private Cloud and a Customer Site</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Intro_to_LBaaS/">Introduction to Load Balancer as a Service (LBaaS)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Security_groups_CLI/">Using the CLI to Set Up Security Groups</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/neutron/Network_Use_Cases_White_Paper/">IBM Blue Box Network Use Cases</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/neutron/Where_Are_These_IPs/">Where Are the First Two IPs?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/glance">Glance [Images] (6)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/glance/FAQ_Working_with_Windows_Images/">Working with Windows Images FAQ</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/compatible-glance-images/">Is there a list of official OpenStack-compatible images that I can download for use with Glance? (CentOS, Ubuntu, etc.)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/disk-capacity-constraints/">Disk Capacity Constraints</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/Image_Properties_on_Power/">Optimal Settings for Glance Images on Power Compute</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/glance/imagesnapshot/">Difference Between Image and Snapshot</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/cinder">Cinder [Block Storage] (13)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/read-only-cinder-error/">What causes read-only Cinder volumes and how can I fix them?</a>
+          </li>
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/cinder-volume-stuck/">Cinder Volume Stuck</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/alternative_method_for_volume_encryption/">Alternative Method For Block Storage Volume Encryption (using an Ubuntu Guest VM)</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Bug_Creating_Encrypted_Volumes/">Creating Encrypted Volumes with Cinder is Not Supported</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/cinder/Managing_block_storage/">Managing Block Storage</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cli-create-volume/">Creating a volume with the command line</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/create-volume-from-snapshot/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/resize_cinder_volume/">How Can I Resize a Cinder Volume?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/supported_volume_types/">Which Cinder Volume Types are supported in Cloud Instance?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Ephemeral_to_Cinder/">How to Move from Ephemeral Disk to Cinder Storage</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/volume_clone/">Can I enable volume full clone more than copy-on-write clone?</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/Force_snapshot_on_attached_volume/">How to Force a Snapshot on an Attached Volume</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/cinder/cinder-failed-connection-error/">What do I do if the Cinder client returns 'ERROR: Unable to establish connection' message and fails to connect?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/keystone">Keystone [Identity] (8)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/oidc-federation/">OpenID Connect Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/saml-federation/">Keystone SAML Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/RBAC_Definitions/">Role-Based Access Control</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/Managing_Users_and_Projects/">Managing Users and Projects</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/k2k-federation/">Keystone to Keystone (K2K) Federation on IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/tenants-security-groups-keystone/">Projects and Security Groups</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/keystone/custom-domains-keystone/">Custom Domains within Keystone V3</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/keystone/Getting_Started_with_K2K_Identity/">Getting Started with Keystone Federated Identity</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/heat">Heat [Orchestration] (7)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Getting_Started_With_Heat/">Getting Started With Heat Templates</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/autoscaling-with-heat/">Using Heat for autoscaling</a>
+              </li>
+            
+          
+        
+          
+          <li>
+              <a class="page-link" href="/help-documentation/heat/Deploying_apps_with_UCD/">Deploying Applications with IBM UrbanCode Deploy and IBM Bluemix Private Cloud</a>
+          </li>
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_load_balancer/">Using Heat for provisioning servers with a load balancer</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using-ucd-ucdp/">Using IBM Urban Code Deploy with IBM Bluemix Private Cloud</a>
+              </li>
+            
+          
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/heat/using_heat_for_deployment/">Using Heat With a Self-signed Certificate</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+
+    <li>
+      <h3 class="title">
+        <a  class="page-link"  href="/help-documentation/ceilometer">Ceilometer [Telemetry] (1)</a>
+        <a href=""  class="expand rotate" ><img src="/help-documentation/img/en/arrow.svg" /></a>
+      </h3>
+      <ul  class="article__list slide-up-hidden" >
+        
+        
+        
+          
+            
+            
+              <li class="non-featured">
+                  <a class="page-link" href="/help-documentation/ceilometer/compatible-glance-images/">Is creating a volume from an instance snapshot supported?</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+
+<article>
+
+  <div class="page-container">
+
+    <div class="main-content">
+      <header class="post-header">
+
+        <h1 class="post-title">
+        
+
+        
+
+        How Many Simultaneous Connections can HAProxy Handle?
+
+        
+        </h1>
+
+
+
+
+        
+        <div class="post-data">
+          <img src='/help-documentation/img/en/avatar.png' />
+          <ul class="author--info">
+            <li>
+              <span class="author">by Lampros Chaidas </span>
+              <span class="dot">&#9679;</span>
+              <span class="date"> October 21, 2016</span>
+            </li>
+            <li>
+              <span class="job-title"></span>
+            </li>
+            <li class="tags">
+              
+                <h4>Tags:</h4>
+                  <ul class="tag--list">
+                  
+                    <li class="tag"><p>troubleshooting</p></li>
+                  
+                    <li class="tag"><p>haproxy</p></li>
+                  
+                    <li class="tag"><p>maxconn</p></li>
+                  
+                    <li class="tag"><p>load testing</p></li>
+                  
+                  </ul>
+              
+            </li>
+          </ul>
+        </div>
+        
+      </header>
+
+      <div class="post-content">
+        <p><strong>Please Note:</strong> This article is NOT specifically related to OpenStack Neutron LBaaS, only to HAProxy running inside instances.</p>
+
+<p>Recently, I was looking at a customer’s load balancing configuration. While examining the HAProxy states page with the customer, the question came up: “How many simultaneous connections can they really support?”</p>
+
+<p>Does the maximum connections per backend server really matter? This article covers a way to determine the number of simultaneous connections that <a href="http://www.haproxy.org/">HAProxy</a> can handle.</p>
+
+<p>We’ll install HAProxy on a <strong>CentOS 6 VPS</strong> and run a series of tests to find the answer. On a different VPS, we’ll set up our benchmarking utility.</p>
+
+<h2 id="requirements">Requirements:</h2>
+
+<ul>
+  <li>2x CentOS 6.x VPS</li>
+</ul>
+
+<p>The specifications for the VPS’s that I used in those tests were:</p>
+
+<ul>
+  <li>2GB RAM</li>
+  <li>2 Cores</li>
+  <li>CentOS 6.7</li>
+</ul>
+
+<h2 id="installing-haproxy-on-the-haproxy-vps">Installing HAProxy on the HAProxy VPS:</h2>
+
+<p>Step 1. Install the HAProxy <a href="https://ius.io/">IUS (Inline with Upstream Stable) repo</a> for <strong>CentOS 6</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  yum -y install https://centos6.iuscommunity.org/ius-release.rpm
+</code></pre>
+</div>
+
+<p>Step 2. Then get the latest version of HAProxy - at the time of writing that is <code class="highlighter-rouge">1.6.9</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  yum -y install haproxy16u &amp;&amp; chkconfig haproxy on
+</code></pre>
+</div>
+
+<p>Step 3. Move your default HAproxy configuration somewhere else, in case you need to review it later:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg-default
+</code></pre>
+</div>
+
+<p>Step 4. Configure <a href="http://www.rsyslog.com/">rsyslog</a> to receive logs from HAProxy:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  sed -i -- 's/#$ModLoad imudp/$ModLoad imudp/g' /etc/rsyslog.conf
+  sed -i -- 's/#$UDPServerRun 514/$UDPServerRun 514/g' /etc/rsyslog.conf
+  echo "\$UDPServerAddress 127.0.0.1" &gt;&gt; /etc/rsyslog.conf
+  echo "local2.* -/var/log/haproxy.log" &gt;&gt; /etc/rsyslog.conf
+</code></pre>
+</div>
+
+<p>The previous commands set <code class="highlighter-rouge">rsyslog</code> to listen to UDP port <code class="highlighter-rouge">514</code> and limit it to <code class="highlighter-rouge">localhost</code> connections only. The last line sets the HAProxy logs to go <code class="highlighter-rouge">/var/log/haproxy.log</code>.</p>
+
+<p>Step 5. Restart <code class="highlighter-rouge">rsyslog</code> so that the changes take effect:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  service rsyslog restart
+</code></pre>
+</div>
+
+<p>Step 6. Add a new HAProxy configuration - <code class="highlighter-rouge">/etc/haproxy/haproxy.cfg</code> - note the <code class="highlighter-rouge">maxconn 20</code> line. Per the <a href="https://cbonte.github.io/haproxy-dconv/1.6/configuration.html#maxconn">manual page</a> “Proxies will stop accepting connections when this limit is reached.” In other words, this configuration allows us only up to <strong>20</strong> connections at the same time.</p>
+
+<p>What is the <code class="highlighter-rouge">fullconn 20</code> line? From the <a href="https://cbonte.github.io/haproxy-dconv/1.6/configuration.html#4-fullconn">manual page</a> it’s defined as “the number of connections on the backend which will make the servers use the maximal number of connections.”</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>global
+daemon
+# we need the socket for hatop statistics
+stats socket /var/run/haproxy.sock mode 600 level admin
+log /dev/log local4
+maxconn 20
+
+defaults
+log global
+timeout connect 4000
+timeout client 42000
+timeout server 43000
+
+listen lampros-pool-1
+bind *:80
+mode http
+balance roundrobin
+fullconn 20
+server go_http_server_1 127.0.0.1:8080 cookie go_http_server_1 check inter 2000 rise 2 fall 3
+
+</code></pre>
+</div>
+
+<h2 id="installing-the-go-language---do-this-on-both-servers">Installing the Go language - Do this on both servers:</h2>
+
+<p>Install the Go language along with the <code class="highlighter-rouge">screen</code> utility and <code class="highlighter-rouge">git</code>. We need this language on both servers because, on the HAProxy VPS, we’ll compile a very basic application server. On the benchmarker VPS, we need Go so we can run the <a href="https://github.com/cmpxchg16/gobench">gobench</a> benchmarker utility.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>yum -y install git screen nc
+cd /tmp
+wget https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz
+tar -xvf go1.7.linux-amd64.tar.gz
+mv go /usr/local
+export GOROOT=/usr/local/go
+mkdir /root/goapps
+export GOPATH=/root/goapps
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+echo export "GOPATH=/root/goapps" &gt;&gt; ~/.bashrc
+echo export "export PATH=$PATH:$GOPATH/bin:$GOROOT/bin" &gt;&gt; ~/.bashrc
+</code></pre>
+</div>
+
+<h2 id="on-the-haproxy-server-well-set-up-a-basic-application-server-using-go">On the HAProxy server we’ll set up a basic application server using Go:</h2>
+
+<p>Step 1. Create a directory called <code class="highlighter-rouge">/root/slowserver</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  mkdir -pv /root/slowserver
+</code></pre>
+</div>
+
+<p>Step 2. Inside it, add a file called <code class="highlighter-rouge">/root/slowserver/slowserver.go</code> with the following contents:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>package main
+
+import (
+    "fmt"
+    "net/http"
+    "time"
+)
+
+func slow_handler(w http.ResponseWriter, r *http.Request) {
+    time.Sleep(3000 * time.Millisecond)
+    fmt.Fprintf(w, "I'm slooooow")
+}
+
+func fast_handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "I'm FAST!!!!")
+}
+
+func main() {
+    http.HandleFunc("/fast", fast_handler)
+    http.HandleFunc("/slow", slow_handler)
+    http.ListenAndServe(":8080", nil)
+}
+</code></pre>
+</div>
+
+<p>Step 3. Compile this file with <code class="highlighter-rouge">go build</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  cd /root/slowserver
+  go build
+</code></pre>
+</div>
+
+<p>Step 4. Start our slowserver in a detached screen session, so that it stays in the background:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  screen -d -m -t go_slowserver /root/slowserver/slowserver
+</code></pre>
+</div>
+
+<p>Step 5. Confirm that it’s running using <code class="highlighter-rouge">netstat -ntlp | grep slowserver</code> - you should see the port it’s listening on as well as the process ID. This is the output I got:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  netstat -ntlp | grep slowserver
+  tcp        0      0 :::8080                     :::*                        LISTEN      5204/slowserver
+</code></pre>
+</div>
+
+<h2 id="on-the-haproxy-server-setup-hatop">On the HAProxy server setup HATop</h2>
+
+<p>Step 1. Download and install <a href="http://feurix.org/projects/hatop/">HATop</a> so that we can monitor HAProxy:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  cd /tmp
+  wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hatop/hatop-0.7.7.tar.gz
+  tar -xzf hatop-0.7.7.tar.gz
+  cd hatop-0.7.7
+  install -m 755 bin/hatop /usr/local/bin
+  install -m 644 man/hatop.1 /usr/local/share/man/man1
+  gzip /usr/local/share/man/man1/hatop.1
+</code></pre>
+</div>
+
+<p>Step 2. Start HAProxy:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  service haproxy start
+</code></pre>
+</div>
+
+<p>Step 3. Start HAtop:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  hatop -s /var/run/haproxy.sock
+</code></pre>
+</div>
+
+<p>Step 4. Now let’s use a one-liner to ask HAProxy for the status of our backend server <strong>go_http_server_1</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  echo "show stat" | nc -U /var/run/haproxy.sock | awk -F, '/go_http_server/{print $18}'
+</code></pre>
+</div>
+
+<p>You should get the following output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  UP
+</code></pre>
+</div>
+
+<h2 id="on-the-vps-that-well-run-the-tests-from-do-this">On the VPS that we’ll run the tests from, do this:</h2>
+
+<p>Download the <a href="https://github.com/cmpxchg16/gobench">gobench</a> benchmarker utility:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  go get github.com/cmpxchg16/gobench
+</code></pre>
+</div>
+
+<h2 id="load-testing---does-the-maximum-connections-per-backend-server-really-matter-no-artificial-delay">Load testing - Does the maximum connections per backend server really matter? (no artificial delay)</h2>
+
+<p>For our first test, we’ll try to determine whether the <code class="highlighter-rouge">fullconn</code> setting has any effect on the results. On the first run, we’ll set <code class="highlighter-rouge">fullconn</code> to <code class="highlighter-rouge">20</code> and on the second run we’ll set it to <code class="highlighter-rouge">1</code>. We’ll calibrate the test for <code class="highlighter-rouge">30</code> seconds worth of benchmarking using <code class="highlighter-rouge">20</code> fast clients (no artificial delay):</p>
+
+<ul>
+  <li><strong>maxconn</strong> 20</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 20</li>
+  <li><strong>fast/slow</strong> fast</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/fast -c 20 -t 30
+</code></pre>
+</div>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Dispatching 20 clients
+Waiting for results...
+
+Requests:                           627867 hits
+Successful requests:                627867 hits
+Network failed:                          0 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:            20928 hits/sec
+Read throughput:                   2699828 bytes/sec
+Write throughput:                  1841801 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<p>Now, before we run it again, we’ll modify HAProxy’s configuration and set <code class="highlighter-rouge">fullconn</code> to <code class="highlighter-rouge">1</code>. We do this task using <code class="highlighter-rouge">sed</code> and then reload HAProxy:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sed -i -- 's/fullconn 20/fullconn 1/g' /etc/haproxy/haproxy.cfg
+/etc/init.d/haproxy reload
+</code></pre>
+</div>
+
+<p>To summarize:</p>
+
+<ul>
+  <li><strong>maxconn</strong> 20</li>
+  <li><strong>fullconn</strong> 1</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 20</li>
+  <li><strong>fast/slow</strong> fast</li>
+</ul>
+
+<p>Now run the same test again:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/fast -c 20 -t 30
+</code></pre>
+</div>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/fast -c 20 -t 30
+Dispatching 20 clients
+Waiting for results...
+
+Requests:                           527141 hits
+Successful requests:                527141 hits
+Network failed:                          0 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:            17571 hits/sec
+Read throughput:                   2266727 bytes/sec
+Write throughput:                  1546353 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<p>As you can see: in the first test, we got 20928 hits/sec, while on the second test we got 17571 hits/sec. What if the application server was slow, though, and it took 3 seconds to reply each time?</p>
+
+<h2 id="load-testing---does-the-maximum-connections-per-backend-server-really-matter-3-seconds-of-artificial-delay">Load testing - Does the maximum connections per backend server really matter? (3 seconds of artificial delay)</h2>
+
+<ul>
+  <li><strong>maxconn</strong> 20</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 20</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<p>We’ll change the <code class="highlighter-rouge">fullconn</code> back to <code class="highlighter-rouge">20</code> before we begin:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sed -i -- 's/fullconn 1/fullconn 20/g' /etc/haproxy/haproxy.cfg
+/etc/init.d/haproxy restart
+</code></pre>
+</div>
+
+<p>Test again:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 20 -t 30
+</code></pre>
+</div>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 20 -t 30
+Dispatching 20 clients
+Waiting for results...
+
+Requests:                              180 hits
+Successful requests:                   180 hits
+Network failed:                          0 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:                6 hits/sec
+Read throughput:                       774 bytes/sec
+Write throughput:                      586 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<p>Change the <code class="highlighter-rouge">fullconn</code> back to <code class="highlighter-rouge">1</code> and test again:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sed -i -- 's/fullconn 20/fullconn 1/g' /etc/haproxy/haproxy.cfg
+/etc/init.d/haproxy restart
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>maxconn</strong> 20</li>
+  <li><strong>fullconn</strong> 1</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 20</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 20 -t 30
+</code></pre>
+</div>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Dispatching 20 clients
+Waiting for results...
+
+Requests:                              180 hits
+Successful requests:                   180 hits
+Network failed:                          0 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:                6 hits/sec
+Read throughput:                       774 bytes/sec
+Write throughput:                      586 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<h2 id="conclusion--load-testing---does-the-maximum-connections-per-backend-server-really-matter">Conclusion : Load testing - Does the maximum connections per backend server really matter?</h2>
+
+<p>The answer is yes. It matters, but only when the servers are fast. With slow servers, we saw no difference in our results.</p>
+
+<h2 id="load-testing---determining-the-number-of-simultaneous-connections-haproxy-can-handle">Load testing - Determining the number of simultaneous connections HAProxy can handle</h2>
+
+<p>Now let’s see how many simultaneous connections HAProxy can handle. Before we begin, let’s not forget one basic detail regarding HAProxy: <a href="https://cbonte.github.io/haproxy-dconv/1.6/configuration.html#1.1">“By default HAProxy operates in keep-alive mode with regard to persistent connections: for each connection it processes each request and response, and it leaves the connection idle on both sides between the end of a response and the start of a new request.”</a></p>
+
+<p>This statement means that long-running connections will have a greater impact on the server than short-lived ones. As such, we’ll run the tests against the “slow” function of our application server.</p>
+
+<ul>
+  <li><strong>maxconn</strong> 20</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 20</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 20 -t 30
+</code></pre>
+</div>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Dispatching 20 clients
+Waiting for results...
+
+Requests:                              180 hits
+Successful requests:                   180 hits
+Network failed:                          0 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:                6 hits/sec
+Read throughput:                       774 bytes/sec
+Write throughput:                      586 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<p>We see <code class="highlighter-rouge">6 hits/sec</code> and no errors reported. Let’s try again with 5 times as many clients (100).</p>
+
+<ul>
+  <li><strong>maxconn</strong> 20</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 100</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 100 -t 30
+</code></pre>
+</div>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Dispatching 100 clients
+Waiting for results...
+
+Requests:                              266 hits
+Successful requests:                   180 hits
+Network failed:                         86 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:                6 hits/sec
+Read throughput:                       774 bytes/sec
+Write throughput:                     1120 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<p>We’re still at <code class="highlighter-rouge">6 hits/sec</code> but this time there also are errors. Errors mean that our HAProxy configuration is at its limit, because the number of hits per second are no longer going up, and at the same time we’re getting these errors. Let’s try the same number of clients (100), but let’s double the <code class="highlighter-rouge">maxconns</code> and see what happens:</p>
+
+<ul>
+  <li><strong>maxconn</strong> 40</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 100</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 100 -t 30
+Dispatching 100 clients
+Waiting for results...
+
+Requests:                              426 hits
+Successful requests:                   360 hits
+Network failed:                         66 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:               12 hits/sec
+Read throughput:                      1548 bytes/sec
+Write throughput:                     1630 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<p>As expected from our previous tests, the <code class="highlighter-rouge">fullconn</code> didn’t really limit us. By doubling the <code class="highlighter-rouge">maxconns</code> we got exactly double the hit rate (<code class="highlighter-rouge">12 hits/sec</code>), although we are still getting errors, which means that our HAProxy configuration is still over its limit.</p>
+
+<p>Let’s raise <code class="highlighter-rouge">maxconns</code> again - this time to <code class="highlighter-rouge">60</code>:</p>
+
+<ul>
+  <li><strong>maxconn</strong> 60</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 100</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 100 -t 30
+Dispatching 100 clients
+Waiting for results...
+
+Requests:                              595 hits
+Successful requests:                   540 hits
+Network failed:                         55 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:               18 hits/sec
+Read throughput:                      2322 bytes/sec
+Write throughput:                     2179 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<p>As you can see, each time we raise the <code class="highlighter-rouge">maxconn</code> limit, we are seeing a linear increase on the <code class="highlighter-rouge">hits/sec</code>. Let’s keep it going until we see the errors stop:</p>
+
+<ul>
+  <li><strong>maxconn</strong> 80</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 100</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 100 -t 30
+Dispatching 100 clients
+Waiting for results...
+
+Requests:                              760 hits
+Successful requests:                   720 hits
+Network failed:                         40 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:               24 hits/sec
+Read throughput:                      3096 bytes/sec
+Write throughput:                     2698 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>maxconn</strong> 100</li>
+  <li><strong>fullconn</strong> 20</li>
+  <li><strong>seconds</strong> 30</li>
+  <li><strong>connections</strong> 100</li>
+  <li><strong>fast/slow</strong> slow</li>
+</ul>
+
+<p><strong>Results:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gobench -u http://10.42.226.10/slow -c 100 -t 30
+Dispatching 100 clients
+Waiting for results...
+
+Requests:                              900 hits
+Successful requests:                   900 hits
+Network failed:                          0 hits
+Bad requests failed (!2xx):              0 hits
+Successful requests rate:               30 hits/sec
+Read throughput:                      3870 bytes/sec
+Write throughput:                     2933 bytes/sec
+Test time:                              30 sec
+</code></pre>
+</div>
+
+<h2 id="conclusion-load-testing---determining-the-number-of-simultaneous-connections-haproxy-can-handle">Conclusion: Load testing - Determining the number of simultaneous connections HAProxy can handle</h2>
+
+<p>The conclusion we can draw from the previous experiment is that, in order to test capacity (max number of clients connected to HAProxy), we need to use a server that opens a TCP connection but holds it open for an extended period of time (3 seconds). This is the opposite of testing how fast a server is–where the more traffic you can push through it, the better results you’ll get.</p>
+
+<p>The second conclusion is that your max connections (<code class="highlighter-rouge">maxconn</code>) needs to be greater than the request rate (for example 100 clients) * time (3 seconds) to serve each request.</p>
+
+<p>For example:</p>
+
+<p><code class="highlighter-rouge">maxconn</code>=100*3 =&gt; <code class="highlighter-rouge">maxconn</code>=300</p>
+
+<h2 id="sources">Sources:</h2>
+
+<ul>
+  <li><a href="https://www.percona.com/blog/2014/10/03/haproxy-give-me-some-logs-on-centos-6-5/">Percona - HAProxy: Give me some logs on CentOS  6.5!</a></li>
+  <li><a href="http://www.loadbalancer.org/uk/blog/setting-up-haproxy-with-transparent-mode-on-centos-6-x">Setting up HAProxy with Transparent Mode on Centos 6.x</a></li>
+  <li><a href="https://golang.org/doc/articles/wiki/">The Go Programming Language - Writing Web Applications</a></li>
+  <li><a href="http://unix.stackexchange.com/a/267794">Stack Exchange - Run script in a screen</a></li>
+  <li><a href="http://tecadmin.net/install-go-on-centos/">TecAdmin.net - How to Install Go 1.7 on CentOS/RHEL 7/6/5</a></li>
+  <li><a href="http://feurix.org/projects/hatop/">Feurix Free Open Source Projects - HATop</a></li>
+  <li><a href="http://www.serverlab.ca/tutorials/linux/network-services/monitoring-haproxy-using-hatop/">Serverlab - Monitoring HAProxy using HATOP</a></li>
+  <li><a href="https://github.com/cmpxchg16/gobench">Github.com - GoBench -  HTTP/HTTPS load testing and benchmarking tool</a></li>
+</ul>
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="footer__wrapper--light">
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Products</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-local" class="nav--item__link">Private Cloud Local</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="nav--item__link">Sales</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-faq" class="nav--item__link">FAQs</a>
+      </li>
+    
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Our Story</a>
+      </li>
+ <li class="footer--nav__item">
+        <a href="https://github.com/blueboxgroup?cm_mc_uid=04946053248414876234663&cm_mc_sid_50200000=1489010497" class="nav--item__link">On GitHub</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://blueboxstatus.com/" class="nav--item__link">System Status</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Support</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://support.bluebox.net/" class="nav--item__link">Box Panel</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Resources
+        </a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud">Case Studies</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">Videos</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="nav--item__link">News</a>
+      </li>
+    </ul>
+
+    <ul class="footer--nav">
+      <li class="footer--nav__header">
+        <a href="hhttps://www.ibm.com/blogs/bluemix/">Recent Blog Posts</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/the-power-of-openstack/" class="nav--item__link">The Power of OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/08/blue-box-storage-models-explained/" class="nav--item__link">IBM Bluemix Private Cloud Storage Models</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.blueboxcloud.com/insight/blog-article/github-ibm-com-running-on-blue-box" class="nav--item__link">IBM Github Runs on Bluemix Private Cloud</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/10/building-up-to-openstack/" class="nav--item__link">Building up to OpenStack</a>
+      </li>
+      <li class="footer--nav__item">
+        <a href="https://www.ibm.com/blogs/bluemix/2016/07/keystone-to-keystone-federated-identity-on-blue-box-cloud/" class="nav--item__link">Get Started with Keystone Federation</a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer__wrapper--dark">
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.facebook.com/BlueBoxGroup/" class="list--item__link">Facebook</a>
+      </li>
+      <li class="list--item">
+        <a href="https://twitter.com/bluebox?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="list--item__link">Twitter</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.linkedin.com/company/blue-box-group" class="list--item__link">LinkedIn</a>
+      </li>
+      <li class="list--item">
+        <a href="https://plus.google.com/+BlueBoxSeattle/posts" class="list--item__link">Google +</a>
+      </li>
+      <li class="list--item">
+        <a href="https://github.com/blueboxgroup" class="list--item__link">GitHub</a>
+      </li>
+    </ul>
+
+    <ul class="footer--list">
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/private-cloud-contact-us" class="list--item__link">Contact</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Legal</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Privacy Policy</a>
+      </li>
+      <li class="list--item">
+        <a href="https://www.ibm.com/cloud-computing/bluemix/bluemix-private-cloud" class="list--item__link">Terms and Conditions</a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="footer__wrapper--black">
+    <p>
+        &copy; 2017 IBM Bluemix
+    </p>
+  </div>
+</footer>
+
+
+
+    <script src="/help-documentation/js/vendor/simple-jekyll-search.js" type="text/javascript"></script>
+
+
+    <script>
+        SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/help-documentation/search.json',
+          searchResultTemplate: '<li class="search-item"><a href="{url}" class="item-title">{title}</a><ul class="tag--list">{tags}</ul></li>'
+        });
+    </script>
+  <script src="/help-documentation/js/scripts.js"></script>
+
+  </body>
+
+</html>
