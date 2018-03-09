@@ -1,0 +1,13 @@
+---
+layout: page
+title:  "Common Administrative Questions"
+categories: gettingstarted userguides
+---
+
+{% for page in site.commonadmin %}
+  <li>
+      {% if page.title %}
+      <a class="page--link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      {% endif %}
+  </li>
+{% endfor %}

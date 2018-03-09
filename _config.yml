@@ -1,0 +1,95 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Blue Box Help
+email: twegan@us.ibm.com
+description: The definitive Knowledge Base for IBM Blue Box Cloud.
+baseurl: "/help-documentation" # the subpath of your site, e.g. /blog
+url: "http://ibm-blue-box-help.github.io" # the base hostname & protocol for your site
+twitter_username: tj_egan
+github_username:  twegan
+
+
+
+# Build settings
+permalink: /:title
+top-level: /:top-level
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+
+#variables
+author: /:author
+
+#Default settings
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      dateAdded: "February 4th, 2016"
+      author: "Blue Box Support"
+      job-title:
+
+sass:
+    style: compressed
+
+collections:
+  troubleshooting:
+    output: true
+    permalink: /troubleshooting/:path/
+  openstack:
+    output: true
+    permalink: /openstack/:path/
+  api:
+    output: true
+    permalink: /openstack/api/:path/
+  userdocs:
+    output: true
+    permalink: /openstack/userdocs/:path/
+  gettingstarted:
+    output: true
+    permalink: /gettingstarted/:path/
+  commontech:
+    output: true
+    permalink: /gettingstarted/commontech/:path/
+  commonadmin:
+    output: true
+    permalink: /gettingstarted/commonadmin/:path/
+  userguides:
+    output: true
+    permalink: /gettingstarted/userguides/:path/
+  glance:
+    output: true
+    permalink: /glance/:path/
+  cinder:
+    output: true
+    permalink: /cinder/:path/
+  keystone:
+    output: true
+    permalink: /keystone/:path/
+  nova:
+    output: true
+    permalink: /nova/:path/
+  horizon:
+    output: true
+    permalink: /horizon/:path/
+  neutron:
+    output: true
+    permalink: /neutron/:path/
+  heat:
+    output: true
+    permalink: /heat/:path/
+  ceilometer:
+    output: true
+    permalink: /ceilometer/:path/
+  releasenotes:
+    output: true
+    permalink: /releasenotes/:path/

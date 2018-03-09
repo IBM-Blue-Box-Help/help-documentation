@@ -1,0 +1,16 @@
+---
+layout: page
+title:  "User Guides"
+category: top-level
+top-level: usergudes
+---
+
+{% for page in site.userguides %}
+  <li>
+      {% if page.title %}
+    	{% if page.featured != 'hidden' %}
+      		<a class="page--link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {% endif %}
+      {% endif %}
+  </li>
+{% endfor %}

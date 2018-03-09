@@ -1,0 +1,95 @@
+---
+layout: default
+---
+{% include sidebar.html %}
+
+<article>
+
+  <div class="page-container">
+
+    <div class="main-content">
+      <header class="post-header">
+
+        <h1 class="post-title">
+        {% assign x = page.title | remove: ' ' | downcase %}
+
+        {% if x == 'openstack' %}
+          {% assign count-helper = 0 %}
+          {% for topic in site.userdocs %}
+            {% if topic.title %}
+              {% assign count-helper = count-helper | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% for topic in site.api %}
+            {% if topic.title %}
+              {% assign count-helper = count-helper | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        {% elsif x == 'gettingstarted' %}
+          {% assign counter = 0 %}
+          {% assign hidden-size = 0 %}
+          {% assign original = site.userguides %}
+          {% for item in original %}
+              {% if item.featured == 'hidden' %}
+               {% assign hidden-size = hidden-size | plus: 1 %}
+              {% endif %}
+          {% endfor %}
+          {% assign counter = site.commontech.size | plus:site.commonadmin.size | plus:site.userguides.size | minus:hidden-size %}
+        {% else %}
+          {% assign counter = 0 %}
+          {% for item in site[x] %}
+            {% if item.title %}
+              {% assign counter = counter | plus: 1 %}
+            {% endif %}
+            {% if item.featured == 'hidden' %}
+              {% assign counter = counter | minus : 1 %}
+            {% endif %}            
+          {% endfor %}
+        {% endif %}
+
+        {{ page.title }}
+
+        {% if counter > 1 %}
+          {{ counter | prepend: '(' | append: ')' }}
+        {% elsif count-helper > 1 %}
+          {{ count-helper | prepend: '(' | append: ')' }}
+        {% endif%}
+        </h1>
+
+
+
+
+        {% if page.tags.size > 0 %}
+        <div class="post-data">
+          <img src='{{ site.baseurl }}/img/avatar.png' />
+          <ul class="author--info">
+            <li>
+              <span class="author">by {{ page.author }} </span>
+              <span class="dot">&#9679;</span>
+              <span class="date"> {{ page.dateAdded }}</span>
+            </li>
+            <li>
+              <span class="job-title">{{ page.job-title }}</span>
+            </li>
+            <li class="tags">
+              {% if page.tags %}
+                <h4>Tags:</h4>
+                  <ul class="tag--list">
+                  {% for tag in page.tags %}
+                    <li class="tag"><p>{{ tag | remove: ',' }}</p></li>
+                  {% endfor %}
+                  </ul>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+        {% endif %}
+      </header>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </div>
+
+  </div>
+</article>

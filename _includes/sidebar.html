@@ -1,0 +1,438 @@
+
+<div class="sidebar sidebar--toggled">
+  <ul class="sidebar__nav">
+    <li>
+      <h3 class="title">
+        {% assign hidden-size = 0 %}
+        {% assign original = site.userguides %}
+        {% for item in original %}
+              {% if item.featured == 'hidden' %}
+               {% assign hidden-size = hidden-size | plus: 1 %}
+              {% endif %}
+        {% endfor %}
+        <a {% if page.url == '/gettingstarted/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/gettingstarted' }}">Getting Started ({{ site.commontech.size | plus:site.commonadmin.size | plus:site.userguides.size | plus:site.releasenotes.size | minus:hidden-size}})</a>
+        <a href="" {% if page.url == '/gettingstarted/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/gettingstarted/' %} class="article__list" {% elsif page.tags[0] contains 'getting' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        <h5 class="sub__head">Common Technical Questions</h5>
+        {% assign count = 0 %}
+        {% assign ctq = site.commontech | sort:"weight" %}
+        {% for node in ctq %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="hidden non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <li><a href="" class="page-link view">View More ( {{ count }} )</a></li>
+      </ul>
+      
+      <ul {% if page.url == '/gettingstarted/' %} class="article__list" {% elsif page.tags[0] contains 'getting' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        <h5 class="sub__head">Common Administrative Questions</h5>
+        {% assign count = 0 %}
+        {% assign caq = site.commonadmin | sort:"weight" %}
+        {% for node in caq %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="hidden non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <li><a href="" class="page-link view">View More ( {{ count }} )</a></li>
+      </ul>
+      
+      <ul {% if page.url == '/gettingstarted/' %} class="article__list" {% elsif page.tags[0] contains 'getting' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        <h5 class="sub__head">User Guides</h5>
+        {% assign count = 0 %}
+        {% assign ug = site.userguides | sort:"weight" %}
+          {% for node in ug %}
+             {% if node.featured == true %}
+                <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+                </li>
+              {% elsif node.featured == false %}
+                {% if page.url == node.url %}
+                  <li>
+                    <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend:  site.baseurl }}">{{ node.title }}</a>
+                  </li>
+                {% else %}
+                  {% assign count = count | plus: 1 %}
+                  <li class="hidden non-featured">
+                    <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+                  </li>
+              {% endif %}
+             {% endif %}
+         {% endfor %}
+        <li><a href="" class="page-link view">View More ( {{ count }} )</a></li>
+      </ul>
+      
+      <ul {% if page.url == '/gettingstarted/' %} class="article__list" {% elsif page.tags[0] contains 'getting' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        <h5 class="sub__head">Release Notes</h5>
+        {% assign count = 0 %}
+        {% assign rn = site.releasenotes | sort:"weight" %}
+          {% for node in rn %}
+             {% if node.featured == true %}
+                <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+                </li>
+              {% elsif node.featured == false %}
+                {% if page.url == node.url %}
+                  <li>
+                    <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend:  site.baseurl }}">{{ node.title }}</a>
+                  </li>
+                {% else %}
+                  {% assign count = count | plus: 1 %}
+                  <li class="hidden non-featured">
+                    <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+                  </li>
+              {% endif %}
+             {% endif %}
+         {% endfor %}
+        <li><a href="" class="page-link view">View More ( {{ count }} )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/troubleshooting/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/troubleshooting' }}">Troubleshooting ({{ site.troubleshooting.size }})</a>
+        <a href="" {% if page.url == '/troubleshooting/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/troubleshooting/' %} class="article__list" {% elsif page.tags[0] contains 'troubleshooting' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign ts = site.troubleshooting | sort:"weight" %}
+        {% for node in ts %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="hidden non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <li><a href="" class="page-link view">View More ( {{ count }} )</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/openstack/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/openstack' }}">Open Stack ({{ site.userdocs.size | plus:site.api.size }})</a>
+        <a href="" {% if page.url == '/openstack/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/openstack/' %} class="article__list" {% elsif page.tags[0] contains 'openstack' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        <h5 class="sub__head">User Docs</h5>
+        {% assign count = 0 %}
+        {% assign ud = site.userdocs | sort:"weight" %}
+        {% for node in ud %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <li><a href="" class="page-link view">View More ( {{ count }} )</a></li>
+      </ul>
+
+      <ul {% if page.url == '/openstack/' %} class="article__list" {% elsif page.tags[0] == 'openstack' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        <h5 class="sub__head">API</h5>
+        {% assign count = 0 %}
+        {% assign api = site.api | sort:"weight" %}
+        {% for node in api %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <li><a href="" class="page-link view">View More ( {{ count }} )</a></li>
+      </ul>
+    </li>
+
+
+
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/horizon/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/horizon' }}">Horizon [GUI] ({{ site.horizon.size }})</a>
+        <a href="" {% if page.url == '/horizon/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/horizon/' %} class="article__list" {% elsif page.tags[0] == 'horizon' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.horizon | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/nova/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/nova' }}">Nova [Compute] ({{ site.nova.size }})</a>
+        <a href="" {% if page.url == '/nova/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/nova/' %} class="article__list" {% elsif page.tags[0] == 'nova' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.nova | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/neutron/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/neutron' }}">Neutron [Networking] ({{ site.neutron.size }})</a>
+        <a href="" {% if page.url == '/neutron/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/neutron/' %} class="article__list" {% elsif page.tags[0] == 'neutron' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.neutron | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/glance/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/glance' }}">Glance [Images] ({{ site.glance.size }})</a>
+        <a href="" {% if page.url == '/glance/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/glance/' %} class="article__list" {% elsif page.tags[0] == 'glance' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.glance | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/cinder/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/cinder' }}">Cinder [Block Storage] ({{ site.cinder.size }})</a>
+        <a href="" {% if page.url == '/cinder/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/cinder/' %} class="article__list" {% elsif page.tags[0] == 'cinder' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.cinder | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/keystone/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/keystone' }}">Keystone [Identity] ({{ site.keystone.size }})</a>
+        <a href="" {% if page.url == '/keystone/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/keystone/' %} class="article__list" {% elsif page.tags[0] == 'keystone' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.keystone | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/heat/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/heat' }}">Heat [Orchestration] ({{ site.heat.size }})</a>
+        <a href="" {% if page.url == '/heat/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/heat/' %} class="article__list" {% elsif page.tags[0] == 'heat' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.heat | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+
+    <li>
+      <h3 class="title">
+        <a {% if page.url == '/ceilometer/' %} class="page-link active" {% else %} class="page-link" {% endif %} href="{{ site.baseurl | append: '/ceilometer' }}">Ceilometer [Telemetry] ({{ site.ceilometer.size }})</a>
+        <a href="" {% if page.url == '/ceilometer/' %} class="expand" {% else %} class="expand rotate" {% endif %}><img src="{{ site.baseurl }}/img/arrow.svg" /></a>
+      </h3>
+      <ul {% if page.url == '/ceilometer/' %} class="article__list" {% elsif page.tags[0] == 'ceilometer' %} class="article__list" {% else %} class="article__list slide-up-hidden" {% endif %}>
+        {% assign count = 0 %}
+        {% assign gs = site.ceilometer | sort:"weight" %}
+        {% for node in gs %}
+          {% if node.featured == true %}
+          <li>
+              <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          </li>
+          {% elsif node.featured == false %}
+            {% if page.url == node.url %}
+            <li>
+                <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+            </li>
+            {% else %}
+            {% assign count = count | plus: 1 %}
+              <li class="non-featured">
+                  <a {% if page.url == node.url %}class="page-link--active" {% else %}class="page-link"{% endif %} href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+  </ul>
+</div>

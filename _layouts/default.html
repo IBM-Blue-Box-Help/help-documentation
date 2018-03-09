@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+  {% if page.url == '/' %}
+    {% include header.html %}
+  {% elsif page.url != '/' %}
+    {% include header--page.html %}
+  {% endif %}
+
+  {% if page.url == '/' %}
+  <div class="mainpage-content">
+  {% elsif page.url != '/' %}
+  <div class="page-content">
+  {% endif %}
+
+      <div class="main-wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+
+    <script src="{{ site.baseurl }}/js/vendor/simple-jekyll-search.js" type="text/javascript"></script>
+
+
+    <script>
+        SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '{{site.baseurl}}/search.json',
+          searchResultTemplate: '<li class="search-item"><a href="{url}" class="item-title">{title}</a><ul class="tag--list">{tags}</ul></li>'
+        });
+    </script>
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+
+  </body>
+
+</html>

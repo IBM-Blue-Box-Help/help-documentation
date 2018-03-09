@@ -1,0 +1,16 @@
+---
+layout: page
+title:  "Release Notes"
+category: top-level
+top-level: releasenotes
+---
+
+{% for page in site.releasenotes %}
+  <li>
+      {% if page.title %}
+    	{% if page.featured != 'hidden' %}
+      		<a class="page--link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {% endif %}
+      {% endif %}
+  </li>
+{% endfor %}
