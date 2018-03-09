@@ -1,0 +1,38 @@
+// SEARCH CONTAINER
+
+.search--pageview {
+  flex-grow: 2;
+  margin-left: 1em;
+
+  img {
+    height: 34px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .input-container {
+    @media (max-width: 768px) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.search__minview--page {
+  width: 80%;
+  height: 34px;
+  font-size: $font-14;
+  border: 2px solid $grey-color-light;
+  border-right: 0;
+  outline: 0;
+  padding-left: 1em;
+
+
+  @media (max-width: 768px) {
+    border: 0;
+    background: url('../img/search-min.svg') no-repeat bottom right;
+    cursor: pointer;
+    background-size: 34px;
+  }
+}

@@ -1,0 +1,13 @@
+---
+layout: page
+title:  "User Docs"
+categories: userdocs user docs openstack
+---
+
+{% for page in site.userdocs %}
+  <li>
+      {% if page.title %}
+      <a class="page--link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      {% endif %}
+  </li>
+{% endfor %}

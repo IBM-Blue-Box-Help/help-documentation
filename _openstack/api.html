@@ -1,0 +1,13 @@
+---
+layout: page
+title:  "API"
+categories: api openstack
+---
+
+{% for page in site.api %}
+  <li>
+      {% if page.title %}
+      <a class="page--link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      {% endif %}
+  </li>
+{% endfor %}

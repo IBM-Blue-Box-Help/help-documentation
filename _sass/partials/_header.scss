@@ -1,0 +1,45 @@
+.site-header {
+  border: none;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  img {
+    height: 25px;
+  }
+}
+
+.header-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 2em;
+}
+
+.header--request {
+  font-size: $font-14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin: 0;
+    font-size: $font-12;
+  }
+
+  img {
+    height: 22px;
+    margin-left: 1.5em;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 780px) {
+    display: none;
+  }
+}
