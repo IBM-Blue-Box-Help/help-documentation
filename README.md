@@ -1,62 +1,18 @@
 ![header](/readme-img/bluebox-help.png)
 
-## Running Locally
-1. Clone the repo 
-2. Check whether you have Ruby 2.0.0 or higher installed `ruby --version`
-3. Install Bundler:
-```BASH
-gem install bundler
-```
-4. Check whether you have Node v6.9 or installed `node -v`
-5. Install Node and NPM (if necessary):
-```BASH 
-brew install nvm
-nvm install node --reinstall-packages-from=node
-npm install
-```
-6. Build and Run locally with:
-```
-bundle exec jekyll serve
-```  
-7. Visit your static web site in a web browser:  
-  http://localhost:4444/help-documentation/
+##Running Locally
+  1. Clone the repo 
+  2. Check whether you have Ruby 2.0.0 or higher installed `ruby --version`
+  3. Install Bundler `gem install bundler` 
+  4. Run locally with `bundle exec jekyll serve`
 
-## Deployment
-1. Build your static web site with jekyll
-```BASH
-# the 'build' command is more concise, but 'serve' would also work
-bundle exec jekyll build
-```
-2. Release you the static website to the 'gh-pages' branch of your origin repo
-```BASH
-# the './dist' directory must contain the static website
-node deploy.js
-```
-3. Visit your production website to verify the changes. Note: The changes may take several minutes after the deploy script exits to reach your production Github environment.
-
-## Troubleshooting
-
-You may need to modify some local pieces of configuration in the `./_config.yml` in order for your css, javascript, and other assets build their links correctly for your specific deployment path:
-
-For example, the following line in `_config.yml`:
-```YML
-baseurl: "/help-documentation" # the subpath of your site, e.g. /blog
-```
-
-Could have to be changed to:
-```YML
-baseurl: "/wsulzer/help-documentation-staging-area/" # the subpath of your site, e.g. /blog
-```
-
-You would then need to rebuild and redeploy the web site as described above.
-
-## Github Organization
+##Github Organization
 1. [Basic Github folder Organization](#basic-github-folder-organization)
 2. [Folders for Content](#folders-for-content)
 3. [Folders for site structure, page layout and global styling](#folders-for-site-structure)
 
 
-## Article Post
+##Article Post
 1. [Setting up an article](#setting-up-an-article)
 2. [Code highlighting](#code-highlighting)
 3. [Tag best practices](#tag-best-practices)

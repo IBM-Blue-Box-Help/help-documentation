@@ -16,8 +16,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.2",
-    "gh-pages": "^1.0.0"
+    "gulp-uglify": "^1.5.2"
   },
   "dependencies": {
     "simple-jekyll-search": "^1.1.1"
