@@ -1,0 +1,166 @@
+NetworkManager.x86_64             1:1.0.6-29.el7_2
+
+NetworkManager-libnm.x86_64       1:1.0.6-29.el7_2
+
+NetworkManager-team.x86_64        1:1.0.6-29.el7_2
+
+NetworkManager-tui.x86_64         1:1.0.6-29.el7_2
+
+bind-libs.x86_64                  32:9.9.4-29.el7_2.3
+
+bind-libs-lite.x86_64             32:9.9.4-29.el7_2.3
+
+bind-license.noarch               32:9.9.4-29.el7_2.3
+
+bind-utils.x86_64                 32:9.9.4-29.el7_2.3
+
+chkconfig.x86_64                  1.3.61-5.el7_2.1
+
+cronie.x86_64                     1.4.11-14.el7_2.1
+
+cronie-anacron.x86_64             1.4.11-14.el7_2.1
+
+device-mapper.x86_64              7:1.02.107-5.el7_2.2
+
+device-mapper-event.x86_64        7:1.02.107-5.el7_2.2
+
+device-mapper-event-libs.x86_64   7:1.02.107-5.el7_2.2
+
+device-mapper-libs.x86_64         7:1.02.107-5.el7_2.2
+
+epel-release.noarch               7-6
+
+euca2ools.noarch                  3.3.0-3.el7
+
+gdisk.x86_64                      0.8.6-5.el7
+
+git.x86_64                        1.8.3.1-6.el7_2.1
+
+glibc.x86_64                      2.17-106.el7_2.6
+
+glibc-common.x86_64               2.17-106.el7_2.6
+
+glibc-devel.x86_64                2.17-106.el7_2.6
+
+glibc-headers.x86_64              2.17-106.el7_2.6
+
+initscripts.x86_64                9.49.30-1.el7_2.2
+
+kernel.x86_64                     3.10.0-327.18.2.el7
+
+kernel-devel.x86_64               3.10.0-327.18.2.el7
+
+kernel-headers.x86_64             3.10.0-327.18.2.el7
+
+kernel-tools.x86_64               3.10.0-327.18.2.el7
+
+kernel-tools-libs.x86_64          3.10.0-327.18.2.el7
+
+kpartx.x86_64                     0.4.9-85.el7_2.4
+
+krb5-libs.x86_64                  1.13.2-12.el7_2
+
+libblkid.x86_64                   2.23.2-26.el7_2.2
+
+libgudev1.x86_64                  219-19.el7_2.9
+
+libicu.x86_64                     50.1.2-15.el7
+
+libmount.x86_64                   2.23.2-26.el7_2.2
+
+libndp.x86_64                     1.2-6.el7_2
+
+libsss_idmap.x86_64               1.13.0-40.el7_2.4
+
+libsss_nss_idmap.x86_64           1.13.0-40.el7_2.4
+
+libteam.x86_64                    1.17-6.el7_2
+
+libtirpc.x86_64                   0.2.4-0.6.el7
+
+libuuid.x86_64                    2.23.2-26.el7_2.2
+
+lvm2.x86_64                       7:2.02.130-5.el7_2.2
+
+lvm2-libs.x86_64                  7:2.02.130-5.el7_2.2
+
+mariadb-libs.x86_64               1:5.5.47-1.el7_2
+
+nspr.x86_64                       4.11.0-1.el7_2
+
+nss.x86_64                        3.21.0-9.el7_2
+
+nss-softokn.x86_64                3.16.2.3-14.2.el7_2
+
+nss-softokn-freebl.x86_64         3.16.2.3-14.2.el7_2
+
+nss-sysinit.x86_64                3.21.0-9.el7_2
+
+nss-tools.x86_64                  3.21.0-9.el7_2
+
+nss-util.x86_64                   3.21.0-2.2.el7_2
+
+ntpdate.x86_64                    4.2.6p5-22.el7.centos.2
+
+ntsysv.x86_64                     1.3.61-5.el7_2.1
+
+openldap.x86_64                   2.4.40-9.el7_2
+
+openssh.x86_64                    6.6.1p1-25.el7_2
+
+openssh-clients.x86_64            6.6.1p1-25.el7_2
+
+openssh-server.x86_64             6.6.1p1-25.el7_2
+
+openssl.x86_64                    1:1.0.1e-51.el7_2.5
+
+openssl-libs.x86_64               1:1.0.1e-51.el7_2.5
+
+pcre.x86_64                       8.32-15.el7_2.1
+
+perl-Git.noarch                   1.8.3.1-6.el7_2.1
+
+python-lxml.x86_64                3.2.1-4.el7
+
+python-perf.x86_64                3.10.0-327.18.2.el7
+
+python-progressbar.noarch         2.3-4.el7
+
+python-requestbuilder.noarch      0.5.2-1.el7
+
+python2-boto.noarch               2.39.0-1.el7
+
+python2-ecdsa.noarch              0.13-4.el7
+
+python2-paramiko.noarch           1.16.1-1.el7
+
+python2-rsa.noarch                3.4.1-1.el7
+
+qemu-img.x86_64                   10:1.5.3-105.el7_2.4
+
+quota.x86_64                      1:4.01-11.el7_2.1
+
+quota-nls.noarch                  1:4.01-11.el7_2.1
+
+rpcbind.x86_64                    0.2.0-33.el7_2
+
+sssd-client.x86_64                1.13.0-40.el7_2.4
+
+sudo.x86_64                       1.8.6p7-17.el7_2
+
+systemd.x86_64                    219-19.el7_2.9
+
+systemd-libs.x86_64               219-19.el7_2.9
+
+systemd-python.x86_64             219-19.el7_2.9
+
+systemd-sysv.x86_64               219-19.el7_2.9
+
+teamd.x86_64                      1.17-6.el7_2
+
+tuned.noarch                      2.5.1-4.el7_2.3
+
+tzdata.noarch                     2016d-1.el7
+
+util-linux.x86_64                 2.23.2-26.el7_2.2
+

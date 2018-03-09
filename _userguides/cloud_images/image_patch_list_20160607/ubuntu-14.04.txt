@@ -1,0 +1,100 @@
+bind9-host                       1:9.9.5.dfsg-3ubuntu0.7
+
+biosdevname                      0.4.1-0ubuntu6.2
+
+ca-certificates                  20141019ubuntu0.14.04.1
+
+cloud-init                       0.7.5-0ubuntu1.18
+
+cpio                             2.11+dfsg-1ubuntu1.1
+
+debian-installer                 20101020ubuntu318.38
+
+dnsutils                         1:9.9.5.dfsg-3ubuntu0.7
+
+grub-common                      2.02~beta2-9ubuntu1.7
+
+grub-pc                          2.02~beta2-9ubuntu1.7
+
+grub-pc-bin                      2.02~beta2-9ubuntu1.7
+
+grub2-common                     2.02~beta2-9ubuntu1.7
+
+ifupdown                         0.7.47.2ubuntu4.3
+
+initramfs-tools                  0.103ubuntu4.2
+
+initramfs-tools-bin              0.103ubuntu4.2
+
+language-pack-en                 1:14.04+20150219
+
+language-pack-en-base            1:14.04+20150219
+
+language-pack-gnome-en           1:14.04+20150219
+
+language-pack-gnome-en-base      1:14.04+20150219
+
+libbind9-90                      1:9.9.5.dfsg-3ubuntu0.7
+
+libdns100                        1:9.9.5.dfsg-3ubuntu0.7
+
+libgnutls-openssl27:amd64        2.12.23-12ubuntu2.4
+
+libgnutls26:amd64                2.12.23-12ubuntu2.4
+
+libisc95                         1:9.9.5.dfsg-3ubuntu0.7
+
+libisccc90                       1:9.9.5.dfsg-3ubuntu0.7
+
+libisccfg90                      1:9.9.5.dfsg-3ubuntu0.7
+
+liblwres90                       1:9.9.5.dfsg-3ubuntu0.7
+
+libnuma1:amd64                   2.0.9~rc5-1ubuntu3.14.04.1
+
+libpam-cracklib:amd64            1.1.8-1ubuntu2.2
+
+libpam-systemd:amd64             204-5ubuntu20.18
+
+libparted0debian1:amd64          2.3-19ubuntu1.14.04.1
+
+libssl1.0.0:amd64                1.0.1f-1ubuntu2.16
+
+libsystemd-daemon0:amd64         204-5ubuntu20.18
+
+libsystemd-login0:amd64          204-5ubuntu20.18
+
+libudev1:amd64                   204-5ubuntu20.18
+
+linux-image-4.2.0-36-generic     4.2.0-36.42~14.04.1
+
+linux-image-virtual-lts-wily     4.2.0.36.29
+
+lsb-base                         4.1+Debian11ubuntu6
+
+lsb-release                      4.1+Debian11ubuntu6
+
+openssh-client                   1:6.6p1-2ubuntu2.7
+
+openssh-server                   1:6.6p1-2ubuntu2.7
+
+openssh-sftp-server              1:6.6p1-2ubuntu2.7
+
+openssl                          1.0.1f-1ubuntu2.16
+
+parted                           2.3-19ubuntu1.14.04.1
+
+perl                             5.18.2-2ubuntu1
+
+perl-base                        5.18.2-2ubuntu1
+
+perl-modules                     5.18.2-2ubuntu1
+
+qemu-utils                       2.0.0+dfsg-2ubuntu1.24
+
+systemd-services                 204-5ubuntu20.18
+
+udev                             204-5ubuntu20.18
+
+usbutils                         1:007-2ubuntu1
+
