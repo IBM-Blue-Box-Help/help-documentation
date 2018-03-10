@@ -1,3 +1,14 @@
+---
+layout: page
+author: Lampros Chaidas
+title: Network Troubleshoting Tips
+editor: Leslie Lundquist
+tags: [troubleshooting, traceroute, mtr]
+dateAdded: October 21, 2016
+featured: TRUE
+weight: 3
+---
+
 Every situation is different, so it's tough to provide a template that would work for all network failures, but here are some starters.  These are best done, if possible, _while_ the trouble is occurring:
 
 Please provide:
